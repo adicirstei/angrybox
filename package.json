@@ -1,0 +1,8 @@
+{
+  "name": "angrybox",
+  "version": "0.0.0",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "bower": "~1.0.3"
+  }
+}
