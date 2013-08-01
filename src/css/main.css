@@ -1,0 +1,14 @@
+body {
+  background-color: #e0e0e0;
+}
+section{
+  position: relative;
+  width:100%;
+}
+
+#game{
+  width: 640px;
+  height:480px;
+  background-color: #333333;
+  margin: 0 auto;
+}
