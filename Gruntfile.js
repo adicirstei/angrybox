@@ -58,9 +58,16 @@ module.exports = function(grunt){
       dist: {
         // Options: https://github.com/jrburke/r.js/blob/master/build/example.build.js
         options: {
-          // `name` and `out` is set by grunt-usemin
+
+
+
+          name:'app',
+
+          mainConfigFile: "src/js/main.js",
+          out: "dist/js/main.js",
+
           baseUrl: angryConfig.app + '/js',
-          optimize: 'none',
+          optimize: 'uglify2',
           // TODO: Figure out how to make sourcemaps work with grunt-usemin
           // https://github.com/yeoman/grunt-usemin/issues/30
           //generateSourceMaps: true,
@@ -73,11 +80,49 @@ module.exports = function(grunt){
         }
       }
     },
-
-
+    copy: {
+      dist: {
+        files: [{
+          expand: true,
+          dot: true,
+          cwd: '<%= angry.app %>',
+          dest: '<%= angry.dist %>',
+          src: [
+            '*.{ico,png,txt}',
+            '.htaccess',
+            '*.html',
+            'components/requirejs/require.js',
+            'img/{,*/}*.{webp,gif}',
+            'css/fonts/*'
+          ]
+        }, {
+          expand: true,
+          cwd: '.tmp/images',
+          dest: '<%= angry.dist %>/img',
+          src: [
+            'generated/*'
+          ]
+        }]
+      }
+    },
+    clean: {
+      dist: {
+        files: [{
+          dot: true,
+          src: [
+            '.tmp',
+            '<%= angry.dist %>/*',
+            '!<%= angry.dist %>/.git*'
+          ]
+        }]
+      },
+      server: '.tmp'
+    }
   });
   grunt.registerTask('build', [
- 
+    'clean:dist',
+    'copy:dist',
+    'requirejs'
   ]);
 
   grunt.registerTask('default', [
