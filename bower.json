@@ -1,6 +1,7 @@
 {
   "name": "angrybox",
   "dependencies": {
-    "requirejs": "~2.1.8"
+    "requirejs": "~2.1.8",
+    "box2dweb": "https://box2dweb.googlecode.com/files/Box2dWeb-2.1a.3.zip"
   }
 }
