@@ -6,9 +6,14 @@ section{
   width:100%;
 }
 
-#game{
+#gameui {
   width: 640px;
   height:480px;
-  background-color: #333333;
+
   margin: 0 auto;
+}
+#gameui canvas {
+    background-color: #333333;
+    width:100%;
+    height: 100%;
 }
