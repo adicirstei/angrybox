@@ -1,8 +1,9 @@
-define(['Box2D'], function(Box2D){
+define(['boxbox'], function(box){
   var World = function(){
 
 
   }
+  World.box = box;
   return World;
 
 });
