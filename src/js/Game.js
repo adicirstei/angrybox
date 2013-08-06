@@ -2,15 +2,9 @@ define(['World'], function(World){
   
   return {
     start: function(){
-      var w = new World();
+      var w = new World(document.getElementById('canvas'));
       this.world = w;
+      w.loadLevel(3);
     },
-    render:function(){
-      requestAnimationFrame(this.render);
-      // render code goes here
-
-
-    }
   };
-
 });
