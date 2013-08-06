@@ -94,7 +94,7 @@ module.exports = function(grunt){
             '*.html',
             'components/requirejs/require.js',
             'img/{,*/}*.{webp,gif}',
-            'css/fonts/*'
+            'css/*'
           ]
         }, {
           expand: true,
