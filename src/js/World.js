@@ -1,8 +1,11 @@
-define(['boxbox'], function(boxbox){
+define(['boxbox', 'Events'], function(boxbox, Events){
   var World = function(canvas){
     this.b2World = new boxbox.createWorld(canvas);
-
   }
+
+  World.prototype = Events;
+
+
   World.prototype.loadLevel = function(level){
     var player = this.b2World.createEntity({
       name: "player",
@@ -11,7 +14,12 @@ define(['boxbox'], function(boxbox){
       color: '#ffee00',
       density: 4
     });
+
+    this.trigger('kill');
   };
+
+
+
   return World;
 
 });
