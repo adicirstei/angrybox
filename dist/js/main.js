@@ -1,4 +1,4 @@
-(function () {
+
 /*
 * Copyright (c) 2006-2007 Erin Catto http://www.gphysics.com
 *
@@ -12464,4 +12464,4 @@ define('app',['Game'], function(Game){
   Game.start();
   return {Game: Game};
 
-});}());
+});
