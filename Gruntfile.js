@@ -74,8 +74,7 @@ module.exports = function(grunt){
           //generateSourceMaps: true,
           // required to support SourceMaps
           // http://requirejs.org/docs/errors.html#sourcemapcomments
-          preserveLicenseComments: false,
-          useStrict: true
+          preserveLicenseComments: false
           //uglify2: {} // https://github.com/mishoo/UglifyJS2
         }
       }
