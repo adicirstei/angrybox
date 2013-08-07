@@ -56,25 +56,25 @@ module.exports = function(grunt){
       }
     },
     requirejs: {
-      dist: {
+      compile: {
         // Options: https://github.com/jrburke/r.js/blob/master/build/example.build.js
         options: {
 
 
 
-          name:'app',
+          name:'main',
 
           mainConfigFile: "src/js/main.js",
           out: "dist/js/main.js",
 
           baseUrl: angryConfig.app + '/js',
-          optimize: 'none',
+          optimize: 'uglify2' //,
           // TODO: Figure out how to make sourcemaps work with grunt-usemin
           // https://github.com/yeoman/grunt-usemin/issues/30
           //generateSourceMaps: true,
           // required to support SourceMaps
           // http://requirejs.org/docs/errors.html#sourcemapcomments
-          preserveLicenseComments: false
+          //preserveLicenseComments: false
           //uglify2: {} // https://github.com/mishoo/UglifyJS2
         }
       }
