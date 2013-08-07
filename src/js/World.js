@@ -15,6 +15,8 @@ define(['boxbox', 'Events'], function(boxbox, Events){
       density: 4
     });
 
+
+    // for testing purposes
     this.trigger('kill');
   };
 
