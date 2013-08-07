@@ -2,6 +2,6 @@
   "name": "angrybox",
   "dependencies": {
     "requirejs": "~2.1.8",
-    "boxgame": "https://github.com/incompl/boxbox/archive/master.zip"
+    "boxgame": "https://github.com/incompl/boxbox/tree/7a3ab6e84ea44fa20925213fad8385e53c61fef8"
   }
 }
