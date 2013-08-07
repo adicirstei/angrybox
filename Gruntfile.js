@@ -68,7 +68,7 @@ module.exports = function(grunt){
           out: "dist/js/main.js",
 
           baseUrl: angryConfig.app + '/js',
-          optimize: 'uglify2',
+          optimize: 'none',
           // TODO: Figure out how to make sourcemaps work with grunt-usemin
           // https://github.com/yeoman/grunt-usemin/issues/30
           //generateSourceMaps: true,
