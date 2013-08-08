@@ -1,18 +1,12 @@
-define([], function(){
-  var Level  = function(){
+define(['Ajax'], function(Ajax){
+  var Level  = function(){};
 
-  };
-
-  Level.load = function(id){
+  Level.load = function(id, done){
     // to do: add loading logic here
-    return {
-      ground:[
-        {}
-      ],
-      actors:[],
-      obstacles: [],
-      enemies:[]
-    };
+    Ajax.load('assets/'+id+'.json', function(data){
+      done(JSON.parse(data));
+    });
   }
 
+  return Level;
 });

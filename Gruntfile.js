@@ -91,7 +91,8 @@ module.exports = function(grunt){
             '.htaccess',
             '*.html',
             'components/requirejs/require.js',
-            'img/{,*/}*.{webp,gif}',
+            'img/{,*/}*.{webp,gif,png,svg}',
+            'assets/{,*/}*',
             'css/*'
           ]
         }, {
