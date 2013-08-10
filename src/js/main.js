@@ -4,10 +4,6 @@ require.config({
     'Box2D': {
       exports: 'Box2D'
     },
-    'boxbox' :{
-      exports: 'boxbox',
-      deps: ['Box2D'],
-    },
     'easeljs': {
       exports: 'createjs'
     },
@@ -28,11 +24,11 @@ require.config({
 });
 
 
-require(['app', 'preloadjs'], function (app, easeljs) {
+require(['app', 'preloadjs', 'easeljs', 'soundjs', 'Box2D'], function (app, preloadjs, easeljs, soundjs, Box2D) {
     'use strict';
     
-    console.log(app);
+    console.log(app, Box2D);
     
-    console.log(easeljs);
+    console.log(preloadjs, easeljs, soundjs);
     
 });
