@@ -1,4 +1,4 @@
-define(['easeljs', 'box2d', 'Level'], function(easeljs, box2d, Level){
+define(['easeljs', 'box2d', 'Level', 'Sprite'], function(easeljs, box2d, Level, Sprite){
   var Scene = function(canvas){
 //    this.b2World = new boxbox.createWorld(canvas);
     this.stage = new easeljs.Stage(canvas);
@@ -13,7 +13,7 @@ define(['easeljs', 'box2d', 'Level'], function(easeljs, box2d, Level){
 
   Scene.prototype.tick = function(){
     this.stage.update();
-    this.world.DrawDebugData();
+    //this.world.DrawDebugData();
     this.world.Step(1/60, 10, 10);
     this.world.ClearForces();
   };
@@ -41,6 +41,12 @@ define(['easeljs', 'box2d', 'Level'], function(easeljs, box2d, Level){
       
       }
 
+      that.stage.onMouseDown = function(){
+        var s = new Sprite(that.world, {shape: 'circle', radius: 0.3});
+        that.stage.addChild(s.view);
+
+      }
+      
       var debugDraw = new box2d.b2DebugDraw();
 
       debugDraw.SetSprite(that.stage.canvas.getContext('2d'));
