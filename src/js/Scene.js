@@ -1,7 +1,9 @@
 define(['easeljs', 'box2d', 'Level', 'Sprite'], function(easeljs, box2d, Level, Sprite){
   var Scene = function(canvas){
-//    this.b2World = new boxbox.createWorld(canvas);
+
     this.stage = new easeljs.Stage(canvas);
+    this.debug = document.getElementById('debug');
+
     easeljs.EventDispatcher.initialize(Scene.prototype);
 
     this.world = setupPhysics();
@@ -13,7 +15,7 @@ define(['easeljs', 'box2d', 'Level', 'Sprite'], function(easeljs, box2d, Level, 
 
   Scene.prototype.tick = function(){
     this.stage.update();
-    //this.world.DrawDebugData();
+    this.world.DrawDebugData();
     this.world.Step(1/60, 10, 10);
     this.world.ClearForces();
   };
@@ -41,7 +43,7 @@ define(['easeljs', 'box2d', 'Level', 'Sprite'], function(easeljs, box2d, Level, 
       
       }
 
-      that.stage.onMouseDown = function(){
+      that.debug.onmousedown = function(){
         var s = new Sprite(that.world, {shape: 'circle', radius: 0.3});
         that.stage.addChild(s.view);
 
@@ -49,8 +51,9 @@ define(['easeljs', 'box2d', 'Level', 'Sprite'], function(easeljs, box2d, Level, 
       
       var debugDraw = new box2d.b2DebugDraw();
 
-      debugDraw.SetSprite(that.stage.canvas.getContext('2d'));
+      debugDraw.SetSprite(that.debug.getContext('2d'));
       debugDraw.SetDrawScale(box2d.SCALE);
+      debugDraw.SetFillAlpha(0.5);
       debugDraw.SetFlags(box2d.b2DebugDraw.e_shapeBit | box2d.b2DebugDraw.e_jointBit);
 
       that.world.SetDebugDraw(debugDraw);
