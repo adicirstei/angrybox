@@ -111,7 +111,7 @@ module.exports = function(grunt){
       },
       production: {
         options: {
-          build_branch: "createjs",
+          build_branch: "gh-pages",
           dist: "dist",
           pull: false
         }
@@ -135,7 +135,7 @@ module.exports = function(grunt){
     'clean:dist',
     'copy:dist',
     'requirejs',
-    'build_gh_pages'
+    'build_gh_pages:production'
   ]);
 
   grunt.registerTask('default', [
