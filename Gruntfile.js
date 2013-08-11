@@ -105,6 +105,18 @@ module.exports = function(grunt){
         }]
       }
     },
+    build_gh_pages: {
+      gh_pages: {
+        // Leave empty if you just want to run the defaults
+      },
+      production: {
+        options: {
+          build_branch: "createjs",
+          dist: "dist",
+          pull: false
+        }
+      }
+    },
     clean: {
       dist: {
         files: [{
@@ -122,7 +134,8 @@ module.exports = function(grunt){
   grunt.registerTask('build', [
     'clean:dist',
     'copy:dist',
-    'requirejs'
+    'requirejs',
+    'build_gh_pages'
   ]);
 
   grunt.registerTask('default', [
