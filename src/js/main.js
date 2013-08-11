@@ -1,7 +1,7 @@
 
 require.config({
   shim: {
-    'Box2D': {
+    'Box2dWeb': {
       exports: 'Box2D'
     },
     'easeljs': {
@@ -15,7 +15,7 @@ require.config({
     }    
   },
   paths: {
-    'Box2D': '../components/boxgame/Box2dWeb-2.1.a.3',
+    'Box2dWeb': '../components/boxgame/Box2dWeb-2.1.a.3',
     'boxbox': '../components/boxgame/boxbox',
     'easeljs': '../components/easeljs/index',
     'soundjs': '../components/soundjs/index',
@@ -24,11 +24,6 @@ require.config({
 });
 
 
-require(['app', 'preloadjs', 'easeljs', 'soundjs', 'Box2D'], function (app, preloadjs, easeljs, soundjs, Box2D) {
+require(['app'], function (app) {
     'use strict';
-    
-    console.log(app, Box2D);
-    
-    console.log(preloadjs, easeljs, soundjs);
-    
 });
