@@ -1,15 +1,15 @@
-define(['World'], function(World){
+define(['Scene'], function(Scene){
   var Game = function(){
     this.score = 0;
     this.level = 'I.1';
   };
 
   Game.prototype.start = function() {
-    var w = new World(document.getElementById('canvas'));
-    w.on('kill', this.kill, this);
-    w.on('damage', this.damage, this);
-    w.on('died', this.died, this);
-    this.world = w;
+    var w = new Scene(document.getElementById('canvas'));
+    // w.on('kill', this.kill, this);
+    // w.on('damage', this.damage, this);
+    // w.on('died', this.died, this);
+//    this.world = w.world;
     w.loadLevel(this.level);
   };
 
