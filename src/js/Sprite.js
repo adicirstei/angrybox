@@ -1,7 +1,7 @@
 define(['box2d', 'easeljs'], function(box2d, easeljs){
   var Sprite = function(world, data){
     var f, b;
-    this.view = new easeljs.Bitmap('../img/b1.png');
+    this.view = new easeljs.Bitmap('img/b1.png');
     this.view.regX = this.view.regY = box2d.SCALE / 2;
 
     f = new box2d.b2FixtureDef();
