@@ -135,6 +135,10 @@ module.exports = function(grunt){
     'clean:dist',
     'copy:dist',
     'requirejs',
+  ]);
+
+  grunt.registerTask('publish', [
+    'build',
     'build_gh_pages:production'
   ]);
 
