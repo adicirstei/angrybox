@@ -33,6 +33,22 @@ define(['box2d', 'easeljs'], function(box2d, easeljs){
     };
     
   };
+  Sprite.extend = function(c){
+    // for the moment let's just pretend to extend
+    // look at Backbone extend form more insight
 
+    var parent = this,
+      child;
+
+    child = function(){ return parent.apply(this, arguments); };
+
+    for(k in c){
+      if(c.hasOwnProperty(k)){
+        child.prototype[k] = c[k];
+      }
+    }
+    return child;
+  };
+  
   return Sprite;
 });
