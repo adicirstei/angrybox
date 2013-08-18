@@ -41,6 +41,7 @@ define(['box2d', 'easeljs'], function(box2d, easeljs){
       child;
 
     child = function(){ return parent.apply(this, arguments); };
+    child.extend = parent.extend;
 
     for(k in c){
       if(c.hasOwnProperty(k)){
