@@ -6,6 +6,14 @@ define(['box2d', 'easeljs'], function(box2d, easeljs){
     // damage is the amount of damage taken so far. When damage >= 100% then the sprite is "dead" and is removed from scene.
     var damage = 0;
 
+    this.takeDamage = function(impact) {
+      damage += impact * this.damageFactor;
+      if (damage >= 100) {
+        // raise event that the sprite died and destroy it.
+        this.dispatchEvent ('destroyed');
+      }
+    };
+
     if(!(data && data.world)) {
       throw new Error ('Can\'t create sprite without a world');
     }
@@ -54,15 +62,6 @@ define(['box2d', 'easeljs'], function(box2d, easeljs){
 
   //the damageFactor is the coeficiet by which the impact is multiplied in order to compute the health loss;
   Sprite.prototype.damageFactor = 0;
-
-
-  Sprite.prototype.takeDamage = function(impact) {
-    damage += impact * this.damageFactor;
-    if (damage >= 100) {
-      // raise event that the sprite died and destroy it.
-      this.dispatchEvent ('destroyed');
-    }
-  };
 
   Sprite.extend = function(c){
     // for the moment let's just pretend to extend
