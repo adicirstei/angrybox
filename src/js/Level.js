@@ -1,11 +1,15 @@
-define(['Ajax'], function(Ajax){
+define(['preloadjs'], function(preloadjs){
   var Level  = function(){};
 
   Level.load = function(id, done){
-    // to do: add loading logic here
-    Ajax.load('assets/'+id+'.json', function(data){
-      done(JSON.parse(data));
+    var queue = new preloadjs.LoadQueue();
+    
+    queue.addEventListener("fileload", function(event){
+      done(event.result);
     });
+
+    queue.loadFile('assets/'+id+'.json');
+
   }
 
   return Level;

@@ -1,8 +1,29 @@
 define(['box2d', 'easeljs'], function(box2d, easeljs){
-  var Sprite = function(world, data){
-    var f, b;
-    this.view = new easeljs.Bitmap('../img/b1.png');
-    this.view.regX = this.view.regY = box2d.SCALE / 2;
+  var Sprite = function(data){
+    var f, b, world, view;
+
+    
+    // damage is the amount of damage taken so far. When damage >= 100% then the sprite is "dead" and is removed from scene.
+    var damage = 0;
+
+    this.takeDamage = function(impact) {
+      damage += impact * this.damageFactor;
+      if (damage >= 100) {
+        // raise event that the sprite died and destroy it.
+        this.dispatchEvent ('destroyed');
+      }
+    };
+
+    if(!(data && data.world)) {
+      throw new Error ('Can\'t create sprite without a world');
+    }
+
+    world = data.world;
+    view = data.view || new easeljs.Bitmap('img/b1.png');
+
+
+    this.view = view;
+    //this.view.regX = this.view.regY = box2d.SCALE / 2;
 
     f = new box2d.b2FixtureDef();
     f.density = data.density || 1;
@@ -34,5 +55,44 @@ define(['box2d', 'easeljs'], function(box2d, easeljs){
     
   };
 
+  easeljs.EventDispatcher.initialize(Sprite.prototype);
+
+// properties I might override in subclasses
+
+
+  //the damageFactor is the coeficiet by which the impact is multiplied in order to compute the health loss;
+  Sprite.prototype.damageFactor = 0;
+
+  Sprite.extend = function(c){
+    // for the moment let's just pretend to extend
+    // look at Backbone extend form more insight
+
+    var parent = this,
+      child;
+
+    if (c && c.hasOwnProperty('constructor')) {
+      child = c.constructor;
+    } else {
+      child = function(){ return parent.apply(this, arguments); };
+    }
+
+    child.extend = parent.extend;
+
+    var Surrogate = function() { this.constructor = child; };
+    Surrogate.prototype = parent.prototype;
+    child.prototype = new Surrogate();
+
+    if(c) {
+      for(k in c){
+        if(c.hasOwnProperty(k)){
+          child.prototype[k] = c[k];
+        }
+      }
+    }
+    child.__super__ = parent.prototype;
+
+    return child;
+  };
+  
   return Sprite;
 });

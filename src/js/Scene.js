@@ -1,4 +1,4 @@
-define(['easeljs', 'box2d', 'Level', 'Sprite'], function(easeljs, box2d, Level, Sprite){
+define(['easeljs', 'box2d', 'Level', 'Sprite', 'Enemy'], function(easeljs, box2d, Level, Sprite, Enemy){
   var Scene = function(canvas){
 
     this.stage = new easeljs.Stage(canvas);
@@ -44,9 +44,10 @@ define(['easeljs', 'box2d', 'Level', 'Sprite'], function(easeljs, box2d, Level, 
       }
 
       that.debug.onmousedown = function(){
-        var s = new Sprite(that.world, {shape: 'circle', radius: 0.3});
+        var s = new Sprite({world: that.world, shape: 'circle', radius: 0.3});
         that.stage.addChild(s.view);
-
+        var enemy = new Enemy({world: that.world, shape: 'circle', radius: 0.3});
+        that.stage.addChild(enemy.view);
       }
       
       var debugDraw = new box2d.b2DebugDraw();

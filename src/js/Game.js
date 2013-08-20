@@ -5,12 +5,12 @@ define(['Scene'], function(Scene){
   };
 
   Game.prototype.start = function() {
-    var w = new Scene(document.getElementById('canvas'));
-    // w.on('kill', this.kill, this);
-    // w.on('damage', this.damage, this);
-    // w.on('died', this.died, this);
-//    this.world = w.world;
-    w.loadLevel(this.level);
+    var scene = new Scene(document.getElementById('canvas'));
+    // scene.on('kill', this.kill, this);
+    // scene.on('damage', this.damage, this);
+    // scene.on('died', this.died, this);
+//    this.world =scene scene.world;
+    scene.loadLevel(this.level);
   };
 
   Game.prototype.kill = function() {
