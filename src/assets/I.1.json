@@ -25,5 +25,44 @@
       "x":26.5
     }
 
+  ],
+  "sling":{
+    "x": 2,
+    "y": 1
+  },
+  "enemies": [
+    {
+      "radius": 0.3,
+      "x": 7,
+      "y": 0.5
+    },
+    {
+      "radius": 0.3,
+      "x": 11,
+      "y": 0.5
+    }    
+  ],
+  "obstacles":[
+    {
+      "x": 6,
+      "y": 1.2,
+      "width": 0.1,
+      "height": 1,
+      "material":"glass"
+    },
+    {
+      "x": 8,
+      "y": 1.2,
+      "width": 0.1,
+      "height": 1,
+      "material":"glass"
+    },
+    {
+      "x": 6,
+      "y": 2.2,
+      "width": 2,
+      "height": 0.1,
+      "material":"wood"
+    }        
   ]
 }
