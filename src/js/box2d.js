@@ -10,6 +10,6 @@ define(['Box2dWeb'], function(Box2D){
     b2PolygonShape : Box2D.Collision.Shapes.b2PolygonShape,
     b2CircleShape : Box2D.Collision.Shapes.b2CircleShape,
     b2DebugDraw : Box2D.Dynamics.b2DebugDraw,
-    SCALE: 30
+    SCALE: 800/16
   };
 });
