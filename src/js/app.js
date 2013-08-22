@@ -1,3 +1,5 @@
-define(['Game'], function(Game){
-  Game.start();
+define(['Game'], function(game){
+  var ab = window.AngryBox = window.AngryBox || {};
+  ab.game  =game;
+  game.start();
 });
