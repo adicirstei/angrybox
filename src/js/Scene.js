@@ -1,4 +1,4 @@
-define(['easeljs', 'box2d', 'Level', 'Sprite', 'Enemy'], function(easeljs, box2d, Level, Sprite, Enemy){
+define(['easeljs', 'box2d', 'Level', 'Sprite', 'Enemy', 'GroundSprite'], function(easeljs, box2d, Level, Sprite, Enemy, GroundSprite){
   var Scene = function(canvas){
     var g = window.AngryBox.game;
     this.stage = new easeljs.Stage(canvas);
@@ -33,8 +33,8 @@ define(['easeljs', 'box2d', 'Level', 'Sprite', 'Enemy'], function(easeljs, box2d
       for(var i=0, l = data.ground.length; i<l; i++){
 
         data.ground[i].world = that.world;
-        data.ground[i].type = 'static';
-        var s = new Sprite(data.ground[i]);
+
+        var s = new GroundSprite({world: that.world, data: data.ground[i]});
         that.stage.addChild(s.view);
       
       }

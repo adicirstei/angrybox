@@ -1,11 +1,12 @@
 define(['box2d', 'easeljs'], function(box2d, easeljs){
-  var Sprite = function(data){
-    var f, b, world, view, g;
+  var Sprite = function(options){
+    var f, b, world, view, g, type, data;
     g = window.AngryBox.game;
     
     // damage is the amount of damage taken so far. When damage >= 100% then the sprite is "dead" and is removed from scene.
     var damage = 0;
-
+    data = options.data;
+    world = options.world;
     this.takeDamage = function(impact) {
       damage += impact * this.damageFactor;
       if (damage >= 100) {
@@ -14,11 +15,12 @@ define(['box2d', 'easeljs'], function(box2d, easeljs){
       }
     };
 
-    if(!(data && data.world)) {
+    if(!world) {
       throw new Error ('Can\'t create sprite without a world');
     }
 
-    world = data.world;
+    type = data.type || this.type;
+
     view = data.view || new easeljs.Bitmap('img/b1.png');
 
 
@@ -30,7 +32,7 @@ define(['box2d', 'easeljs'], function(box2d, easeljs){
     f.friction = data.friction || 0.5;
     f.restitution = data.restitution || 0.8;
     b = new box2d.b2BodyDef();
-    b.type = (data.type === 'static'? box2d.b2Body.b2_staticBody : box2d.b2Body.b2_dynamicBody) ;
+    b.type = (type === 'static'? box2d.b2Body.b2_staticBody : box2d.b2Body.b2_dynamicBody) ;
     b.position.x = data.x || Math.random()*15 +1;
     b.position.y = g.worldHeight - (data.y || 0);
 
