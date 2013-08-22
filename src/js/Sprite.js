@@ -1,6 +1,6 @@
 define(['box2d', 'easeljs'], function(box2d, easeljs){
   var Sprite = function(options){
-    var f, b, world, view, g, type, data;
+    var f, b, world, view, g, type, data, shape, width, height;
     g = window.AngryBox.game;
     
     // damage is the amount of damage taken so far. When damage >= 100% then the sprite is "dead" and is removed from scene.
@@ -20,8 +20,9 @@ define(['box2d', 'easeljs'], function(box2d, easeljs){
     }
 
     type = data.type || this.type;
+    shape = data.shape || this.shape;
 
-    view = data.view || new easeljs.Bitmap('img/b1.png');
+    view = data.view || this.view || (new easeljs.Bitmap('img/b1.png')).set({regX: 10, regY:10});
 
 
     this.view = view;
@@ -36,7 +37,7 @@ define(['box2d', 'easeljs'], function(box2d, easeljs){
     b.position.x = data.x || Math.random()*15 +1;
     b.position.y = g.worldHeight - (data.y || 0);
 
-    switch(data.shape) {
+    switch(shape) {
       case 'circle': 
         f.shape = new box2d.b2CircleShape(data.radius || 1);
         break;
@@ -44,7 +45,12 @@ define(['box2d', 'easeljs'], function(box2d, easeljs){
         f.shape = new box2d.b2PolygonShape();
         f.shape.SetAsBox(data.width || 1, data.height || 1);
     }
-    
+
+    width = data.width || data.radius || 1;
+    height = data.height || data.radius || 1;
+
+    this.view.set({scaleX: box2d.SCALE * width / this.view.regX, scaleY: box2d.SCALE * height / this.view.regY});
+
     this.view.body = world.CreateBody(b);
     this.view.body.CreateFixture(f);
 
