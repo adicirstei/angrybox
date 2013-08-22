@@ -1,4 +1,4 @@
-define(['easeljs', 'box2d', 'Level', 'Sprite', 'Enemy'], function(easeljs, box2d, Level, Sprite, Enemy){
+define(['easeljs', 'box2d', 'Level', 'Sprite', 'EnemySprite', 'GroundSprite', 'ObstacleSprite'], function(easeljs, box2d, Level, Sprite, EnemySprite, GroundSprite, ObstacleSprite){
   var Scene = function(canvas){
     var g = window.AngryBox.game;
     this.stage = new easeljs.Stage(canvas);
@@ -29,20 +29,19 @@ define(['easeljs', 'box2d', 'Level', 'Sprite', 'Enemy'], function(easeljs, box2d
     var damage = 0;
     var that = this;
     Level.load(level, function (data) {
-      var f, b;
       for(var i=0, l = data.ground.length; i<l; i++){
-
-        data.ground[i].world = that.world;
-        data.ground[i].type = 'static';
-        var s = new Sprite(data.ground[i]);
+        var s = new GroundSprite({world: that.world, data: data.ground[i]});
         that.stage.addChild(s.view);
-      
+      }
+      for(var i=0, l = data.obstacles.length; i<l; i++){
+        var s = new ObstacleSprite({world: that.world, data: data.obstacles[i]});
+        that.stage.addChild(s.view);
       }
 
       that.debug.onmousedown = function(){
-        var s = new Sprite({world: that.world, shape: 'circle', radius: 0.3, y: 8});
+        var s = new Sprite({world: that.world, data: {shape: 'circle', radius: 0.3, y: 8}});
         that.stage.addChild(s.view);
-        var enemy = new Enemy({world: that.world, shape: 'circle', radius: 0.3, y: 6});
+        var enemy = new EnemySprite({world: that.world, data:{radius: 0.3, y: 6}});
         that.stage.addChild(enemy.view);
       }
       
