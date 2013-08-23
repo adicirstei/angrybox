@@ -1,4 +1,17 @@
 define(['preloadjs'], function(preloadjs){
+  var unique = function(arr) {
+    var result = [],
+      len,
+      tmp = {};
+      len = arr.length || 0;
+      for(var i = 0; i< len; i+=1) {
+        if(!tmp.hasOwnProperty(arr[i])) {
+          tmp[arr[i]] = 1;
+          result.push(arr[i]);
+        }
+      }
+      return result;
+  };
   var Level  = function(){};
 
   Level.load = function(id, done){
@@ -29,7 +42,7 @@ define(['preloadjs'], function(preloadjs){
         }
       });
       queue.close();
-      queue.loadManifest(imgArray);
+      queue.loadManifest(unique(imgArray));
     });
 
     queue.loadFile('assets/'+id+'.json');
