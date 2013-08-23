@@ -1,7 +1,7 @@
 AngryBox
 ========
 
-just a training sequel
+Just a training sequel. For the lates working version, please see: [http://a.cirstei.ro/angrybox/](http://a.cirstei.ro/angrybox/). Also, please note that the development branch is createjs.
 
 TODO
 ----
