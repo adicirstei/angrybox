@@ -5,30 +5,15 @@ define(['preloadjs'], function(preloadjs){
     var queue = new preloadjs.LoadQueue();
     
     queue.addEventListener("fileload", function(event){
-      var images = {}, s, img, imgArray = [];
-      queue.removeAllEventListeners ();
-      for(i = 0; i < event.result.ground.length; i+=1) {
-        s = event.result.ground[i];
-        if(s.images) {
-          for (var j = 0; j < s.images.length; j+=1) {
-            if(!images[s.images[j]]) {
-              imgArray.push(s.images[j]);
-              images[s.images[j]] = true;
-            }
-          }
-        }
-      }
-      for(i = 0; i < event.result.enemies.length; i+=1) {
-        s = event.result.enemies[i];
-        if(s.images) {
-          for (var j = 0; j < s.images.length; j+=1) {
-            if(!images[s.images[j]]) {
-              imgArray.push(s.images[j]);
-              images[s.images[j]] = true;
-            }
-          }
-        }
-      }
+      var images = {}, s, img, imgArray = [], sprites = [];
+
+      sprites = sprites.concat(event.result.ground, event.result.enemies, event.result.obstacles);
+
+      sprites.forEach(function(sprite){
+        imgArray = imgArray.concat(sprite.images || []);
+      });
+
+      queue.removeAllEventListeners();
       queue.addEventListener("complete", function () {
         console.log(window.AngryBox.game.images);
         done(event.result);

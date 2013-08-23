@@ -37,7 +37,10 @@ define(['easeljs', 'box2d', 'Level', 'Sprite', 'EnemySprite', 'GroundSprite', 'O
         var s = new ObstacleSprite({world: that.world, data: data.obstacles[i]});
         that.stage.addChild(s.view);
       }
-
+      for(var i=0, l = data.enemies.length; i<l; i++){
+        var s = new EnemySprite({world: that.world, data: data.enemies[i]});
+        that.stage.addChild(s.view);
+      }
       that.debug.onmousedown = function(){
         var s = new Sprite({world: that.world, data: {shape: 'circle', radius: 0.3, y: 8}});
         that.stage.addChild(s.view);

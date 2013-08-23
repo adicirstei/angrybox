@@ -22,14 +22,13 @@ define(['box2d', 'easeljs'], function(box2d, easeljs){
     type = data.type || this.type;
     shape = data.shape || this.shape;
     
-    images = data.images || ['img/b1.png'];
-    var firstImage = window.AngryBox.game.images[images[0]];
-    if(firstImage) {
-      view = (new easeljs.Bitmap(firstImage)).set({regX: 50, regY:50});
+    images = data.images; // || [];
+    if(images) {
+      var firstImage = window.AngryBox.game.images[images[0]];
+      view = (new easeljs.Bitmap(firstImage)).set({regX: data.imageSize.width/2, regY:data.imageSize.height/2});
     } else {
-      view = (new easeljs.Bitmap(images[0])).set({regX: 10, regY:10});
+      view = (new easeljs.Bitmap('img/default.png')).set({regX: 0.5, regY:0.5});
     }
-    
 
     this.view = view;
     //this.view.regX = this.view.regY = box2d.SCALE / 2;
