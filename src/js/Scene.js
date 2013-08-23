@@ -41,7 +41,7 @@ define(['easeljs', 'box2d', 'Level', 'Sprite', 'EnemySprite', 'GroundSprite', 'O
       that.debug.onmousedown = function(){
         var s = new Sprite({world: that.world, data: {shape: 'circle', radius: 0.3, y: 8}});
         that.stage.addChild(s.view);
-        var enemy = new EnemySprite({world: that.world, data:{radius: 0.3, y: 6}});
+        var enemy = new EnemySprite({world: that.world, data:{radius: 0.3, y: 6, "images": ["img/enemy-h.png", "img/enemy-sd.png", "img/enemy-bd.png"]}});
         that.stage.addChild(enemy.view);
       }
       

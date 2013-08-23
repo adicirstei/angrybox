@@ -1,6 +1,6 @@
 define(['box2d', 'easeljs'], function(box2d, easeljs){
   var Sprite = function(options){
-    var f, b, world, view, g, type, data, shape, width, height;
+    var f, b, world, view, g, type, data, shape, width, height, images;
     g = window.AngryBox.game;
     
     // damage is the amount of damage taken so far. When damage >= 100% then the sprite is "dead" and is removed from scene.
@@ -21,9 +21,15 @@ define(['box2d', 'easeljs'], function(box2d, easeljs){
 
     type = data.type || this.type;
     shape = data.shape || this.shape;
-
-    view = data.view || this.view || (new easeljs.Bitmap('img/b1.png')).set({regX: 10, regY:10});
-
+    
+    images = data.images || ['img/b1.png'];
+    var firstImage = window.AngryBox.game.images[images[0]];
+    if(firstImage) {
+      view = (new easeljs.Bitmap(firstImage)).set({regX: 50, regY:50});
+    } else {
+      view = (new easeljs.Bitmap(images[0])).set({regX: 10, regY:10});
+    }
+    
 
     this.view = view;
     //this.view.regX = this.view.regY = box2d.SCALE / 2;
