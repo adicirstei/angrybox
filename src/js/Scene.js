@@ -1,12 +1,17 @@
-define(['easeljs', 'box2d', 'Level', 'Sprite', 'Enemy'], function(easeljs, box2d, Level, Sprite, Enemy){
+define(['easeljs', 'box2d', 'Level', 'Sprite', 'EnemySprite', 'GroundSprite', 'ObstacleSprite'], function(easeljs, box2d, Level, Sprite, EnemySprite, GroundSprite, ObstacleSprite){
   var Scene = function(canvas){
-
+    var g = window.AngryBox.game;
     this.stage = new easeljs.Stage(canvas);
     this.debug = document.getElementById('debug');
 
     easeljs.EventDispatcher.initialize(Scene.prototype);
 
     this.world = setupPhysics();
+    if (g) {
+      g.worldWidth = 800/box2d.SCALE;
+      g.worldHeight = 600/box2d.SCALE;
+    }
+
 
     easeljs.Ticker.addListener(this);
     easeljs.Ticker.setFPS(60);
@@ -24,29 +29,22 @@ define(['easeljs', 'box2d', 'Level', 'Sprite', 'Enemy'], function(easeljs, box2d
     var damage = 0;
     var that = this;
     Level.load(level, function (data) {
-      var f, b;
       for(var i=0, l = data.ground.length; i<l; i++){
-        f = new box2d.b2FixtureDef();
-        f.density = 1;
-        f.friction = 0.5;
-
-        b = new box2d.b2BodyDef();
-        b.type = box2d.b2Body.b2_staticBody;
-        b.position.x = data.ground[i].x;
-        b.position.y = data.ground[i].y;
-
-        f.shape = new box2d.b2PolygonShape();
-        f.shape.SetAsBox(data.ground[i].width, data.ground[i].height);
-
-        that.world.CreateBody(b).CreateFixture(f);
-
-      
-      }
-
-      that.debug.onmousedown = function(){
-        var s = new Sprite({world: that.world, shape: 'circle', radius: 0.3});
+        var s = new GroundSprite({world: that.world, data: data.ground[i]});
         that.stage.addChild(s.view);
-        var enemy = new Enemy({world: that.world, shape: 'circle', radius: 0.3});
+      }
+      for(var i=0, l = data.obstacles.length; i<l; i++){
+        var s = new ObstacleSprite({world: that.world, data: data.obstacles[i]});
+        that.stage.addChild(s.view);
+      }
+      for(var i=0, l = data.enemies.length; i<l; i++){
+        var s = new EnemySprite({world: that.world, data: data.enemies[i]});
+        that.stage.addChild(s.view);
+      }
+      that.debug.onmousedown = function(){
+        var s = new Sprite({world: that.world, data: {shape: 'circle', radius: 0.3, y: 8}});
+        that.stage.addChild(s.view);
+        var enemy = new EnemySprite({world: that.world, data:{radius: 0.3, y: 6, "images": ["img/enemy-h.png", "img/enemy-sd.png", "img/enemy-bd.png"]}});
         that.stage.addChild(enemy.view);
       }
       
