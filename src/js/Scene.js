@@ -3,6 +3,7 @@ define(['easeljs', 'box2d', 'Level', 'Sprite', 'EnemySprite', 'GroundSprite', 'O
     var g = window.AngryBox.game;
     this.stage = new easeljs.Stage(canvas);
     this.debug = document.getElementById('debug');
+    this.toBeDeleted = [];
 
     easeljs.EventDispatcher.initialize(Scene.prototype);
 
@@ -23,7 +24,17 @@ define(['easeljs', 'box2d', 'Level', 'Sprite', 'EnemySprite', 'GroundSprite', 'O
     this.world.DrawDebugData();
     this.world.Step(1/60, 10, 10);
     this.world.ClearForces();
+    this.deleteSprites();
   };
+
+  Scene.prototype.deleteSprites = function() {
+    var spr;
+    for(var i=0; i<this.toBeDeleted.length; i+=1){
+      spr = this.toBeDeleted.shift();
+      this.world.DestroyBody(spr.view.body);
+      this.stage.removeChild(spr.view);
+    }
+  }
 
   Scene.prototype.loadLevel = function(level){
     var damage = 0;
@@ -36,6 +47,9 @@ define(['easeljs', 'box2d', 'Level', 'Sprite', 'EnemySprite', 'GroundSprite', 'O
       for(var i=0, l = data.obstacles.length; i<l; i++){
         var s = new ObstacleSprite({world: that.world, data: data.obstacles[i]});
         s.addEventListener('destroyed', function(e){
+          var spr = e.target;
+          that.toBeDeleted.push(spr);
+
           console.log(e);
         });
         s.addEventListener('damage', function(e){
