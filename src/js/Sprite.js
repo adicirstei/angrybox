@@ -8,6 +8,9 @@ define(['box2d', 'easeljs'], function(box2d, easeljs){
     data = options.data;
     world = options.world;
     this.takeDamage = function(impact) {
+      if(impact > 0) {
+        this.dispatchEvent ({type: 'damage', data: damage + impact * this.damageFactor});
+      }
       damage += impact * this.damageFactor;
       if (damage >= 100) {
         // raise event that the sprite died and destroy it.
@@ -58,6 +61,7 @@ define(['box2d', 'easeljs'], function(box2d, easeljs){
 
     this.view.body = world.CreateBody(b);
     this.view.body.CreateFixture(f);
+    this.view.body.gameSprite = this;
 
     this.view.onTick = function(e){
       var p = this.body.GetPosition();
