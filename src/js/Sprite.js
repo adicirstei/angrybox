@@ -9,9 +9,10 @@ define(['box2d', 'easeljs'], function(box2d, easeljs){
     world = options.world;
     this.takeDamage = function(impact) {
       if(impact > 0) {
-        this.dispatchEvent ({type: 'damage', data: damage + impact * this.damageFactor});
+        damage += impact * this.damageFactor;
+        this.dispatchEvent ({type: 'damage', value: damage});
       }
-      damage += impact * this.damageFactor;
+      
       if (damage >= 100) {
         // raise event that the sprite died and destroy it.
         this.dispatchEvent ('destroyed');

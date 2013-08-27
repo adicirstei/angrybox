@@ -54,5 +54,19 @@
       "height": 0.2,
       "material":"wood"
     }        
+  ],
+  "actors" : [
+    {
+      "x": 1.8,
+      "y": 0.4,
+      "width":0.1,
+      "height": 0.1
+    },
+    {
+      "x": 1.3,
+      "y": 0.4,
+      "width":0.1,
+      "height": 0.1
+    }
   ]
 }

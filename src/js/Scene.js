@@ -49,16 +49,20 @@ define(['easeljs', 'box2d', 'Level', 'Sprite', 'EnemySprite', 'GroundSprite', 'O
         s.addEventListener('destroyed', function(e){
           var spr = e.target;
           that.toBeDeleted.push(spr);
-
-          console.log(e);
         });
         s.addEventListener('damage', function(e){
           console.log(e);
+          that.dispatchEvent({type: 'damage', value: e.value});
+
         });
         that.stage.addChild(s.view);
       }
       for(var i=0, l = data.enemies.length; i<l; i++){
         var s = new EnemySprite({world: that.world, data: data.enemies[i]});
+        s.addEventListener('destroyed', function(e){
+          var spr = e.target;
+          that.toBeDeleted.push(spr);
+        });
         that.stage.addChild(s.view);
       }
       that.debug.onmousedown = function(){
