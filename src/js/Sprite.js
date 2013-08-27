@@ -9,7 +9,7 @@ define(['box2d', 'easeljs'], function(box2d, easeljs){
     world = options.world;
     this.takeDamage = function(impact) {
       if(impact > 0) {
-        damage += impact * this.damageFactor;
+        damage += impact * this.damageFactor();
         this.dispatchEvent ({type: 'damage', value: damage});
       }
       
@@ -25,6 +25,7 @@ define(['box2d', 'easeljs'], function(box2d, easeljs){
 
     type = data.type || this.type;
     shape = data.shape || this.shape;
+    this.material = data.material;
     
     images = data.images; // || [];
     if(images) {
@@ -79,7 +80,7 @@ define(['box2d', 'easeljs'], function(box2d, easeljs){
 
 
   //the damageFactor is the coeficiet by which the impact is multiplied in order to compute the health loss;
-  Sprite.prototype.damageFactor = 0;
+  Sprite.prototype.damageFactor = function() { return 0;};
 
   Sprite.extend = function(c){
     // for the moment let's just pretend to extend
