@@ -55,6 +55,11 @@ define(['easeljs', 'box2d', 'Level', 'Sprite', 'EnemySprite', 'GroundSprite', 'O
           that.dispatchEvent({type: 'damage', value: e.value});
 
         });
+        s.addEventListener('imgchanged', function(e){
+
+          that.stage.addChild(e.cb);
+          that.stage.removeChild(e.pb);
+        });        
         that.stage.addChild(s.view);
       }
       for(var i=0, l = data.enemies.length; i<l; i++){
@@ -63,6 +68,11 @@ define(['easeljs', 'box2d', 'Level', 'Sprite', 'EnemySprite', 'GroundSprite', 'O
           var spr = e.target;
           that.toBeDeleted.push(spr);
         });
+        s.addEventListener('imgchanged', function(e){
+
+          that.stage.addChild(e.cb);
+          that.stage.removeChild(e.pb);
+        });           
         that.stage.addChild(s.view);
       }
       that.debug.onmousedown = function(){

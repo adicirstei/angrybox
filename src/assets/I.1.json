@@ -18,14 +18,14 @@
       "x": 8.5,
       "y": 1,
       "imageSize": {"width": 100, "height": 100},
-      "images": ["img/enemy-h.png", "img/enemy-sd.png", "img/enemy-bd.png"]
+      "images": ["img/enemy-h.png", "img/enemy-sd.png", "img/enemy-bd.png", "img/enemy-sd.png", "img/enemy-bd.png", "img/enemy-sd.png", "img/enemy-bd.png", "img/enemy-sd.png", "img/enemy-bd.png", "img/enemy-sd.png", "img/enemy-bd.png"]
     },
     {
       "radius": 0.8,
       "x": 12,
       "y": 1,
       "imageSize": {"width": 100, "height": 100},
-      "images": ["img/enemy-h.png", "img/enemy-sd.png", "img/enemy-bd.png"]
+      "images": ["img/enemy-h.png", "img/enemy-sd.png", "img/enemy-bd.png", "img/enemy-sd.png", "img/enemy-bd.png", "img/enemy-sd.png", "img/enemy-bd.png", "img/enemy-sd.png", "img/enemy-bd.png", "img/enemy-sd.png", "img/enemy-bd.png"]
     }    
   ],
   "obstacles":[
@@ -52,7 +52,9 @@
       "y": 3.4,
       "width": 1.5,
       "height": 0.2,
-      "material":"wood"
+      "material":"wood",
+      "imageSize": {"width": 100, "height": 100},
+      "images": ["img/enemy-h.png", "img/enemy-sd.png", "img/enemy-bd.png"]      
     }        
   ],
   "actors" : [

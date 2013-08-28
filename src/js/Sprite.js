@@ -8,8 +8,21 @@ define(['box2d', 'easeljs'], function(box2d, easeljs){
     data = options.data;
     world = options.world;
     this.takeDamage = function(impact) {
+      var pDmg = damage, idx, pidx, imgLen = 0;
+      if(images) {
+        imgLen = images.length;
+      }
       if(impact > 0) {
         damage += impact * this.damageFactor();
+        idx = Math.floor(damage*imgLen/100); // index of current image
+        pidx = Math.floor(pDmg*imgLen/100);  // index of previous image
+        if(pidx !== idx) {
+          // change the image
+          var v = this.view, b = (new easeljs.Bitmap(images[idx])).set({regX: data.imageSize.width/2, regY:data.imageSize.height/2});
+          b.body = this.view.body;
+          this.view = b;
+          this.dispatchEvent ({type: 'imgchanged', pb: v, cb: b});
+        }
         this.dispatchEvent ({type: 'damage', value: damage});
       }
       
