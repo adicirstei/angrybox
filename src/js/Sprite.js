@@ -1,6 +1,6 @@
 define(['box2d', 'easeljs'], function(box2d, easeljs){
   var Sprite = function(options){
-    var f, b, world, view, g, type, data, shape, width, height, images;
+    var f, b, world, view, g, type, data, shape, images;
     g = window.AngryBox.game;
     
     // damage is the amount of damage taken so far. When damage >= 100% then the sprite is "dead" and is removed from scene.
@@ -19,8 +19,8 @@ define(['box2d', 'easeljs'], function(box2d, easeljs){
         if(pidx !== idx) {
           // change the image
           var v = this.view, b = (new easeljs.Bitmap(images[idx])).set({regX: data.imageSize.width/2, regY:data.imageSize.height/2});
-          b.body = this.view.body;
-          this.view = b;
+
+          this.setBitmap(b, v.body);
           this.dispatchEvent ({type: 'imgchanged', pb: v, cb: b});
         }
         this.dispatchEvent ({type: 'damage', value: damage});
@@ -69,22 +69,13 @@ define(['box2d', 'easeljs'], function(box2d, easeljs){
         f.shape.SetAsBox(data.width || 1, data.height || 1);
     }
 
-    width = data.width || data.radius || 1;
-    height = data.height || data.radius || 1;
+    this.width = data.width || data.radius || 1;
+    this.height = data.height || data.radius || 1;
 
-    this.view.set({scaleX: box2d.SCALE * width / this.view.regX, scaleY: box2d.SCALE * height / this.view.regY});
+    var body = world.CreateBody(b);
+    body.CreateFixture(f);
 
-    this.view.body = world.CreateBody(b);
-    this.view.body.CreateFixture(f);
-    this.view.body.gameSprite = this;
-
-    this.view.onTick = function(e){
-      var p = this.body.GetPosition();
-      this.x = p.x * box2d.SCALE;
-      this.y = p.y * box2d.SCALE;
-      this.rotation = this.body.GetAngle() * 180 / Math.PI;
-    };
-    
+    this.setBitmap(view, body);
   };
 
   easeljs.EventDispatcher.initialize(Sprite.prototype);
@@ -95,6 +86,20 @@ define(['box2d', 'easeljs'], function(box2d, easeljs){
   //the damageFactor is the coeficiet by which the impact is multiplied in order to compute the health loss;
   Sprite.prototype.damageFactor = function() { return 0;};
 
+  Sprite.prototype.setBitmap = function(bmp, body) {
+    var ob = this.view, nb = bmp;
+    body.gameSprite = this;
+    nb.body = body;
+
+    nb.set({scaleX: box2d.SCALE * this.width / nb.regX, scaleY: box2d.SCALE * this.height / nb.regY});
+    this.view = nb;
+    nb.onTick = function(e){
+      var p = this.body.GetPosition();
+      this.x = p.x * box2d.SCALE;
+      this.y = p.y * box2d.SCALE;
+      this.rotation = this.body.GetAngle() * 180 / Math.PI;
+    };
+  };
   Sprite.extend = function(c){
     // for the moment let's just pretend to extend
     // look at Backbone extend form more insight

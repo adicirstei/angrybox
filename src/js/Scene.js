@@ -36,9 +36,16 @@ define(['easeljs', 'box2d', 'Level', 'Sprite', 'EnemySprite', 'GroundSprite', 'O
     }
   }
 
+
+
   Scene.prototype.loadLevel = function(level){
     var damage = 0;
     var that = this;
+
+    var imgChanged = function(e) {
+      that.stage.addChild(e.cb);
+      that.stage.removeChild(e.pb);
+    };
     Level.load(level, function (data) {
       for(var i=0, l = data.ground.length; i<l; i++){
         var s = new GroundSprite({world: that.world, data: data.ground[i]});
@@ -55,11 +62,7 @@ define(['easeljs', 'box2d', 'Level', 'Sprite', 'EnemySprite', 'GroundSprite', 'O
           that.dispatchEvent({type: 'damage', value: e.value});
 
         });
-        s.addEventListener('imgchanged', function(e){
-
-          that.stage.addChild(e.cb);
-          that.stage.removeChild(e.pb);
-        });        
+        s.addEventListener('imgchanged', imgChanged);
         that.stage.addChild(s.view);
       }
       for(var i=0, l = data.enemies.length; i<l; i++){
@@ -68,11 +71,7 @@ define(['easeljs', 'box2d', 'Level', 'Sprite', 'EnemySprite', 'GroundSprite', 'O
           var spr = e.target;
           that.toBeDeleted.push(spr);
         });
-        s.addEventListener('imgchanged', function(e){
-
-          that.stage.addChild(e.cb);
-          that.stage.removeChild(e.pb);
-        });           
+        s.addEventListener('imgchanged', imgChanged);
         that.stage.addChild(s.view);
       }
       that.debug.onmousedown = function(){
