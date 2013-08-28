@@ -11,10 +11,12 @@ section{
   height:600px;
 
   margin: 0 auto;
+
 }
 #gameui canvas{
    position: absolute;
 }
 #canvas {
-  background-color: #eee;
+  background: url('../img/bg.jpg');
+  /* background-color: #eee;   */
 }
