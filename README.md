@@ -5,14 +5,14 @@ Just a training sequel. For the lates working version, please see: [http://adici
 
 TODO
 ----
-
+* _Learn more about the tools of the craft_
 * load assets with preloadjs
 * bring some parallax background
 * bring sound
 * implement game logic
 * do the graphics
 
-Make it run
+To make it run
 -----------
 * clone the repo
 * Install `npm` dependencies `npm install`
