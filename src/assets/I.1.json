@@ -24,8 +24,8 @@
       "radius": 0.8,
       "x": 12,
       "y": 1,
-      "imageSize": {"width": 100, "height": 100},
-      "images": ["img/enemy-h.png", "img/enemy-sd.png", "img/enemy-bd.png"]
+      "imageSize": {"width": 160, "height": 160},
+      "images": ["img/enemy.png"]
     }    
   ],
   "obstacles":[
