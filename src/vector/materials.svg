@@ -68,6 +68,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -78,7 +79,10 @@
      style="display:inline">
     <g
        id="g4451"
-       transform="translate(6.8185297,-100.51018)">
+       transform="translate(6.8185297,-100.51018)"
+       inkscape:export-filename="D:\proiecte\angrybox\src\img\wood-h.png"
+       inkscape:export-xdpi="45"
+       inkscape:export-ydpi="45">
       <rect
          transform="matrix(1.0606061,0,0,1,-4.1558453,0)"
          clip-path="url(#clipPath4429)"
@@ -98,7 +102,10 @@
     </g>
     <g
        id="g4455"
-       transform="matrix(0,-1,1,0,-517.89466,725.99054)">
+       transform="matrix(0,-1,1,0,-517.89466,725.99054)"
+       inkscape:export-filename="D:\proiecte\angrybox\src\img\wood-v.png"
+       inkscape:export-xdpi="45"
+       inkscape:export-ydpi="45">
       <rect
          style="fill:#d3bc5f;fill-opacity:1;stroke:none"
          id="rect4457"
