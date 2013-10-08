@@ -25,7 +25,7 @@ define(['Scene'], function(Scene){
     this.score += 100;
     console.log(this.score);
   };
-  return new Game();
+  return Game;
 
 
 });
