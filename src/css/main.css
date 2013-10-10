@@ -17,6 +17,6 @@ section{
    position: absolute;
 }
 #canvas {
-  background: url('../img/bg.jpg');
+  /*background: url('../img/bg.jpg');*/
   /* background-color: #eee;   */
 }
