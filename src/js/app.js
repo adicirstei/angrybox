@@ -8,8 +8,21 @@ define(['core', 'Game'], function(ab, Game){
     };
     img.src = "../img/splash.png";
   };
-  var loadMenu = function(settings) {
-    console.log(settings);
+  var loadMenu = function(data) {
+    var lvls = data.levels;
+    var first = lvls[0];
+    var cellsize = {w: 24, h:24};
+
+    //ab.menu = {pages: lvls, currpage = first};
+
+    // draw current page
+    ab.context.fillStyle = "rgba(40, 255,40, 1)";
+    ab.context.fillRect(0, 250, ab.gameCanvas.width, ab.gameCanvas.height - 250);
+
+    ab.context.font = "24pt Arial Black";
+    ab.context.fillStyle = "green";
+    ab.context.fillText("Level " + first.key, 200, 290);
+
   };
 
   // set up the drawing context
@@ -30,7 +43,7 @@ define(['core', 'Game'], function(ab, Game){
 
 
   // start loading the settings
-  ab.xhrGet('../assets/user.json', function(data){
+  ab.xhrGet('../assets/game.json', function(data){
     var s = JSON.parse(this.responseText);
     loadMenu(s);
   });
