@@ -11,6 +11,7 @@ module.exports = function(grunt){
       dist: 'dist'
   };
   grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
     angry: angryConfig,
     watch: {
       livereload: {
@@ -68,7 +69,7 @@ module.exports = function(grunt){
           out: "dist/js/main.js",
 
           baseUrl: angryConfig.app + '/js',
-          optimize: 'uglify2' //,
+          optimize: 'uglify2'//,
           // TODO: Figure out how to make sourcemaps work with grunt-usemin
           // https://github.com/yeoman/grunt-usemin/issues/30
           //generateSourceMaps: true,
@@ -76,6 +77,9 @@ module.exports = function(grunt){
           // http://requirejs.org/docs/errors.html#sourcemapcomments
           //preserveLicenseComments: false
           //uglify2: {} // https://github.com/mishoo/UglifyJS2
+          // onBuildWrite: function( name, path, contents ) {
+          //   return require('amdclean').clean(contents);
+          // }
         }
       }
     },
