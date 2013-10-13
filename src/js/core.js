@@ -8,6 +8,35 @@ define(function(){
 
     xhr.send();
   }
+  ab.Event = function(){};
+
+  ab.Event.mixin = function(type){
+    var targetObj;
+    if(typeof type === 'function'){
+      // add Event functionality to prototype
+      targetObj = type.prototype;
+    } else {
+      // consider it an object
+      targetObj = type;
+    }
+
+    targetObj.on = function(event, callback, context){
+      var ctx = context || targetObj;
+      targetObj.eventHandlers = targetObj.eventHandlers || {};
+      targetObj.eventHandlers[event] = targetObj.eventHandlers[event] || [];
+      targetObj.eventHandlers[event].push({cb:callback, ctx: ctx});
+    };
+
+    targetObj.trigger = function(event){
+      var e;
+      if(this.eventHandlers && this.eventHandlers[event]){
+        for(var i = 0; i<this.eventHandlers[event].length; i++){
+          e = this.eventHandlers[event][i];
+          e.cb.call(e.ctx);
+        }
+      }
+    };
+  }
 
   var Class = function(){};
   Class.extend = function(c){
