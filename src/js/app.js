@@ -1,12 +1,26 @@
 define(['core', 'Game'], function(ab, Game){
   window.AngryBox = ab;
+  
+  ab.assets = ab.assets || {};
+  
+  var getImage = function(src, cb){
+	if(ab.assets[src]){
+		cb(ab.assets[src]);
+	} else {
+		var img = new Image();
+		img.onload = function(){
+			ab.assets[src] = this;
+			cb(this);
+		};
+		img.src = src;
+	}
+  };
+  
 
   var drawSplash = function(ctx){
-    var img = new Image();
-    img.onload = function(){
-      ctx.drawImage(this, 0, 0);
-    };
-    img.src = "../img/splash.png";
+	getImage("../img/splash.png", function(img){
+		ctx.drawImage(img, 0, 0);
+	});
   };
   var loadMenu = function(data) {
     var lvls = data.levels;
