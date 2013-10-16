@@ -1,6 +1,5 @@
 {
-  "levels": [{
-    "key": "I",
-    "screens":["1"]
-  }]
+  "atlases":[],
+  "sounds":[],  
+  "levels": [{  }]
 }
