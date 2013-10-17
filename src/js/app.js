@@ -4,7 +4,9 @@ define(['core','AssetManager', 'Game'], function(ab, AM, Game){
   var drawSplash = function(ctx){
     AM.getImage("../img/splash.png", function(img){
       ctx.drawImage(img, 0, 0);
-      AM.loadAssets(function(){
+      AM.loadAssets(function(progress){
+        console.log(progress);
+      }, function(){
         drawMenu(ctx);
       });
     });

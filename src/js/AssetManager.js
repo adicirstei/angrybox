@@ -13,12 +13,19 @@ define(['core'], function(ab){
       img.src = src;
     }
   };
-  AM.loadAssets = function(cb){
+  AM.loadAssets = function(progress, done){
     // start loading the settings
     ab.xhrGet('../assets/game.json', function(data){
       var s = JSON.parse(this.responseText);
+      var i, total = s.atlases.length + s.sounds.length, p = 0.0;
       ab.data = s;
-      cb();
+      for (i = 0; i<s.atlases.length; i++){
+        progress(p);
+      }
+      for (i = 0; i<s.sounds.length; i++){
+        progress(p);
+      }
+      done();
     });
   };
   return AM;
