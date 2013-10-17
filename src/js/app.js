@@ -1,41 +1,28 @@
-define(['core', 'Game'], function(ab, Game){
+define(['core','AssetManager', 'Game'], function(ab, AM, Game){
   window.AngryBox = ab;
   
-  ab.assets = ab.assets || {};
-  
-  var getImage = function(src, cb){
-	if(ab.assets[src]){
-		cb(ab.assets[src]);
-	} else {
-		var img = new Image();
-		img.onload = function(){
-			ab.assets[src] = this;
-			cb(this);
-		};
-		img.src = src;
-	}
-  };
-  
-
   var drawSplash = function(ctx){
-	getImage("../img/splash.png", function(img){
-		ctx.drawImage(img, 0, 0);
-	});
+    AM.getImage("../img/splash.png", function(img){
+      ctx.drawImage(img, 0, 0);
+      AM.loadAssets(function(){
+        drawMenu(ctx);
+      });
+    });
   };
-  var loadMenu = function(data) {
-    var lvls = data.levels;
+  var drawMenu = function(ctx) {
+    var lvls = ab.data;
     var first = lvls[0];
     var cellsize = {w: 24, h:24};
 
     //ab.menu = {pages: lvls, currpage = first};
 
     // draw current page
-    ab.context.fillStyle = "rgba(40, 255,40, 1)";
-    ab.context.fillRect(0, 250, ab.gameCanvas.width, ab.gameCanvas.height - 250);
+    ctx.fillStyle = "rgba(40, 255,40, 1)";
+    ctx.fillRect(0, 250, ab.gameCanvas.width, ab.gameCanvas.height - 250);
 
-    ab.context.font = "24pt Arial Black";
-    ab.context.fillStyle = "green";
-    ab.context.fillText("Level " + first.key, 200, 290);
+    ctx.font = "24pt Arial Black";
+    ctx.fillStyle = "green";
+    ctx.fillText("Level " + first.key, 200, 290);
 
   };
 
@@ -56,11 +43,7 @@ define(['core', 'Game'], function(ab, Game){
   drawSplash(ab.context);
 
 
-  // start loading the settings
-  ab.xhrGet('../assets/game.json', function(data){
-    var s = JSON.parse(this.responseText);
-    loadMenu(s);
-  });
+
 
 
 
