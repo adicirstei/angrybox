@@ -1,11 +1,12 @@
 define(['core','AssetManager', 'Game'], function(ab, AM, Game){
   window.AngryBox = ab;
-  
+  ab.AssetManager = AM;
   var drawSplash = function(ctx){
     AM.getImage("../img/splash.png", function(img){
       ctx.drawImage(img, 0, 0);
       AM.loadAssets(function(progress){
-        console.log(progress);
+        console.log('progress: ', progress);
+        
       }, function(){
         drawMenu(ctx);
       });

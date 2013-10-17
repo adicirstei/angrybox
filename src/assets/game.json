@@ -1,5 +1,108 @@
 {
-  "atlases":[],
+  "atlases":{
+    "../assets/atlas.png":{
+      "frames": {
+      "splash.png": {
+        "frame": {
+        "x": 0, 
+        "y":  0,
+        "w":  800,
+        "h":  600
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {},
+        "sourceSize": {}
+      },
+      "enemy-bd.png": {
+        "frame": {
+        "x": 0, 
+        "y":  600,
+        "w":  100,
+        "h":  100
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {},
+        "sourceSize": {}
+      },
+      "enemy-h.png": {
+        "frame": {
+        "x": 0, 
+        "y":  700,
+        "w":  100,
+        "h":  100
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {},
+        "sourceSize": {}
+      },
+      "enemy-sd.png": {
+        "frame": {
+        "x": 100, 
+        "y":  600,
+        "w":  100,
+        "h":  100
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {},
+        "sourceSize": {}
+      },
+      "glass10x100.png": {
+        "frame": {
+        "x": 100, 
+        "y":  700,
+        "w":  10,
+        "h":  100
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {},
+        "sourceSize": {}
+      },
+      "progress.png": {
+        "frame": {
+        "x": 200, 
+        "y":  600,
+        "w":  386,
+        "h":  68
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {},
+        "sourceSize": {}
+      },
+      "wood-h.png": {
+        "frame": {
+        "x": 200, 
+        "y":  668,
+        "w":  100,
+        "h":  15
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {},
+        "sourceSize": {}
+      },
+      "wood-v.png": {
+        "frame": {
+        "x": 110, 
+        "y":  700,
+        "w":  15,
+        "h":  100
+        },
+        "rotated": false,
+        "trimmed": false,
+        "spriteSourceSize": {},
+        "sourceSize": {}
+      }  
+      }, 
+      "meta": {}
+    }
+  
+  },
   "sounds":[],  
   "levels": [{  }]
 }
