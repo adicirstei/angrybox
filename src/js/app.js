@@ -14,7 +14,7 @@ define(['core','AssetManager', 'Game'], function(ab, AM, Game){
   };
   var drawMenu = function(ctx) {
     var lvls = ab.data;
-    var first = lvls[0];
+  //  var first = lvls[0];
     var cellsize = {w: 24, h:24};
 
     //ab.menu = {pages: lvls, currpage = first};
@@ -25,7 +25,10 @@ define(['core','AssetManager', 'Game'], function(ab, AM, Game){
 
     ctx.font = "24pt Arial Black";
     ctx.fillStyle = "green";
-    ctx.fillText("Level " + first.key, 200, 290);
+  //  ctx.fillText("Level " + first.key, 200, 290);
+    
+    ab.game = new Game();
+    ab.game.start();
 
   };
 

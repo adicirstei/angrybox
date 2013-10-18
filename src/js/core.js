@@ -1,4 +1,5 @@
 define(function(){
+  var RAD = Math.PI / 180.0;
   var ab = window.AngryBox = window.AngryBox || {};
   ab.xhrGet = function (reqUri,callback) {
     var xhr = new XMLHttpRequest();
@@ -8,6 +9,10 @@ define(function(){
 
     xhr.send();
   }
+  
+  ab.deg2Rad = function(deg){
+    return RAD * deg;
+  };
   ab.Event = function(){};
 
   ab.Event.mixin = function(type){

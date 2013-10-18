@@ -1,31 +1,31 @@
-define(['Scene'], function(Scene){
-  var Game = function(){
-    this.score = 0;
-    this.level = 'I.1';
-  };
+define(['core', 'Scene', 'Sprite'], function(ab, Scene, Sprite){
+  var requestID = 0;
+  var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+                              window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+  window.requestAnimationFrame = requestAnimationFrame;
+  var cancelAnimationFrame = window.cancelAnimationFrame || window.mozCancelAnimationFrame;
+  var s;
+  
+  var Game = ab.Class.extend({
+    start: function(lvl){
+      s = new Sprite({rot:ab.deg2Rad(120), cx: 200, cy: 100, frame:"wood-v.png"});
+      this.loop();
+    },
+    pause: function(){
+      if(requestID){
+        cancelAnimationFrame(requestID);
+      }
+    },
+    
+    loop: function(){
+      // scene update
+      
+      
+      s.draw(ab.context);
+      
+      requestID = window.requestAnimationFrame(ab.game.loop);
+    }
+  });
 
-  Game.prototype.start = function() {
-    var scene = new Scene(document.getElementById('canvas'));
-    // scene.on('kill', this.kill, this);
-    // scene.on('damage', this.damage, this);
-    // scene.on('died', this.died, this);
-//    this.world =scene scene.world;
-    scene.loadLevel(this.level);
-  };
-
-  Game.prototype.kill = function() {
-    this.score += 100;
-    console.log(this.score);
-  };
-  Game.prototype.damage = function() {
-    this.score += 100;
-    console.log(this.score);
-  };
-  Game.prototype.died = function() {
-    this.score += 100;
-    console.log(this.score);
-  };
   return Game;
-
-
 });

@@ -14,10 +14,9 @@ define(['core'], function(ab){
     }
   };
   AM.loadAssets = function(progress, done){
-    
     function parseAtlas(img, ad){
       for(var f in ad.frames){
-        AM.sprites[f] = {
+        AM.spriteimgs[f] = {
           img: img,
           x: ad.frames[f].frame.x,
           y: ad.frames[f].frame.y,
@@ -26,23 +25,32 @@ define(['core'], function(ab){
          };
       }
     };
-    AM.sprites = AM.sprites || {};
+    AM.spriteimgs = AM.spriteimgs || {};
     // start loading the settings
     ab.xhrGet('../assets/game.json', function(data){
       var s = JSON.parse(this.responseText);
-      var i, total = s.atlases.length + s.sounds.length, p = 0.0;
+      var i, total = 1 + s.sounds.length, p = 0.0;
+      var assetsLoaded  = 0;
       ab.data = s;
       for (var a in s.atlases){
         AM.getImage(a, function(img){
           parseAtlas(img, s.atlases[a]);
           progress(p);
+          assetsLoaded += 1;
+          if(assetsLoaded === total){
+            done();
+          }
         });
         
       }
       for (i = 0; i<s.sounds.length; i++){
         progress(p);
+        assetsLoaded += 1;
+        if(assetsLoaded === total){
+          done();
+        }        
       }
-      done();
+      
     });
   };
   return AM;
