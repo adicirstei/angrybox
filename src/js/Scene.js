@@ -1,98 +1,42 @@
-define(['easeljs', 'box2d', 'Level', 'Sprite', 'EnemySprite', 'GroundSprite', 'ObstacleSprite'], function(easeljs, box2d, Level, Sprite, EnemySprite, GroundSprite, ObstacleSprite){
-  var Scene = function(canvas){
-    var g = window.AngryBox.game;
-    this.stage = new easeljs.Stage(canvas);
-    this.debug = document.getElementById('debug');
-    this.toBeDeleted = [];
-
-    easeljs.EventDispatcher.initialize(Scene.prototype);
-
-    this.world = setupPhysics();
-    if (g) {
-      g.worldWidth = 800/box2d.SCALE;
-      g.worldHeight = 600/box2d.SCALE;
-    }
-
-
-    easeljs.Ticker.addListener(this);
-    easeljs.Ticker.setFPS(60);
-    easeljs.Ticker.useRAF = true;
-  }
-
-  Scene.prototype.tick = function(){
-    this.stage.update();
-    this.world.DrawDebugData();
-    this.world.Step(1/60, 10, 10);
-    this.world.ClearForces();
-    this.deleteSprites();
-  };
-
-  Scene.prototype.deleteSprites = function() {
-    var spr;
-    for(var i=0; i<this.toBeDeleted.length; i+=1){
-      spr = this.toBeDeleted.shift();
-      this.world.DestroyBody(spr.view.body);
-      this.stage.removeChild(spr.view);
-    }
-  }
-
-
-
-  Scene.prototype.loadLevel = function(level){
-    var damage = 0;
-    var that = this;
-
-    var imgChanged = function(e) {
-      that.stage.addChild(e.cb);
-      that.stage.removeChild(e.pb);
-    };
-    Level.load(level, function (data) {
-      for(var i=0, l = data.ground.length; i<l; i++){
-        var s = new GroundSprite({world: that.world, data: data.ground[i]});
-        that.stage.addChild(s.view);
-      }
-      for(var i=0, l = data.obstacles.length; i<l; i++){
-        var s = new ObstacleSprite({world: that.world, data: data.obstacles[i]});
-        s.addEventListener('destroyed', function(e){
-          var spr = e.target;
-          that.toBeDeleted.push(spr);
-        });
-        s.addEventListener('damage', function(e){
-          console.log(e);
-          that.dispatchEvent({type: 'damage', value: e.value});
-
-        });
-        s.addEventListener('imgchanged', imgChanged);
-        that.stage.addChild(s.view);
-      }
-      for(var i=0, l = data.enemies.length; i<l; i++){
-        var s = new EnemySprite({world: that.world, data: data.enemies[i]});
-        s.addEventListener('destroyed', function(e){
-          var spr = e.target;
-          that.toBeDeleted.push(spr);
-        });
-        s.addEventListener('imgchanged', imgChanged);
-        that.stage.addChild(s.view);
-      }
-      that.debug.onmousedown = function(){
-        var s = new Sprite({world: that.world, data: {shape: 'circle', radius: 0.3, y: 8}});
-        that.stage.addChild(s.view);
-        var enemy = new EnemySprite({world: that.world, data:{imageSize:{width: 100, height: 100}, radius: 0.3, y: 6, "images": ["img/enemy-h.png", "img/enemy-sd.png", "img/enemy-bd.png"]}});
-        that.stage.addChild(enemy.view);
-      }
+define(['core', 'box2d', 'GameObject'], function(ab, box2d, GameObject){
+  var Scene = ab.Class.extend({
+    'constructor': function(canvas){
       
-      var debugDraw = new box2d.b2DebugDraw();
+      this.debug = document.getElementById('debug');
+      this.toBeDeleted = [];
+      this.world = setupPhysics();
 
-      debugDraw.SetSprite(that.debug.getContext('2d'));
-      debugDraw.SetDrawScale(box2d.SCALE);
-      debugDraw.SetFillAlpha(0.5);
-      debugDraw.SetFlags(box2d.b2DebugDraw.e_shapeBit | box2d.b2DebugDraw.e_jointBit);
+      // the layers will contain arrays of GameObject instances
+      this.layers = [];
+    },
+    update: function(){
+      
+      this.world.Step(1/60, 10, 10);
+      this.world.ClearForces();
+      this.world.DrawDebugData();
 
-      that.world.SetDebugDraw(debugDraw);
 
 
-    });
-  };
+      this.draw();
+      this.cleanUp();
+    },
+    draw: function(){
+      var g = ab.game;
+      // loop through all GameObjects instances, optain the sprite and draw it
+
+
+
+    },
+    cleanUp: function(){
+      // var spr;
+      // for(var i=0; i<this.toBeDeleted.length; i+=1){
+      //   spr = this.toBeDeleted.shift();
+      //   this.world.DestroyBody(spr.view.body);
+        
+      // }
+    }
+  });
+
 
   function setupPhysics () {
     var w = new box2d.b2World(new box2d.b2Vec2(0, 10), true);
@@ -111,7 +55,6 @@ define(['easeljs', 'box2d', 'Level', 'Sprite', 'EnemySprite', 'GroundSprite', 'O
     w.SetContactListener(listener);
     return w;
   }
-
 
   return Scene;
 
