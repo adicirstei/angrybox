@@ -1,4 +1,5 @@
-define(['core', 'box2d', 'GameObject'], function(ab, box2d, GameObject){
+define(['core', 'box2d'], function(ab, box2d){
+  var BG_LAYER = 0, PLX_LAYER = 1, OBJ_LAYER = 2, EFX_LAYER = 3;
   var Scene = ab.Class.extend({
     'constructor': function(canvas){
       
@@ -7,15 +8,22 @@ define(['core', 'box2d', 'GameObject'], function(ab, box2d, GameObject){
       this.world = setupPhysics();
 
       // the layers will contain arrays of GameObject instances
-      this.layers = [];
+      this.layers = [[], [], [], []];
     },
     update: function(){
-      
+      var t = (new Date()).getTime();
+      var l, i, lay;
       this.world.Step(1/60, 10, 10);
       this.world.ClearForces();
       this.world.DrawDebugData();
 
-
+      // for each GameObject instance, call update
+      for(l=0; l < this.layers.length; l++){
+        lay = this.layers[l];
+        for(i=0; i<lay.length; i++){
+          lay[i].update(t);
+        }
+      }
 
       this.draw();
       this.cleanUp();

@@ -13,6 +13,18 @@ define(['core'], function(ab){
       img.src = src;
     }
   };
+  AM.getSound = function(src, cb){
+    if(ab.assets[src]){
+      cb(ab.assets[src]);
+    } else {
+      var snd = new Audio();
+      snd.onload = function(){
+        ab.assets[src] = this;
+        cb(this);
+      };
+      snd.src = src;
+    }
+  };  
   AM.loadAssets = function(progress, done){
     function parseAtlas(img, ad){
       for(var f in ad.frames){
@@ -44,11 +56,13 @@ define(['core'], function(ab){
         
       }
       for (i = 0; i<s.sounds.length; i++){
-        progress(p);
-        assetsLoaded += 1;
-        if(assetsLoaded === total){
-          done();
-        }        
+        AM.getSound(s.sounds[i], function(snd){
+          progress(p);
+          assetsLoaded += 1;
+          if(assetsLoaded === total){
+            done();
+          }
+        });      
       }
       
     });

@@ -8,7 +8,7 @@ define(['core', 'Scene', 'Sprite'], function(ab, Scene, Sprite){
   
   var Game = ab.Class.extend({
     start: function(lvl){
-      s = new Sprite({rot:ab.deg2Rad(120), cx: 200, cy: 100, frame:"wood-v.png"});
+      s = new Sprite({rot:ab.deg2Rad(120), cx: 200, cy: 100, frame:"wood-1.png"});
       this.loop();
     },
     pause: function(){

@@ -1,14 +1,20 @@
-define(['core','box2d'], function(ab, box2d){
-  var Sprite = ab.Class.extend({
+define(['core', 'Component'], function(ab, Component){
+  var Sprite = Component.extend({
     'constructor': function(options){
       this.spimg = ab.AssetManager.spriteimgs[options.frame];
-      this.cx = options.cx;
-      this.cy = options.cy;
+      // this.cx = options.cx;
+      // this.cy = options.cy;
       this.w = this.spimg.w/2.0;
       this.h = this.spimg.h/2.0;
-      this.rot = options.rot;
+      // this.rot = options.rot;
     },
-    update: function(){},
+
+    tag: 'sprite',
+
+    getSprite: function(){
+      return this;
+    },
+
     draw: function(ctx){
       var img = this.spimg.img;
       if(!img){
