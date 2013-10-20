@@ -1,4 +1,4 @@
-define(['core', 'Scene', 'Sprite', 'GameObject'], function(ab, Scene, Sprite, GameObject){
+define(['core', 'Scene', 'Animation', 'GameObject'], function(ab, Scene, Animation, GameObject){
   var requestID = 0;
   var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
                               window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
@@ -8,13 +8,13 @@ define(['core', 'Scene', 'Sprite', 'GameObject'], function(ab, Scene, Sprite, Ga
   
   var Game = ab.Class.extend({
     start: function(lvl){
-      s = new Sprite({frame:"wood-1.png"});
+      s = new Animation(["c-or-1.png", "c-or-2.png", "c-or-3.png"], 3);
       scene = new Scene(ab.context);
 
       var test = new GameObject({
         x: 100,
         y: 100,
-        rot: ab.deg2Rad(90),
+        rot: ab.deg2Rad(0),
         components: [s]
       });
       scene.addGameObject(test);

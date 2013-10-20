@@ -17,7 +17,7 @@ define(['core', 'box2d'], function(ab, box2d){
       this.world.Step(1/60, 10, 10);
       this.world.ClearForces();
       this.world.DrawDebugData();
-
+      this.context.clearRect(0, 0, ab.viewport.w, ab.viewport.h);
       // for each GameObject instance, call update
       for(l=0; l < this.layers.length; l++){
         lay = this.layers[l];

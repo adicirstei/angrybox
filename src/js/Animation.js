@@ -1,10 +1,17 @@
-define(['core'], function (ab) {
-  var Animation = ab.Class.extend({
+define(['Component', 'Sprite'], function (Component, Sprite) {
+  var Animation = Component.extend({
     tag: 'sprite',
+    sprites: [],
     'constructor': function(frames, fps, loop, startframe){
+
+      for(var i= 0; i< frames.length; i++){
+        this.sprites.push(new Sprite({frame: frames[i]}));  
+      }
+      
+      
       this.frames = frames;
       this.fps = fps;
-      this.loop = loop;
+      this.loop = loop || true;
       this.currentframe = startframe || 0;
       this.startframe = this.currentframe;
 
@@ -14,10 +21,11 @@ define(['core'], function (ab) {
       this.frameLen = 1000 / fps;
     },
     update: function(time){
-      this.currentframe = ((time - this.starttime) / this.frameLen + this.startframe) % this.len;
+      console.log(this.currentframe = (Math.floor((time - this.starttime) / this.frameLen) + this.startframe) % this.len);
+
     },
     getSprite: function(){
-      return this.frames[this.currentframe];
+      return this.sprites[this.currentframe];
     }
   });
 
