@@ -28,7 +28,7 @@ define(['core','AssetManager', 'Game'], function(ab, AM, Game){
   //  ctx.fillText("Level " + first.key, 200, 290);
     
     ab.game = new Game();
-    ab.game.start();
+    ab.game.start(9);
 
   };
 

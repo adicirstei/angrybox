@@ -4,13 +4,12 @@ require.config({
     'Box2dWeb': {
       exports: 'Box2D'
     }
-/*
+
     ,
     'lazyjs': {
-      exports: 'createjs'
+      exports: 'Lazy'
     }
 
-    */
   },
   paths: {
     'Box2dWeb': '../components/box2dweb/Box2dWeb-2.1.a.3',

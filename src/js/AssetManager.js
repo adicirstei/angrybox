@@ -18,10 +18,10 @@ define(['core'], function(ab){
       cb(ab.assets[src]);
     } else {
       var snd = new Audio();
-      snd.onload = function(){
+      snd.addEventListener('canplaythrough', function(){
         ab.assets[src] = this;
         cb(this);
-      };
+      });
       snd.src = src;
     }
   };  

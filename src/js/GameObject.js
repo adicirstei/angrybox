@@ -17,9 +17,10 @@ define(['Component', 'lazyjs'], function(Component, Lazy){
 
     },
     getSprite: function(){
-      Lazy(this.components)
+      var s = Lazy(this.components)
       .filter(function(c){return c.tag === 'sprite';})
       .first().getSprite();
+      return s;
     },
     components: []
 

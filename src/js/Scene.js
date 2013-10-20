@@ -1,18 +1,18 @@
 define(['core', 'box2d'], function(ab, box2d){
   var BG_LAYER = 0, PLX_LAYER = 1, OBJ_LAYER = 2, EFX_LAYER = 3;
   var Scene = ab.Class.extend({
-    'constructor': function(canvas){
+    'constructor': function(context){
       
       this.debug = document.getElementById('debug');
       this.toBeDeleted = [];
       this.world = setupPhysics();
-
+      this.context = context;
       // the layers will contain arrays of GameObject instances
       this.layers = [[], [], [], []];
     },
     update: function(){
       var t = (new Date()).getTime();
-      var l, i, lay;
+      var l, i, lay, go;
       this.world.Step(1/60, 10, 10);
       this.world.ClearForces();
       this.world.DrawDebugData();
@@ -21,19 +21,30 @@ define(['core', 'box2d'], function(ab, box2d){
       for(l=0; l < this.layers.length; l++){
         lay = this.layers[l];
         for(i=0; i<lay.length; i++){
-          lay[i].update(t);
+          go = lay[i];
+          go.update(t);
+          this.drawGO(go);
         }
       }
-
-      this.draw();
       this.cleanUp();
     },
-    draw: function(){
-      var g = ab.game;
-      // loop through all GameObjects instances, optain the sprite and draw it
 
+    drawGO: function(go){
+      var s = go.getSprite();
+      var img = s && s.spimg.img;
+      if(!img){
+        console.log("nothing to draw");
+        return;
+      }
+      this.context.translate(go.x, go.y);
+      this.context.rotate(go.rot);
+      this.context.drawImage(img, s.spimg.x, s.spimg.y, s.spimg.w, s.spimg.h, -s.w, -s.h, s.spimg.w, s.spimg.h);
+      this.context.rotate(-go.rot);
+      this.context.translate(-go.x, -go.y);
+    },
 
-
+    addGameObject: function(go){
+      this.layers[OBJ_LAYER].push(go);
     },
     cleanUp: function(){
       // var spr;
