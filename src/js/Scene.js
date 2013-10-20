@@ -6,6 +6,7 @@ define(['core', 'box2d'], function(ab, box2d){
       this.debug = document.getElementById('debug');
       this.toBeDeleted = [];
       this.world = setupPhysics();
+      setupDebugDraw(this.world, debug.getContext('2d'));
       this.context = context;
       // the layers will contain arrays of GameObject instances
       this.layers = [[], [], [], []];
@@ -56,6 +57,21 @@ define(['core', 'box2d'], function(ab, box2d){
     }
   });
 
+  function setupDebugDraw(world, ctx){
+    // setup debug draw for box2d
+    // ==================
+    var debugDraw = new box2d.b2DebugDraw();
+
+      debugDraw.SetSprite(ctx);
+      debugDraw.SetDrawScale(box2d.SCALE);
+    //      debugDraw.SetFillAlpha(0.5);
+      debugDraw.SetFlags(box2d.b2DebugDraw.e_shapeBit | box2d.b2DebugDraw.e_jointBit);
+
+      world.SetDebugDraw(debugDraw);
+
+    // ===================
+
+  }
 
   function setupPhysics () {
     var w = new box2d.b2World(new box2d.b2Vec2(0, 10), true);
