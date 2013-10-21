@@ -4,7 +4,7 @@ define(['Component', 'box2d'], function(Component, box2d){
     x: 0,
     y: 0,
     rot: 0,
-    body: null,
+
     'constructor': function(body){
       this.body = body;
     },

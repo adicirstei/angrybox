@@ -8,9 +8,9 @@ define(['core', 'Scene', 'Animation', 'GameObject'], function(ab, Scene, Animati
   
   var Game = ab.Class.extend({
     start: function(lvl){
-      s = new Animation(["c-or-1.png", "c-or-2.png", "c-or-3.png"], 3);
-      scene = new Scene(ab.context);
-
+      s = new Animation(["c-or-1.png", "c-or-2.png", "c-or-3.png"], 10);
+      ab.scene = scene = new Scene(ab.context);
+      
       var test = new GameObject({
         x: 100,
         y: 100,

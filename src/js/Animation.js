@@ -1,9 +1,9 @@
 define(['Component', 'Sprite'], function (Component, Sprite) {
   var Animation = Component.extend({
     tag: 'sprite',
-    sprites: [],
+    
     'constructor': function(frames, fps, loop, startframe){
-
+      this.sprites= [];
       for(var i= 0; i< frames.length; i++){
         this.sprites.push(new Sprite({frame: frames[i]}));  
       }

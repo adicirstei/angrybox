@@ -1,4 +1,4 @@
-define(['core', 'box2d'], function(ab, box2d){
+define(['core', 'box2d', 'Factory'], function(ab, box2d, Factory){
   var BG_LAYER = 0, PLX_LAYER = 1, OBJ_LAYER = 2, EFX_LAYER = 3;
   var Scene = ab.Class.extend({
     'constructor': function(context){

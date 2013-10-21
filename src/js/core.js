@@ -45,8 +45,6 @@ define(function(){
 
   var Class = function(){};
   Class.extend = function(c){
-    // for the moment let's just pretend to extend
-    // look at Backbone extend form more insight
 
     var parent = this,
       child;
