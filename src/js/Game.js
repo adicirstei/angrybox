@@ -1,4 +1,4 @@
-define(['core', 'Scene', 'Animation', 'GameObject'], function(ab, Scene, Animation, GameObject){
+define(['core', 'Scene', 'Animation', 'GameObject', 'Sprite'], function(ab, Scene, Animation, GameObject, Sprite){
   var requestID = 0;
   var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
                               window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
@@ -8,9 +8,16 @@ define(['core', 'Scene', 'Animation', 'GameObject'], function(ab, Scene, Animati
   
   var Game = ab.Class.extend({
     start: function(lvl){
-      s = new Animation(["c-or-1.png", "c-or-2.png", "c-or-3.png"], 10);
+      s = new Animation(["c-or-1.png", "c-or-2.png", "c-or-3.png"], 4);
       ab.scene = scene = new Scene(ab.context);
       
+
+      var bg = new GameObject({
+        x: 400,
+        y: 300,
+        components: [new Sprite({frame: "bg.png"})]
+      });
+      scene.addGameObject(bg);
       var test = new GameObject({
         x: 100,
         y: 100,
@@ -18,6 +25,8 @@ define(['core', 'Scene', 'Animation', 'GameObject'], function(ab, Scene, Animati
         components: [s]
       });
       scene.addGameObject(test);
+
+
       this.loop();
     },
     pause: function(){

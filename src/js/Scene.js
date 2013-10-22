@@ -31,17 +31,21 @@ define(['core', 'box2d', 'Factory'], function(ab, box2d, Factory){
     },
 
     drawGO: function(go){
-      var s = go.getSprite();
-      var img = s && s.spimg.img;
-      if(!img){
-        console.log("nothing to draw");
-        return;
+      var sArr = go.getSprites();
+      var l = sArr.length, i, img, s;
+      for (i=0; i<l;i++){
+        s = sArr[i].getSprite();
+        img = s && s.spimg.img;
+        if(!img){
+          console.log("nothing to draw");
+          continue;
+        }
+        this.context.translate(go.x + s.x, go.y+s.y);
+        this.context.rotate(go.rot);
+        this.context.drawImage(img, s.spimg.x, s.spimg.y, s.spimg.w, s.spimg.h, -s.w, -s.h, s.spimg.w, s.spimg.h);
+        this.context.rotate(-go.rot);
+        this.context.translate(-go.x-s.x, -go.y-s.y);
       }
-      this.context.translate(go.x, go.y);
-      this.context.rotate(go.rot);
-      this.context.drawImage(img, s.spimg.x, s.spimg.y, s.spimg.w, s.spimg.h, -s.w, -s.h, s.spimg.w, s.spimg.h);
-      this.context.rotate(-go.rot);
-      this.context.translate(-go.x, -go.y);
     },
 
     addGameObject: function(go){
