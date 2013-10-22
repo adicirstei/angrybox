@@ -25,11 +25,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2"
-     inkscape:cx="262.78366"
-     inkscape:cy="517.18848"
+     inkscape:zoom="1"
+     inkscape:cx="349.2767"
+     inkscape:cy="397.87985"
      inkscape:document-units="px"
-     inkscape:current-layer="g6622"
+     inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1600"
      inkscape:window-height="838"
@@ -1345,7 +1345,10 @@
        transform="translate(200,110)"
        id="use7031"
        width="744.09448"
-       height="1052.3622" />
+       height="1052.3622"
+       inkscape:export-filename="D:\proiecte\angrybox\src\assets\fg.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
     <use
        x="0"
        y="0"
