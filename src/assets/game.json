@@ -396,6 +396,12 @@
     "../assets/glass2.mp3"
   ],
   "levels": [
-    {}
+    {
+      "layer": 0,
+      "classname":"Sprite",
+      "options": {
+        "frame": "bg.png"
+      }
+    }
   ]
 }
