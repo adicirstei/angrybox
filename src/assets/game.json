@@ -420,6 +420,24 @@
                 "fps": 5, 
                 "loop": true
               }
+            },
+            {
+              "classname": "PhysComponent",
+              "data": {
+                "fixture":{
+                  "density": 1,
+                  "friction": 0.9,
+                  "restitution": 0.2
+                },
+                "body": {
+                  "position":{"x": 400, "y": 300},
+                  "static": false
+                },
+                "shapes": [{
+                  "shape":"CIRCLE",
+                  "radius": 120
+                }]
+              }              
             }
           ]
         }],
