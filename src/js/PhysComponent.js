@@ -6,6 +6,8 @@ define(['Component', 'box2d'], function(Component, box2d){
     rot: 0,
 
     'constructor': function(body){
+    
+      // TODO: implement box2d body creation logic 
       this.body = body;
     },
     update: function(time){

@@ -2,23 +2,23 @@ define(['Component', 'Sprite'], function (Component, Sprite) {
   var Animation = Component.extend({
     tag: 'sprite',
     
-    'constructor': function(frames, fps, loop, startframe){
+    'constructor': function(opts){
       this.sprites= [];
-      for(var i= 0; i< frames.length; i++){
-        this.sprites.push(new Sprite({frame: frames[i]}));  
+      for(var i= 0; i< opts.frames.length; i++){
+        this.sprites.push(new Sprite({frame: opts.frames[i]}));  
       }
       
       
-      this.frames = frames;
-      this.fps = fps;
-      this.loop = loop || true;
-      this.currentframe = startframe || 0;
+      this.frames = opts.frames;
+      this.fps = opts.fps;
+      this.loop = opts.loop || true;
+      this.currentframe = opts.startframe || 0;
       this.startframe = this.currentframe;
 
       // TODO set start time to the real value
       this.starttime = (new Date()).getTime();
-      this.len = frames.length;
-      this.frameLen = 1000 / fps;
+      this.len = this.frames.length;
+      this.frameLen = 1000 / this.fps;
     },
     update: function(time){
       console.log(this.currentframe = (Math.floor((time - this.starttime) / this.frameLen) + this.startframe) % this.len);

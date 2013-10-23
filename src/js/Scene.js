@@ -11,6 +11,15 @@ define(['core', 'box2d', 'Factory'], function(ab, box2d, Factory){
       // the layers will contain arrays of GameObject instances
       this.layers = [[], [], [], []];
     },
+    setLevel: function(lvlData){
+      var l, j;
+      for(l=0; l<this.layers.length; l++){
+        for(j=0; j<lvlData.layers[l].length; j++){
+          this.layers[l].push(Factory.createGameObject(lvlData.layers[l][j]));
+        }
+      }
+    
+    },
     update: function(){
       var t = (new Date()).getTime();
       var l, i, lay, go;

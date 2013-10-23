@@ -1,4 +1,4 @@
-define(['Component', 'lazyjs'], function(Component, Lazy){
+define(['Component'], function(Component){
   var GameObject = Component.extend({
     'constructor': function(opt){
       this.components = opt.components || [];
@@ -21,9 +21,9 @@ define(['Component', 'lazyjs'], function(Component, Lazy){
     },
     
     getSprites: function(){
-      var s = Lazy(this.components)
-      .filter(function(c){return c.tag === 'sprite';})
-      .toArray();
+      var s = this.components
+      .filter(function(c){return c.tag === 'sprite';});
+
       return s;
     }
 

@@ -397,11 +397,34 @@
   ],
   "levels": [
     {
-      "layer": 0,
-      "classname":"Sprite",
-      "options": {
-        "frame": "bg.png"
-      }
+      "layers": [
+        [
+          {
+            "x": 400,
+            "y": 300,
+            "components":[{
+              "classname": "Sprite",
+              "data": {"frame": "bg.png"}
+            }]
+          }
+        ],
+        [],
+        [{
+          "x": 400,
+          "y": 300,
+          "components": [
+            {
+              "classname": "Animation",
+              "data": {
+                "frames":["c-or-1.png", "c-or-1.png", "c-or-1.png", "c-or-1.png", "c-or-1.png", "c-or-1.png", "c-or-2.png", "c-or-1.png", "c-or-1.png", "c-or-1.png", "c-or-3.png", "c-or-1.png", "c-or-3.png"], 
+                "fps": 5, 
+                "loop": true
+              }
+            }
+          ]
+        }],
+        []
+      ]
     }
   ]
 }

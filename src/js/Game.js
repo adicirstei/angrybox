@@ -8,9 +8,12 @@ define(['core', 'Scene', 'Animation', 'GameObject', 'Sprite'], function(ab, Scen
   
   var Game = ab.Class.extend({
     start: function(lvl){
-      s = new Animation(["c-or-1.png", "c-or-2.png", "c-or-3.png"], 4);
+
       ab.scene = scene = new Scene(ab.context);
+      scene.setLevel(ab.data.levels[lvl]);
+     /* 
       
+      s = new Animation(["c-or-1.png", "c-or-2.png", "c-or-3.png"], 4);
 
       var bg = new GameObject({
         x: 400,
@@ -25,7 +28,7 @@ define(['core', 'Scene', 'Animation', 'GameObject', 'Sprite'], function(ab, Scen
         components: [s]
       });
       scene.addGameObject(test);
-
+*/
 
       this.loop();
     },
