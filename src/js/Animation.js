@@ -21,7 +21,7 @@ define(['Component', 'Sprite'], function (Component, Sprite) {
       this.frameLen = 1000 / this.fps;
     },
     update: function(time){
-      console.log(this.currentframe = (Math.floor((time - this.starttime) / this.frameLen) + this.startframe) % this.len);
+      this.currentframe = (Math.floor((time - this.starttime) / this.frameLen) + this.startframe) % this.len;
 
     },
     getSprite: function(){

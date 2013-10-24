@@ -10,12 +10,15 @@ define(['core', 'box2d', 'Factory'], function(ab, box2d, Factory){
       this.context = context;
       // the layers will contain arrays of GameObject instances
       this.layers = [[], [], [], []];
+      this.paralax = [0.0, 0.2, 1.0, 1.0];
     },
     setLevel: function(lvlData){
-      var l, j;
+      var l, j, go;
       for(l=0; l<this.layers.length; l++){
         for(j=0; j<lvlData.layers[l].length; j++){
-          this.layers[l].push(Factory.createGameObject(lvlData.layers[l][j]));
+          go = Factory.createGameObject(lvlData.layers[l][j]);
+          go.layer = l;
+          this.layers[l].push(go);
         }
       }
     
@@ -41,19 +44,24 @@ define(['core', 'box2d', 'Factory'], function(ab, box2d, Factory){
 
     drawGO: function(go){
       var sArr = go.getSprites();
-      var l = sArr.length, i, img, s;
+      var l = sArr.length, i, img, s, vp, x, y;
+      
+      vp = ab.viewport;
       for (i=0; i<l;i++){
         s = sArr[i].getSprite();
         img = s && s.spimg.img;
         if(!img){
-          console.log("nothing to draw");
           continue;
         }
-        this.context.translate(go.x + s.x, go.y+s.y);
+        // translate world pixel coords to viewport coords
+        x = go.x + s.x - vp.x * this.paralax[go.layer];
+        y = go.y+s.y - vp.y;
+        
+        this.context.translate(x, y);
         this.context.rotate(go.rot);
         this.context.drawImage(img, s.spimg.x, s.spimg.y, s.spimg.w, s.spimg.h, -s.w, -s.h, s.spimg.w, s.spimg.h);
         this.context.rotate(-go.rot);
-        this.context.translate(-go.x-s.x, -go.y-s.y);
+        this.context.translate(-x, -y);
       }
     },
 
@@ -76,7 +84,7 @@ define(['core', 'box2d', 'Factory'], function(ab, box2d, Factory){
     var debugDraw = new box2d.b2DebugDraw();
 
       debugDraw.SetSprite(ctx);
-      debugDraw.SetDrawScale(box2d.SCALE);
+      debugDraw.SetDrawScale(box2d.SCALE/3);
     //      debugDraw.SetFillAlpha(0.5);
       debugDraw.SetFlags(box2d.b2DebugDraw.e_shapeBit | box2d.b2DebugDraw.e_jointBit);
 

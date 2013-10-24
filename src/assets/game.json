@@ -408,7 +408,30 @@
             }]
           }
         ],
-        [],
+        [{
+          "x": 100,
+          "y": 400,
+          "components": [
+            {
+              "classname": "Sprite",
+              "data": {
+                "frame":"tree.png"
+              }
+            }
+          ]
+        },
+        {
+          "x": 700,
+          "y": 400,
+          "components": [
+            {
+              "classname": "Sprite",
+              "data": {
+                "frame":"tree.png"
+              }
+            }
+          ]
+        }],
         [{
           "x": 400,
           "y": 40,
