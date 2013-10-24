@@ -10,15 +10,14 @@ define(['core', 'box2d', 'Factory'], function(ab, box2d, Factory){
       this.context = context;
       // the layers will contain arrays of GameObject instances
       this.layers = [[], [], [], []];
-      this.paralax = [0.0, 0.2, 1.0, 1.0];
+      this.paralax = [0.0, 0.3, 1.0, 1.0];
     },
     setLevel: function(lvlData){
       var l, j, go;
       for(l=0; l<this.layers.length; l++){
         for(j=0; j<lvlData.layers[l].length; j++){
           go = Factory.createGameObject(lvlData.layers[l][j]);
-          go.layer = l;
-          this.layers[l].push(go);
+          this.addGameObject(go, l);
         }
       }
     
@@ -65,9 +64,11 @@ define(['core', 'box2d', 'Factory'], function(ab, box2d, Factory){
       }
     },
 
-    addGameObject: function(go){
-      this.layers[OBJ_LAYER].push(go);
+    addGameObject: function(go, layer){
+      go.layer = layer;
+      this.layers[layer].push(go);
     },
+    
     cleanUp: function(){
       // var spr;
       // for(var i=0; i<this.toBeDeleted.length; i+=1){

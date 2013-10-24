@@ -8,6 +8,9 @@ TODO
 * bring sound
 * implement game logic
 * implement some property animation
+* add spawning functionality
+* add some time to live functionality
+* add damage visual feedback
 
 To make it run
 -----------
