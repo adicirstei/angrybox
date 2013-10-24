@@ -10,11 +10,12 @@ define(['core', 'Component', 'box2d'], function(ab, Component, box2d){
       // c) shapes are in a one to one relation with fixtures
       
       
-      var w = ab.scene.world, f, b, sArr, s;
+      var w = ab.scene.world, f, b, sArr, s, parent;
 
       b = opts.body;
       f = opts.fixture;
       sArr = opts.shapes;
+      parent = opts && opts.parent;
       
       var bodyDef = new box2d.b2BodyDef();
       bodyDef.type = (b.static? box2d.b2Body.b2_staticBody: box2d.b2Body.b2_dynamicBody);
@@ -28,6 +29,7 @@ define(['core', 'Component', 'box2d'], function(ab, Component, box2d){
       fixDef.restitution = f.restitution;
 
       this.body = w.CreateBody(bodyDef);
+      this.body.SetUserData({gameobject: parent});
       var cent, rot;
       for (var i = 0; i< sArr.length; i++){
         s = sArr[i];

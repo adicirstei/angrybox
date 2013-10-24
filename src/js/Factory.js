@@ -14,19 +14,18 @@ define(['core', 'GameObject', 'Sprite', 'Animation', 'PhysComponent'], function(
     
     createGameObject: function(data){
       var o = data, datacomp;
-      
+      var go = new GameObject(o);
       datacomp = data.components;
-      o.components = datacomp.map(function(comp){
+      go.components = datacomp.map(function(comp){
+        comp.data.parent = go;
         return this.createComponent(comp);
       }, this);
-      
-      var go = new GameObject(o);
-    
+
       return go;
     },
-    createComponent: function(comp){
-      var F = this.classes[comp.classname];
-      return new F(comp.data);
+    createComponent: function(comp, parent){
+      var C = this.classes[comp.classname];
+      return new C(comp.data);
     }
   };
   
