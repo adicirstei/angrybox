@@ -1,6 +1,20 @@
 define(function(){
   var RAD = Math.PI / 180.0;
   var ab = window.AngryBox = window.AngryBox || {};
+  ab.Mathf = {
+    lerp: function(from, to, time){
+      return (time*(to-from));
+    }
+  };
+
+
+
+  ab.Time = {
+    frameCount: 0,
+    deltaTime: 0,
+    time: 0
+  };
+  
   ab.xhrGet = function (reqUri,callback) {
     var xhr = new XMLHttpRequest();
 

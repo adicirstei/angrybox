@@ -1,9 +1,10 @@
-define(['core', 'GameObject', 'Sprite', 'Animation', 'PhysComponent'], function(ab, GameObject, Sprite, Animation, PhysComponent){
+define(['core', 'GameObject', 'Sprite', 'Animation', 'PhysComponent', 'KillerScript'], function(ab, GameObject, Sprite, Animation, PhysComponent, KillerScript){
   var Factory = {
     classes: {
     "Sprite": Sprite,
     "PhysComponent": PhysComponent,
-    "Animation": Animation
+    "Animation": Animation,
+    "KillerScript": KillerScript
     },
     getClass: function(name){
       return this.classes[name];

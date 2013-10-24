@@ -51,13 +51,9 @@ define(['core', 'Component', 'box2d'], function(ab, Component, box2d){
       // b2PolygonShape.SetAsBox method may take 4 parameters
       // void SetAsBox(float32 hx, float32 hy);
       // void SetAsBox(float32 hx, float32 hy, const b2Vec2& center, float32 angle);
-      
-      // b2CircleShape constructor may take also the position as a second argument, I guess.
-      
-      
-      
-      
-      
+    },
+    destroy: function(){
+      // take care of the physics
     },
     update: function(time){
       if(!this.body){

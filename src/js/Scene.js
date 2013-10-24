@@ -12,6 +12,11 @@ define(['core', 'box2d', 'Factory'], function(ab, box2d, Factory){
       this.layers = [[], [], [], []];
       this.paralax = [0.0, 0.3, 1.0, 1.0];
     },
+    kill: function(go) {
+      if(go){
+        this.toBeDeleted.push(go);
+      }
+    },
     setLevel: function(lvlData){
       var l, j, go;
       for(l=0; l<this.layers.length; l++){
@@ -23,7 +28,7 @@ define(['core', 'box2d', 'Factory'], function(ab, box2d, Factory){
     
     },
     update: function(){
-      var t = (new Date()).getTime();
+      var t = ab.Time.time;
       var l, i, lay, go;
       this.world.Step(1/60, 10, 10);
       this.world.ClearForces();
@@ -70,12 +75,19 @@ define(['core', 'box2d', 'Factory'], function(ab, box2d, Factory){
     },
     
     cleanUp: function(){
-      // var spr;
-      // for(var i=0; i<this.toBeDeleted.length; i+=1){
-      //   spr = this.toBeDeleted.shift();
-      //   this.world.DestroyBody(spr.view.body);
-        
-      // }
+      var go, layer;
+      for(var i=0; i<this.toBeDeleted.length; i+=1){
+        go = this.toBeDeleted.shift();
+        layer = this.layers[go.layer];
+
+        for(var j = 0; j<layer.length; j++){
+          if(go === layer[j]){
+            layer.splice(j);
+            break;
+          }
+        }
+        go.destroy();
+      }
     }
   });
 

@@ -1,4 +1,4 @@
-define(['Component', 'Sprite'], function (Component, Sprite) {
+define(['core', 'Component', 'Sprite'], function (ab, Component, Sprite) {
   var Animation = Component.extend({
     tag: 'sprite',
     
@@ -16,7 +16,7 @@ define(['Component', 'Sprite'], function (Component, Sprite) {
       this.startframe = this.currentframe;
 
       // TODO set start time to the real value
-      this.starttime = (new Date()).getTime();
+      this.starttime = ab.Time.time;
       this.len = this.frames.length;
       this.frameLen = 1000 / this.fps;
     },

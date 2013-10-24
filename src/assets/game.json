@@ -449,6 +449,12 @@
           "y": 400,
           "components": [
             {
+              "classname": "KillerScript",
+              "data": {
+                "ttl":5000
+              }
+            },
+            {
               "classname": "Sprite",
               "data": {
                 "frame":"puff-1.png"
