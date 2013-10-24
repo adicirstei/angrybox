@@ -20,6 +20,7 @@ define(['core', 'Component', 'box2d'], function(ab, Component, box2d){
       bodyDef.type = (b.static? box2d.b2Body.b2_staticBody: box2d.b2Body.b2_dynamicBody);
       bodyDef.position.x = b.position.x / box2d.SCALE; // position in box2d units
       bodyDef.position.y = b.position.y / box2d.SCALE;
+      bodyDef.angle = ab.deg2Rad(b.rot || 0);
       
       var fixDef = new box2d.b2FixtureDef();
       fixDef.density = f.density;
@@ -27,21 +28,24 @@ define(['core', 'Component', 'box2d'], function(ab, Component, box2d){
       fixDef.restitution = f.restitution;
 
       this.body = w.CreateBody(bodyDef);
-
-      
-      s = sArr[0];
-      switch(s.shape){
-        case "CIRCLE":
-          fixDef.shape = new box2d.b2CircleShape(s.radius / box2d.SCALE);
-          break;
-        case "RECTANGLE":
-          fixDef.shape = new box2d.b2PolygonShape();
-          fixDef.shape.SetAsBox(s.w/box2d.SCALE, s.h/box2d.SCALE); // half width and half height in box2d units
-          break;
-        default:
-      };
-      this.body.CreateFixture(fixDef);
-      
+      var cent, rot;
+      for (var i = 0; i< sArr.length; i++){
+        s = sArr[i];
+        cent = new box2d.b2Vec2((s.x || 0)/box2d.SCALE, (s.y || 0)/box2d.SCALE);
+        rot = ab.deg2Rad(s.rot || 0);
+        
+        switch(s.shape){
+          case "CIRCLE":
+            fixDef.shape = new box2d.b2CircleShape(s.radius / box2d.SCALE);
+            break;
+          case "RECTANGLE":
+            fixDef.shape = new box2d.b2PolygonShape();
+            fixDef.shape.SetAsOrientedBox(s.w/box2d.SCALE, s.h/box2d.SCALE, cent, rot); // half width and half height in box2d units
+            break;
+          default:
+        };
+        this.body.CreateFixture(fixDef);
+      }
       // b2PolygonShape.SetAsBox method may take 4 parameters
       // void SetAsBox(float32 hx, float32 hy);
       // void SetAsBox(float32 hx, float32 hy, const b2Vec2& center, float32 angle);

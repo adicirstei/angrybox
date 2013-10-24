@@ -435,7 +435,7 @@
                 },
                 "shapes": [{
                   "shape":"CIRCLE",
-                  "radius": 64
+                  "radius": 32
                 }]
               }              
             }
@@ -479,6 +479,7 @@
                 "frame":"fg.png"
               }
             },
+           
             {
               "classname": "PhysComponent",
               "data": {
@@ -488,13 +489,46 @@
                   "restitution": 0.2
                 },
                 "body": {
-                  "position":{"x": 500, "y": 500},
+                  "position":{"x": 500, "y": 550},
                   "static": true
                 },
                 "shapes": [{
                   "shape":"RECTANGLE",
                   "w": 1000,
-                  "h": 37
+                  "h": 46
+                }]
+              }              
+            }
+          ]
+        },
+        {
+          "x": 100,
+          "y": 300,
+          "components": [
+            {
+              "classname": "Sprite",
+              "data": {
+                "frame":"stone-01.png"
+              }
+            },
+
+            {
+              "classname": "PhysComponent",
+              "data": {
+                "fixture":{
+                  "density": 1,
+                  "friction": 0.9,
+                  "restitution": 0.2
+                },
+                "body": {
+                  "position":{"x": 100, "y": 300},
+                  "static": false,
+                  "rot": 44
+                },
+                "shapes": [{
+                  "shape":"RECTANGLE",
+                  "w": 32,
+                  "h": 32
                 }]
               }              
             }
