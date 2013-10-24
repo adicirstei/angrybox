@@ -94,10 +94,10 @@ define(['core', 'box2d', 'Factory'], function(ab, box2d, Factory){
         var s1, s2, imp;
         imp = impulse.normalImpulses[0];
         if(imp > 0.2) {
-          s1 = contact.GetFixtureA().GetBody().gameSprite;
-          s2 = contact.GetFixtureB().GetBody().gameSprite;
-          s1.takeDamage(imp);
-          s2.takeDamage(imp);
+          // s1 = contact.GetFixtureA().GetBody().gameSprite;
+          // s2 = contact.GetFixtureB().GetBody().gameSprite;
+          // s1.takeDamage(imp);
+          // s2.takeDamage(imp);
         }                 
     }
     w.SetContactListener(listener);

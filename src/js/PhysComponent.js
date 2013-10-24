@@ -3,8 +3,7 @@ define(['core', 'Component', 'box2d'], function(ab, Component, box2d){
     tag: 'body',
 
     'constructor': function(opts){
-    
-      // TODO: implement box2d body creation logic 
+
       // we should find three data structures that define a Box2D object:
       // a) b2FixtureDef: A Fixture Definition defines the attributes of the object, such as density, friction, and restitution (bounciness).
       // b) b2BodyDef: A Body Definition defines where in the world the object is, and if it is dynamic (reacts to things) or static. 
@@ -31,13 +30,13 @@ define(['core', 'Component', 'box2d'], function(ab, Component, box2d){
 
       
       s = sArr[0];
-      switch(){
+      switch(s.shape){
         case "CIRCLE":
           fixDef.shape = new box2d.b2CircleShape(s.radius / box2d.SCALE);
           break;
         case "RECTANGLE":
           fixDef.shape = new box2d.b2PolygonShape();
-          fixDef.shape.SetAsBox(2, 2); // half width and half height in box2d units
+          fixDef.shape.SetAsBox(s.w/box2d.SCALE, s.h/box2d.SCALE); // half width and half height in box2d units
           break;
         default:
       };
