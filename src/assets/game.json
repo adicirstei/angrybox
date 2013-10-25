@@ -481,7 +481,7 @@
   ],
   "levels": [
     {
-      "slots":[{"x":100, "y":450}, {"x":150, "y":470}, {"x":200, "y":470}],
+      "slots":[{"x":120, "y":450}, {"x":150, "y":470}, {"x":170, "y":470}],
       "actors":["RED", "YELLOW", "BLUE"],
       "layers": [
         [
@@ -553,8 +553,7 @@
           ]
         }],
         [{
-          "x": 400,
-          "y": 40,
+
           "components": [
             {
               "classname": "Animation",
@@ -645,8 +644,6 @@
           ]
         },
         {
-          "x": 100,
-          "y": 300,
           "components": [
             {
               "classname": "Sprite",
@@ -664,7 +661,7 @@
                   "restitution": 0.2
                 },
                 "body": {
-                  "position":{"x": 100, "y": 300},
+                  "position":{"x": 400, "y": 300},
                   "static": false,
                   "rot": 44
                 },

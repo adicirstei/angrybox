@@ -31,8 +31,8 @@ define(['box2d', 'GameObject', 'Factory'], function(box2d, GameObject, Factory){
         sprite = "blue-actor.png";
         break;
       case "YELLOW":
-        shapes[0].radius = 10;
-        shapes[0].y = 3;
+        shapes[0].radius = 9;
+        shapes[0].y = 2;
         sprite = "yellow-actor.png";
         break;
       case "BLACK":
@@ -50,12 +50,18 @@ define(['box2d', 'GameObject', 'Factory'], function(box2d, GameObject, Factory){
     
     var a = new GameObject({});
     a.setPos  = function(p){
-      this.body.SetPosition(new box2d.b2Vec2(p.x, p.y));
+      this.x = p.x;
+      this.y = p.y;
+      this.physics.body.SetPosition(new box2d.b2Vec2(p.x/box2d.SCALE, p.y/box2d.SCALE));
     
     };
     
     var phys = Factory.createComponent({classname:"PhysComponent", data:{fixture: fixture, shapes: shapes, body: body, parent: a}});
     var spr = Factory.createComponent({classname:"Sprite", data:{frame: sprite, parent: a}});
+    
+    phys.body.SetAwake(false);
+    
+    a.physics = phys;
     a.components.push(phys);
     a.components.push(spr);
   

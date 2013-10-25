@@ -24,7 +24,7 @@ define(['core', 'box2d', 'Factory', 'Actors'], function(ab, box2d, Factory, Acto
       
       this.actors = lvlData.actors.map(function(t, i){
         var a = Actors.create(t);
-  //      a.setPos(scene.slots[i]);
+        a.setPos(scene.slots[i]);
         scene.addGameObject(a, OBJ_LAYER);
       });
       
@@ -129,10 +129,10 @@ define(['core', 'box2d', 'Factory', 'Actors'], function(ab, box2d, Factory, Acto
         var o1, o2, imp;
         imp = impulse.normalImpulses[0];
         if(imp > 0.3) {
-          // s1 = contact.GetFixtureA().GetBody().gameSprite;
-          // s2 = contact.GetFixtureB().GetBody().gameSprite;
-          // s1.takeDamage(imp);
-          // s2.takeDamage(imp);
+          o1 = contact.GetFixtureA().GetBody().GetUserData().gameobject;
+          o2 = contact.GetFixtureB().GetBody().GetUserData().gameobject;
+          o1.takeDamage(imp);
+          o2.takeDamage(imp);
         }                 
     }
     w.SetContactListener(listener);

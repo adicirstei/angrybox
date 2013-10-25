@@ -14,14 +14,17 @@ define(['Component'], function(Component){
       for(i=0; i < l; i++){
         c = this.components[i];
         c.update(time);
+        /*
         if(c.tag === 'body'){
           this.rot = c.rot;
           this.x = c.x;
           this.y = c.y;
         }
+        
+        */
       }
     },
-    
+    takeDamage: function(){},
     getSprites: function(){
       var s = this.components
       .filter(function(c){return c.tag === 'sprite';});

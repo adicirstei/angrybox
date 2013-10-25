@@ -62,14 +62,15 @@ define(['core', 'Component', 'box2d'], function(ab, Component, box2d){
     },
     update: function(time){
 
-      if(!this.enabled || !this.body){
+      if(!this.body){
         return;
       }
-      var p = this.body.GetPosition();
-      this.x = p.x * box2d.SCALE;
-      this.y = p.y * box2d.SCALE;
 
-      this.rot = this.body.GetAngle();
+      var p = this.body.GetPosition();
+      this.x = this.parent.x = p.x * box2d.SCALE;
+      this.y = this.parent.y = p.y * box2d.SCALE;
+
+      this.rot = this.parent.rot = this.body.GetAngle();
     }
   });
   return PhysComponent;
