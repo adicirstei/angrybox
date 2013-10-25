@@ -1,4 +1,4 @@
-define(['core', 'box2d', 'Factory'], function(ab, box2d, Factory){
+define(['core', 'box2d', 'Factory', 'Actors'], function(ab, box2d, Factory, Actors){
   var BG_LAYER = 0, PLX_LAYER = 1, OBJ_LAYER = 2, EFX_LAYER = 3;
   var Scene = ab.Class.extend({
     'constructor': function(context){
@@ -19,7 +19,14 @@ define(['core', 'box2d', 'Factory'], function(ab, box2d, Factory){
     },
     setLevel: function(lvlData){
       var l, j, go;
+      var scene = this;
+      this.slots = lvlData.slots;
       
+      this.actors = lvlData.actors.map(function(t, i){
+        var a = Actors.create(t);
+  //      a.setPos(scene.slots[i]);
+        scene.addGameObject(a, OBJ_LAYER);
+      });
       
       for(l=0; l<this.layers.length; l++){
         for(j=0; j<lvlData.layers[l].length; j++){

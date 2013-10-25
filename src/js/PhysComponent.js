@@ -9,7 +9,7 @@ define(['core', 'Component', 'box2d'], function(ab, Component, box2d){
       // b) b2BodyDef: A Body Definition defines where in the world the object is, and if it is dynamic (reacts to things) or static. 
       // c) shapes are in a one to one relation with fixtures
       
-      
+      this.enabled = true;
       var w = ab.scene.world, f, b, sArr, s, parent;
 
       b = opts.body;
@@ -61,7 +61,8 @@ define(['core', 'Component', 'box2d'], function(ab, Component, box2d){
       
     },
     update: function(time){
-      if(!this.body){
+
+      if(!this.enabled || !this.body){
         return;
       }
       var p = this.body.GetPosition();
