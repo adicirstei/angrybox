@@ -7,7 +7,7 @@ define(['core'], function(ab){
     },
     destroy: function(){
       var c = this.components || [], i;
-      for (i=c.length; --i;){
+      for (i=0; i<c.length; i++){
         c[i].destroy();
       }
     }

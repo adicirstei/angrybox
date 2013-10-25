@@ -5,6 +5,8 @@ define(['Component'], function(Component){
       this.x = opt.x;
       this.y = opt.y;
       this.rot = opt.rot || 0;
+      
+      this.name = opt.name || "noname object";
     },
     update: function(time){
       var c;

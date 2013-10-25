@@ -4,6 +4,7 @@ define(['core', 'Component', 'Sprite'], function (ab, Component, Sprite) {
     
     'constructor': function(opts){
       this.sprites= [];
+      
       for(var i= 0; i< opts.frames.length; i++){
         this.sprites.push(new Sprite({frame: opts.frames[i]}));  
       }

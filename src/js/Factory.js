@@ -24,9 +24,11 @@ define(['core', 'GameObject', 'Sprite', 'Animation', 'PhysComponent', 'KillerScr
 
       return go;
     },
-    createComponent: function(comp, parent){
+    createComponent: function(comp){
       var C = this.classes[comp.classname];
-      return new C(comp.data);
+      var c = new C(comp.data);
+      c.parent = c.parent || comp.data.parent;
+      return c;
     }
   };
   

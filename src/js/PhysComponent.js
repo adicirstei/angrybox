@@ -15,7 +15,8 @@ define(['core', 'Component', 'box2d'], function(ab, Component, box2d){
       b = opts.body;
       f = opts.fixture;
       sArr = opts.shapes;
-      parent = opts && opts.parent;
+      parent = this.parent = opts && opts.parent;
+      
       
       var bodyDef = new box2d.b2BodyDef();
       bodyDef.type = (b.static? box2d.b2Body.b2_staticBody: box2d.b2Body.b2_dynamicBody);

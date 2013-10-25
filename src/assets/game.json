@@ -435,6 +435,7 @@
         [{
           "x": 100,
           "y": 400,
+          "name":"tree-1",
           "components": [
             {
               "classname": "Sprite",
@@ -447,6 +448,7 @@
         {
           "x": 200,
           "y": 400,
+          "name":"puff-1",
           "components": [
             {
               "classname": "KillerScript",
@@ -465,6 +467,7 @@
         {
           "x": 300,
           "y": 400,
+          "name":"puff-2",
           "components": [
             {
               "classname": "Sprite",
@@ -477,6 +480,7 @@
         {
           "x": 700,
           "y": 400,
+          "name":"tree-2",
           "components": [
             {
               "classname": "Sprite",

@@ -82,7 +82,7 @@ define(['core', 'box2d', 'Factory'], function(ab, box2d, Factory){
 
         for(var j = 0; j<layer.length; j++){
           if(go === layer[j]){
-            layer.splice(j);
+            layer.splice(j,1);
             break;
           }
         }
