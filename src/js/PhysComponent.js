@@ -55,6 +55,10 @@ define(['core', 'Component', 'box2d'], function(ab, Component, box2d){
     },
     destroy: function(){
       // take care of the physics
+      var w = ab.scene.world;
+      
+      w.DestroyBody(this.body);
+      
     },
     update: function(time){
       if(!this.body){

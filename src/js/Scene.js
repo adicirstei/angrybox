@@ -19,12 +19,19 @@ define(['core', 'box2d', 'Factory'], function(ab, box2d, Factory){
     },
     setLevel: function(lvlData){
       var l, j, go;
+      
+      
       for(l=0; l<this.layers.length; l++){
         for(j=0; j<lvlData.layers[l].length; j++){
           go = Factory.createGameObject(lvlData.layers[l][j]);
           this.addGameObject(go, l);
         }
       }
+      
+      // add actors in the queue
+      var actors = lvlData.actors;
+      
+      
     
     },
     update: function(){
@@ -112,9 +119,9 @@ define(['core', 'box2d', 'Factory'], function(ab, box2d, Factory){
     var listener = new box2d.b2ContactListener();
     
     listener.PostSolve = function(contact, impulse) {
-        var s1, s2, imp;
+        var o1, o2, imp;
         imp = impulse.normalImpulses[0];
-        if(imp > 0.2) {
+        if(imp > 0.3) {
           // s1 = contact.GetFixtureA().GetBody().gameSprite;
           // s2 = contact.GetFixtureB().GetBody().gameSprite;
           // s1.takeDamage(imp);

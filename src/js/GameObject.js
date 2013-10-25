@@ -2,8 +2,8 @@ define(['Component'], function(Component){
   var GameObject = Component.extend({
     'constructor': function(opt){
       this.components = opt.components || [];
-      this.x = opt.x;
-      this.y = opt.y;
+      this.x = opt.x || -1000;
+      this.y = opt.y || -1000;
       this.rot = opt.rot || 0;
       
       this.name = opt.name || "noname object";
