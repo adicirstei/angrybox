@@ -1,7 +1,7 @@
 define(['box2d', 'GameObject', 'Factory'], function(box2d, GameObject, Factory){
   var body, fixture, shapes;
   
-  var sprite = "c-or-1.png";
+  var sprite;
   
   body = {
     static: false
@@ -24,18 +24,23 @@ define(['box2d', 'GameObject', 'Factory'], function(box2d, GameObject, Factory){
     switch (TYPE){
       case "BLUE":
         fixture.radius = 10;
+        sprite = "blue-actor.png";
         break;
       case "YELLOW":
         fixture.radius = 20;
+        sprite = "yellow-actor.png";
         break;
       case "BLACK":
         fixture.radius = 22;
+        sprite = "black-actor.png";
         break;
       case "WHITE":
         fixture.radius = 20;
+        sprite = "white-actor.png";
         break;
       default: /// RED
         fixture.radius = 20;
+        sprite = "red-actor.png";
     }
     
     var a = new GameObject({});
