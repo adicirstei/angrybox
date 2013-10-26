@@ -5,7 +5,8 @@ define(['box2d', 'GameObject', 'Factory'], function(box2d, GameObject, Factory){
   
   body = {
     static: false,
-    position:{x:-1000, y:-1000}
+    position:{x:-1000, y:-1000},
+    angularDamping: 0.1
   };
   
   fixture = {

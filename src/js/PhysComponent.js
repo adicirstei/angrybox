@@ -23,6 +23,8 @@ define(['core', 'Component', 'box2d'], function(ab, Component, box2d){
       bodyDef.position.x = b.position.x / box2d.SCALE; // position in box2d units
       bodyDef.position.y = b.position.y / box2d.SCALE;
       bodyDef.angle = ab.deg2Rad(b.rot || 0);
+      bodyDef.angularDamping = b.angularDamping || 0.2;
+
       
       var fixDef = new box2d.b2FixtureDef();
       fixDef.density = f.density;
