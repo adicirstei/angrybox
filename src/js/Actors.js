@@ -11,7 +11,7 @@ define(['box2d', 'GameObject', 'Factory'], function(box2d, GameObject, Factory){
   fixture = {
     density: 1,
     friction: 0.9,
-    restitution: 0.2
+    restitution: 0.9
   };
   
   shapes = [{
