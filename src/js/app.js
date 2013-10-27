@@ -2,7 +2,7 @@ define(['core','AssetManager', 'Factory', 'Game', 'InputManager'], function(ab, 
   window.AngryBox = ab;
   ab.AssetManager = AM;
   var drawSplash = function(ctx){
-    AM.getImage("../img/splash.png", function(img){
+    AM.getImage("img/splash.png", function(img){
       ctx.drawImage(img, 0, 0);
       AM.loadAssets(function(progress){
         console.log('progress: ', progress);
