@@ -1,6 +1,6 @@
 {
   "atlases": {
-    "../assets/atlas.png": {
+    "assets/atlas.png": {
 	"frames": {
 
 		"bg.png": {
@@ -475,9 +475,9 @@
 
   },
   "sounds": [
-    "../assets/smash.mp3",
-    "../assets/glass1.mp3",
-    "../assets/glass2.mp3"
+    "assets/smash.mp3",
+    "assets/glass1.mp3",
+    "assets/glass2.mp3"
   ],
   "levels": [
     {
