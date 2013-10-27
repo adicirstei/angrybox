@@ -42,16 +42,6 @@ define(['core','AssetManager', 'Game'], function(ab, AM, Game){
   ab.gameCanvas.height = ab.viewport.h;
   
   
-  // basic events
-  ab.gameCanvas.onmousedown = function(e){
-    console.log(e);
-  };
-  ab.gameCanvas.onmousemove = function(e){
-    console.log(e);
-  };
-  ab.gameCanvas.onmouseup = function (e){
-    console.log(e);
-  };
 
 
   // draw start screen
