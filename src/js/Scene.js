@@ -1,4 +1,4 @@
-define(['core', 'box2d', 'Factory', 'Actors'], function(ab, box2d, Factory, Actors){
+define(['core', 'box2d', 'Factory', 'Actors', 'KillerScript', 'Animation'], function(ab, box2d, Factory, Actors){
   var BG_LAYER = 0, PLX_LAYER = 1, OBJ_LAYER = 2, EFX_LAYER = 3;
   var Scene = ab.Class.extend({
     'constructor': function(context){
@@ -26,6 +26,7 @@ define(['core', 'box2d', 'Factory', 'Actors'], function(ab, box2d, Factory, Acto
         var a = Actors.create(t);
         a.setPos(scene.slots[i]);
         scene.addGameObject(a, OBJ_LAYER);
+        return a;
       });
       
       for(l=0; l<this.layers.length; l++){
@@ -111,7 +112,7 @@ define(['core', 'box2d', 'Factory', 'Actors'], function(ab, box2d, Factory, Acto
     var debugDraw = new box2d.b2DebugDraw();
 
       debugDraw.SetSprite(ctx);
-      debugDraw.SetDrawScale(box2d.SCALE/3);
+      debugDraw.SetDrawScale(box2d.SCALE/2);
     //      debugDraw.SetFillAlpha(0.5);
       debugDraw.SetFlags(box2d.b2DebugDraw.e_shapeBit | box2d.b2DebugDraw.e_jointBit);
 

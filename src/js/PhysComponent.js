@@ -75,5 +75,7 @@ define(['core', 'Component', 'box2d'], function(ab, Component, box2d){
       this.rot = this.parent.rot = this.body.GetAngle();
     }
   });
+
+  ab.Factory.registerClass("PhysComponent", PhysComponent);
   return PhysComponent;
 });

@@ -10,18 +10,14 @@ define(['core', 'ScriptComponent'], function(ab, ScriptComponent) {
     update: function(time){
 
       if(this.ttl > 0) {
-        console.log(this.ttl,ab.Time.deltaTime);
         this.ttl -= ab.Time.deltaTime;
-        
       } else {
-        if(!once){
           ab.scene.kill(this.parent);
-          console.log('dead');
-          once = true;
-        }
       }
     }
   });
+
+  ab.Factory.registerClass("KillerScript", KillerScript);
   return KillerScript;
 
 });

@@ -1,20 +1,22 @@
-define(['core', 'Scene', 'Animation', 'GameObject', 'Sprite'], function(ab, Scene, Animation, GameObject, Sprite){
+define(['core', 'Scene', 'box2d', 'GameObject'], function(ab, Scene, box2d, GameObject, Sprite){
   var requestID = 0;
   var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
                               window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
   window.requestAnimationFrame = requestAnimationFrame;
   var cancelAnimationFrame = window.cancelAnimationFrame || window.mozCancelAnimationFrame;
-  var s, scene;
+  var s, scene, state;
+  var im;
   var T = ab.Time, startTime, now, frameStart;
 
   var Game = ab.Class.extend({
+
     start: function(lvl){
       startTime = (new Date()).getTime();
       frameStart = startTime;
       ab.scene = scene = new Scene(ab.context);
       scene.setLevel(ab.data.levels[lvl]);
-
-
+      im = ab.inputManager;
+      this.state = Game.WAIT;
       this.loop();
     },
     pause: function(){
@@ -27,16 +29,76 @@ define(['core', 'Scene', 'Animation', 'GameObject', 'Sprite'], function(ab, Scen
       now = (new Date()).getTime();
       T.deltaTime = now - frameStart;
       frameStart = now;
-
       T.time = now - startTime;
-      
       T.frameCount += 1;
+
+      ab.game.stateMachine();
 
       scene.update();
       requestID = window.requestAnimationFrame(ab.game.loop);
 
+    },
+
+    stateMachine: function(){
+      var a = scene.actors[0];
+      var s0 = scene.slots[0];
+      var p = {x: (im.pointer.x + ab.viewport.x) / box2d.SCALE, y: (im.pointer.y + ab.viewport.y) / box2d.SCALE};
+      if (this.state === Game.WAIT){
+        var f = a.physics.body.GetFixtureList();
+
+        if (im.drag){
+          if(f.TestPoint(p)){
+            this.state = Game.AIM;
+          }
+        }
+
+        return;
+      }
+      if (this.state === Game.AIM){
+        if(im.drag){
+          a.setPos(im.pointer);
+        } else {
+          // apply impulse to actor and change the game state
+
+          
+          var impulse = new box2d.b2Vec2((s0.x - im.drop.x)/1, (s0.y - im.drop.y)/1);
+
+          a.physics.body.ApplyImpulse(impulse, a.physics.body.GetWorldCenter());
+          this.state = Game.RESOLVE;
+          this.projectile = a;
+
+        }
+        return;
+      }
+      if (this.state === Game.RESOLVE){
+        var av, lvV, lv, b;
+        b = this.projectile.physics.body;
+        lvV = b.GetLinearVelocity();
+        lv = lvV.x*lvV.x + lvV.y*lvV.y
+        av = Math.abs(b.GetAngularVelocity());
+        if(!(av > 2 || lv > 2)){
+          if(scene.actors.length > 1) {
+            scene.actors.shift();
+            scene.actors[0].setPos(s0);
+            this.state = Game.WAIT;
+          } else {
+            this.state = Game.DONE;
+          }
+          
+        }
+        return;
+      }
+      if (this.state === Game.DONE){
+
+        return;
+      }
+
     }
   });
+  Game.WAIT = 'wait';
+  Game.AIM = 'aim';
+  Game.RESOLVE = 'resolve';
+  Game.DONE = 'done';
 
   return Game;
 });

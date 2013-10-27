@@ -481,8 +481,8 @@
   ],
   "levels": [
     {
-      "slots":[{"x":120, "y":450}, {"x":150, "y":470}, {"x":170, "y":470}],
-      "actors":["RED", "YELLOW", "BLUE"],
+      "slots":[{"x":100, "y":400}, {"x":150, "y":470}, {"x":170, "y":470}],
+      "actors":["RED", "YELLOW", "RED"],
       "layers": [
         [
           {
@@ -569,7 +569,7 @@
                 "fixture":{
                   "density": 1,
                   "friction": 0.9,
-                  "restitution": 0.9
+                  "restitution": 0.2
                 },
                 "body": {
                   "position":{"x": 400, "y": 40},
@@ -628,7 +628,7 @@
                 "fixture":{
                   "density": 1,
                   "friction": 0.9,
-                  "restitution": 0.9
+                  "restitution": 0.2
                 },
                 "body": {
                   "position":{"x": 500, "y": 550},
@@ -658,7 +658,7 @@
                 "fixture":{
                   "density": 1,
                   "friction": 0.9,
-                  "restitution": 0.9
+                  "restitution": 0.2
                 },
                 "body": {
                   "position":{"x": 400, "y": 300},

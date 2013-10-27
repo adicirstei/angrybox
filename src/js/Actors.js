@@ -1,4 +1,4 @@
-define(['box2d', 'GameObject', 'Factory'], function(box2d, GameObject, Factory){
+define(['box2d', 'GameObject', 'Factory', 'SuicideScript', 'PhysComponent', 'Sprite'], function(box2d, GameObject, Factory){
   var body, fixture, shapes;
   
   var sprite;
@@ -6,13 +6,13 @@ define(['box2d', 'GameObject', 'Factory'], function(box2d, GameObject, Factory){
   body = {
     static: false,
     position:{x:-1000, y:-1000},
-    angularDamping: 0.1
+    angularDamping: 0.4
   };
   
   fixture = {
-    density: 1,
+    density: 2,
     friction: 0.9,
-    restitution: 0.9
+    restitution: 0.2
   };
   
   shapes = [{
@@ -58,12 +58,14 @@ define(['box2d', 'GameObject', 'Factory'], function(box2d, GameObject, Factory){
     };
     
     var phys = Factory.createComponent({classname:"PhysComponent", data:{fixture: fixture, shapes: shapes, body: body, parent: a}});
+    var ss = Factory.createComponent({classname:"SuicideScript", data:{parent: a}});
     var spr = Factory.createComponent({classname:"Sprite", data:{frame: sprite, parent: a}});
     
     phys.body.SetAwake(false);
     
     a.physics = phys;
     a.components.push(phys);
+    a.components.push(ss);
     a.components.push(spr);
   
     return a;

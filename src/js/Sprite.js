@@ -14,6 +14,6 @@ define(['core', 'Component'], function(ab, Component){
       return this;
     }
   });
-  
+  ab.Factory.registerClass("Sprite", Sprite);
   return Sprite;
 });

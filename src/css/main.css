@@ -14,10 +14,10 @@ section{
 
 }
 canvas {
-	border: 1px solid red;
+	border: 0px solid red;
 	float: left;
 	display: inline-block;
-	padding: 1em;
+	margin: 4px;
 }
 #gameui canvas{
    position: relative;

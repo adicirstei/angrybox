@@ -30,5 +30,6 @@ define(['core', 'Component', 'Sprite'], function (ab, Component, Sprite) {
     }
   });
 
+  ab.Factory.registerClass("Animation", Animation);
   return Animation;
 });

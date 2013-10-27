@@ -1,4 +1,4 @@
-define(['core','AssetManager', 'Game'], function(ab, AM, Game){
+define(['core','AssetManager', 'Factory', 'Game', 'InputManager'], function(ab, AM, Factory, Game, im){
   window.AngryBox = ab;
   ab.AssetManager = AM;
   var drawSplash = function(ctx){
@@ -35,6 +35,7 @@ define(['core','AssetManager', 'Game'], function(ab, AM, Game){
   // set up the drawing context
   ab.gameCanvas = document.getElementById('canvas');
   ab.context = ab.gameCanvas.getContext('2d');
+  im.init();
 
   ab.viewport = {x:0, y: 0, w: 800, h: 600};
 
