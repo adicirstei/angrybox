@@ -39,7 +39,7 @@ define(['core'], function(ab){
     };
     AM.spriteimgs = AM.spriteimgs || {};
     // start loading the settings
-    ab.xhrGet('../assets/game.json', function(data){
+    ab.xhrGet('assets/game.json', function(data){
       var s = JSON.parse(this.responseText);
       var i, total = 1 + s.sounds.length, p = 0.0;
       var assetsLoaded  = 0;
