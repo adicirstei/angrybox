@@ -1,0 +1,28 @@
+body {
+  background-color: #e0e0e0;
+}
+section{
+  position: relative;
+  width:100%;
+}
+
+#gameui {
+  width: 1700px;
+  height:660px;
+
+  margin: 0 auto;
+
+}
+canvas {
+	border: 0px solid red;
+	float: left;
+	display: inline-block;
+	margin: 4px;
+}
+#gameui canvas{
+   position: relative;
+}
+#canvas {
+  /* background: url('../img/bg.jpg');
+  background-color: #eee;   */
+}
