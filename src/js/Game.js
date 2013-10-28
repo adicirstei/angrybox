@@ -71,21 +71,18 @@ define(['core', 'Scene', 'box2d', 'GameObject'], function(ab, Scene, box2d, Game
         return;
       }
       if (this.state === Game.RESOLVE){
-        var av, lvV, lv, b;
-        b = this.projectile.physics.body;
-        lvV = b.GetLinearVelocity();
-        lv = lvV.x*lvV.x + lvV.y*lvV.y
-        av = Math.abs(b.GetAngularVelocity());
-        if(!(av > 2 || lv > 2)){
-          if(scene.actors.length > 1) {
-            scene.actors.shift();
-            scene.actors[0].setPos(s0);
-            this.state = Game.WAIT;
-          } else {
-            this.state = Game.DONE;
-          }
-          
+        var waitingactors = scene.actors.filter(function(a){
+          return a.status === "sleeping";
+        });
+        
+        if(waitingactors.length > 0) {
+          scene.actors.shift();
+          scene.actors[0].popUp(s0);
+          this.state = Game.WAIT;
+        } else {
+          this.state = Game.DONE;
         }
+
         return;
       }
       if (this.state === Game.DONE){

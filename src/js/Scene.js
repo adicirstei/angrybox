@@ -20,6 +20,11 @@ define(['core', 'box2d', 'Factory', 'Actors', 'KillerScript', 'Animation'], func
     setLevel: function(lvlData){
       var l, j, go;
       var scene = this;
+      
+      
+      this.bounds = lvlData.world || {l:0, t: 0, r: ab.viewport.w, b: ab.viewport.h};
+      
+      
       this.slots = lvlData.slots;
       
       this.actors = lvlData.actors.map(function(t, i){
@@ -55,7 +60,11 @@ define(['core', 'box2d', 'Factory', 'Actors', 'KillerScript', 'Animation'], func
         for(i=0; i<lay.length; i++){
           go = lay[i];
           go.update(t);
-          this.drawGO(go);
+          if(go.x > this.bounds.r || go.x < this.bounds.l || go.y > this.bounds.b){
+            this.kill(go);
+          } else {
+            this.drawGO(go);
+          }
         }
       }
       this.cleanUp();

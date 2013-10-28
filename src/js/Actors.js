@@ -57,6 +57,12 @@ define(['box2d', 'GameObject', 'Factory', 'SuicideScript', 'PhysComponent', 'Spr
     
     };
     
+    a.popUp = function(p) {
+      this.status = "awake";
+      this.setPos(p);
+      
+    };
+    
     var phys = Factory.createComponent({classname:"PhysComponent", data:{fixture: fixture, shapes: shapes, body: body, parent: a}});
     var ss = Factory.createComponent({classname:"SuicideScript", data:{parent: a}});
     var spr = Factory.createComponent({classname:"Sprite", data:{frame: sprite, parent: a}});
@@ -71,6 +77,8 @@ define(['box2d', 'GameObject', 'Factory', 'SuicideScript', 'PhysComponent', 'Spr
     
     
     a.physics = phys;
+    a.status = "sleeping";
+    
     a.components.push(phys);
     a.components.push(ss);
     a.components.push(spr);
