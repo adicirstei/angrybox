@@ -62,6 +62,13 @@ define(['box2d', 'GameObject', 'Factory', 'SuicideScript', 'PhysComponent', 'Spr
     var spr = Factory.createComponent({classname:"Sprite", data:{frame: sprite, parent: a}});
     
     phys.body.SetAwake(false);
+    var filter = new box2d.b2FilterData();
+    
+    filter.categoryBits = 0x0002;
+    filter.maskBits = 0xfffd;
+    
+    phys.body.GetFixtureList().SetFilterData(filter);
+    
     
     a.physics = phys;
     a.components.push(phys);
