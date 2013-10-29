@@ -6,7 +6,7 @@ define(['core', 'Scene', 'box2d', 'GameObject'], function(ab, Scene, box2d, Game
   var cancelAnimationFrame = window.cancelAnimationFrame || window.mozCancelAnimationFrame;
   var s, scene, state;
   var im;
-  var T = ab.Time, startTime, now, frameStart;
+  var T = ab.Time, startTime, now, frameStart, scrolling = false, tvpx, direction, canScroll = true;
 
   var Game = ab.Class.extend({
 
@@ -31,14 +31,35 @@ define(['core', 'Scene', 'box2d', 'GameObject'], function(ab, Scene, box2d, Game
       frameStart = now;
       T.time = now - startTime;
       T.frameCount += 1;
-
+      canScroll = true;
       ab.game.stateMachine();
-
+      if (canScroll){
+        ab.game.scroll();
+      }
       scene.update();
       requestID = window.requestAnimationFrame(ab.game.loop);
 
     },
-
+    scroll: function(){
+      var vpx = ab.viewport.x;
+      if (!scrolling && vpx > 0){
+        tvpx = 0;
+        direction = -1;
+        scrolling = true;
+      } else if(!scrolling && vpx <= 0) {
+        tvpx = scene.bounds.r - ab.viewport.w;
+        direction = 1;
+        scrolling = true;
+      }
+      if(scrolling){
+        if(direction * (tvpx-vpx) > 0){
+          ab.viewport.x = ab.Mathf.lerp(vpx, tvpx, ab.Time.deltaTime/1000.0 *20);
+          console.log(ab.viewport.x);
+        } else {
+          scrolling = false;
+        }
+      }
+    },
     stateMachine: function(){
       var a = scene.actors[0];
       var s0 = scene.slots[0];
@@ -49,7 +70,8 @@ define(['core', 'Scene', 'box2d', 'GameObject'], function(ab, Scene, box2d, Game
         if (im.drag){
           if(f.TestPoint(p)){
             this.state = Game.AIM;
-          }
+            canScroll = false;
+          } 
         }
 
         return;
