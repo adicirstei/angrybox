@@ -121,7 +121,7 @@ define(['core', 'box2d', 'Factory', 'Actors', 'KillerScript', 'Animation'], func
     var debugDraw = new box2d.b2DebugDraw();
 
       debugDraw.SetSprite(ctx);
-      debugDraw.SetDrawScale(box2d.SCALE/2);
+      debugDraw.SetDrawScale(box2d.SCALE/1);
     //      debugDraw.SetFillAlpha(0.5);
       debugDraw.SetFlags(box2d.b2DebugDraw.e_shapeBit | box2d.b2DebugDraw.e_jointBit);
 

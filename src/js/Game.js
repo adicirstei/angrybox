@@ -6,7 +6,7 @@ define(['core', 'Scene', 'box2d', 'GameObject'], function(ab, Scene, box2d, Game
   var cancelAnimationFrame = window.cancelAnimationFrame || window.mozCancelAnimationFrame;
   var s, scene, state;
   var im;
-  var T = ab.Time, startTime, now, frameStart, scrolling = false, tvpx, direction, canScroll = true;
+  var T = ab.Time, startTime, now, frameStart, scrolling = false, tvpx, direction, canScroll = true, indist;
 
   var Game = ab.Class.extend({
 
@@ -33,7 +33,7 @@ define(['core', 'Scene', 'box2d', 'GameObject'], function(ab, Scene, box2d, Game
       T.frameCount += 1;
 
       ab.game.stateMachine();
-      if (canScroll && im.drag){
+      if (scrolling){
         ab.game.scroll();
       }
       scene.update();
@@ -42,19 +42,21 @@ define(['core', 'Scene', 'box2d', 'GameObject'], function(ab, Scene, box2d, Game
     },
     scroll: function(){
       var vpx = ab.viewport.x;
-      var trashold = 3;
+      var treshold = 3;
       if (!scrolling && vpx > 0){
         tvpx = 0;
         direction = -1;
         scrolling = true;
       } else if(!scrolling && vpx <= 0) {
+        
         tvpx = scene.bounds.r - ab.viewport.w;
+        indist = tvpx;
         direction = 1;
         scrolling = true;
       }
       if(scrolling){
-        if(direction * (tvpx-vpx) > trashold){
-          ab.viewport.x = Math.floor(ab.Mathf.lerp(vpx, tvpx, ab.Time.deltaTime/1000.0 *5));
+        if(direction * (tvpx-vpx) > treshold){
+          ab.viewport.x = ab.viewport.x + direction * 10  /// Math.floor(ab.Mathf.lerp(vpx, tvpx, 0.1));
           //console.log(ab.viewport.x);
         } else {
           scrolling = false;
@@ -65,8 +67,11 @@ define(['core', 'Scene', 'box2d', 'GameObject'], function(ab, Scene, box2d, Game
 
       var a = scene.actors[0];
       var s0 = scene.slots[0];
+
+      if (scrolling){
+        return;
+      }
       
-      canScroll = false;
       var p = {x: (im.pointer.x + ab.viewport.x) / box2d.SCALE, y: (im.pointer.y + ab.viewport.y) / box2d.SCALE};
       if (this.state === Game.WAIT){
         var f = a.physics.body.GetFixtureList();
@@ -75,7 +80,7 @@ define(['core', 'Scene', 'box2d', 'GameObject'], function(ab, Scene, box2d, Game
           if(f.TestPoint(p)){
             this.state = Game.AIM;
           } else {
-            canScroll = true;
+            scrolling = true;
           }
         }
         return;
@@ -97,7 +102,7 @@ define(['core', 'Scene', 'box2d', 'GameObject'], function(ab, Scene, box2d, Game
         return;
       }
       if (this.state === Game.RESOLVE){
-        canScroll = true;
+
         var waitingactors = scene.actors.filter(function(a){
           return a.status === "sleeping";
         });
@@ -113,7 +118,7 @@ define(['core', 'Scene', 'box2d', 'GameObject'], function(ab, Scene, box2d, Game
         return;
       }
       if (this.state === Game.DONE){
-        canScroll = true;
+
         return;
       }
 
