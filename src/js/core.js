@@ -3,7 +3,7 @@ define(function(){
   var ab = window.AngryBox = window.AngryBox || {};
   ab.Mathf = {
     lerp: function(from, to, time){
-      return (time*(to-from));
+      return from + (time*(to-from));
     }
   };
 

@@ -31,9 +31,9 @@ define(['core', 'Scene', 'box2d', 'GameObject'], function(ab, Scene, box2d, Game
       frameStart = now;
       T.time = now - startTime;
       T.frameCount += 1;
-      canScroll = true;
+
       ab.game.stateMachine();
-      if (canScroll){
+      if (canScroll && im.drag){
         ab.game.scroll();
       }
       scene.update();
@@ -42,6 +42,7 @@ define(['core', 'Scene', 'box2d', 'GameObject'], function(ab, Scene, box2d, Game
     },
     scroll: function(){
       var vpx = ab.viewport.x;
+      var trashold = 3;
       if (!scrolling && vpx > 0){
         tvpx = 0;
         direction = -1;
@@ -52,17 +53,20 @@ define(['core', 'Scene', 'box2d', 'GameObject'], function(ab, Scene, box2d, Game
         scrolling = true;
       }
       if(scrolling){
-        if(direction * (tvpx-vpx) > 0){
-          ab.viewport.x = ab.Mathf.lerp(vpx, tvpx, ab.Time.deltaTime/1000.0 *20);
-          console.log(ab.viewport.x);
+        if(direction * (tvpx-vpx) > trashold){
+          ab.viewport.x = Math.floor(ab.Mathf.lerp(vpx, tvpx, ab.Time.deltaTime/1000.0 *5));
+          //console.log(ab.viewport.x);
         } else {
           scrolling = false;
         }
       }
     },
     stateMachine: function(){
+
       var a = scene.actors[0];
       var s0 = scene.slots[0];
+      
+      canScroll = false;
       var p = {x: (im.pointer.x + ab.viewport.x) / box2d.SCALE, y: (im.pointer.y + ab.viewport.y) / box2d.SCALE};
       if (this.state === Game.WAIT){
         var f = a.physics.body.GetFixtureList();
@@ -70,10 +74,10 @@ define(['core', 'Scene', 'box2d', 'GameObject'], function(ab, Scene, box2d, Game
         if (im.drag){
           if(f.TestPoint(p)){
             this.state = Game.AIM;
-            canScroll = false;
-          } 
+          } else {
+            canScroll = true;
+          }
         }
-
         return;
       }
       if (this.state === Game.AIM){
@@ -93,6 +97,7 @@ define(['core', 'Scene', 'box2d', 'GameObject'], function(ab, Scene, box2d, Game
         return;
       }
       if (this.state === Game.RESOLVE){
+        canScroll = true;
         var waitingactors = scene.actors.filter(function(a){
           return a.status === "sleeping";
         });
@@ -108,7 +113,7 @@ define(['core', 'Scene', 'box2d', 'GameObject'], function(ab, Scene, box2d, Game
         return;
       }
       if (this.state === Game.DONE){
-
+        canScroll = true;
         return;
       }
 
