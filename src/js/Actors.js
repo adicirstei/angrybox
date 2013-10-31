@@ -60,7 +60,6 @@ define(['box2d', 'GameObject', 'Factory', 'SuicideScript', 'PhysComponent', 'Spr
     a.popUp = function(p) {
       this.status = "awake";
       this.setPos(p);
-      
     };
     
     var phys = Factory.createComponent({classname:"PhysComponent", data:{fixture: fixture, shapes: shapes, body: body, parent: a}});

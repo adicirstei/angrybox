@@ -673,6 +673,15 @@
           ]
         },
         {
+          "classname": "StoneTile",
+          "data":{
+            "frames": ["stone-w-1.png", "stone-w-2.png", "stone-w-3.png", "stone-w-4.png"],
+            "rot": 90,
+            "x" : 200,
+            "y": 50
+          }
+        },
+        {
           "components": [
             {
               "classname": "Sprite",
