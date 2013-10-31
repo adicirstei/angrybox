@@ -18,6 +18,12 @@ define(['core', 'GameObject'],
     },
     
     createGameObject: function(data){
+      if(data.classname){
+        return new this.classes[data.classname](data.data);
+      }
+    
+    
+    
       var o = data, datacomp;
       var go = new GameObject(o);
       datacomp = data.components;
@@ -28,6 +34,10 @@ define(['core', 'GameObject'],
 
       return go;
     },
+    
+    
+    
+    
     createComponent: function(comp){
       var C = this.classes[comp.classname];
       var c = new C(comp.data);

@@ -57,13 +57,27 @@ define(['box2d', 'GameObject', 'Factory', 'SuicideScript', 'PhysComponent', 'Spr
     
     };
     
+    a.popUp = function(p) {
+      this.status = "awake";
+      this.setPos(p);
+    };
+    
     var phys = Factory.createComponent({classname:"PhysComponent", data:{fixture: fixture, shapes: shapes, body: body, parent: a}});
     var ss = Factory.createComponent({classname:"SuicideScript", data:{parent: a}});
     var spr = Factory.createComponent({classname:"Sprite", data:{frame: sprite, parent: a}});
     
     phys.body.SetAwake(false);
+    var filter = new box2d.b2FilterData();
+    
+    filter.categoryBits = 0x0002;
+    filter.maskBits = 0xfffd;
+    
+    phys.body.GetFixtureList().SetFilterData(filter);
+    
     
     a.physics = phys;
+    a.status = "sleeping";
+    
     a.components.push(phys);
     a.components.push(ss);
     a.components.push(spr);

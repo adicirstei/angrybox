@@ -1,4 +1,4 @@
-define(['core', 'box2d', 'Factory', 'Actors', 'KillerScript', 'Animation'], function(ab, box2d, Factory, Actors){
+define(['core', 'box2d', 'Factory', 'Actors', 'KillerScript', 'Animation', 'StoneTile'], function(ab, box2d, Factory, Actors){
   var BG_LAYER = 0, PLX_LAYER = 1, OBJ_LAYER = 2, EFX_LAYER = 3;
   var Scene = ab.Class.extend({
     'constructor': function(context){
@@ -20,6 +20,11 @@ define(['core', 'box2d', 'Factory', 'Actors', 'KillerScript', 'Animation'], func
     setLevel: function(lvlData){
       var l, j, go;
       var scene = this;
+      
+      
+      this.bounds = lvlData.world || {l:0, t: 0, r: ab.viewport.w, b: ab.viewport.h};
+      
+      
       this.slots = lvlData.slots;
       
       this.actors = lvlData.actors.map(function(t, i){
@@ -55,7 +60,11 @@ define(['core', 'box2d', 'Factory', 'Actors', 'KillerScript', 'Animation'], func
         for(i=0; i<lay.length; i++){
           go = lay[i];
           go.update(t);
-          this.drawGO(go);
+          if(go.x > this.bounds.r || go.x < this.bounds.l || go.y > this.bounds.b){
+            this.kill(go);
+          } else {
+            this.drawGO(go);
+          }
         }
       }
       this.cleanUp();
@@ -112,7 +121,7 @@ define(['core', 'box2d', 'Factory', 'Actors', 'KillerScript', 'Animation'], func
     var debugDraw = new box2d.b2DebugDraw();
 
       debugDraw.SetSprite(ctx);
-      debugDraw.SetDrawScale(box2d.SCALE/2);
+      debugDraw.SetDrawScale(box2d.SCALE/1);
     //      debugDraw.SetFillAlpha(0.5);
       debugDraw.SetFlags(box2d.b2DebugDraw.e_shapeBit | box2d.b2DebugDraw.e_jointBit);
 
@@ -129,11 +138,11 @@ define(['core', 'box2d', 'Factory', 'Actors', 'KillerScript', 'Animation'], func
     listener.PostSolve = function(contact, impulse) {
         var o1, o2, imp;
         imp = impulse.normalImpulses[0];
-        if(imp > 0.3) {
+        if(imp > 0.6) {
           o1 = contact.GetFixtureA().GetBody().GetUserData().gameobject;
           o2 = contact.GetFixtureB().GetBody().GetUserData().gameobject;
-          o1.takeDamage(imp);
-          o2.takeDamage(imp);
+          o1.collide(imp);
+          o2.collide(imp);
         }                 
     }
     w.SetContactListener(listener);
