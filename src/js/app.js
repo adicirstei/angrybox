@@ -37,7 +37,7 @@ define(['core','AssetManager', 'Factory', 'Game', 'InputManager'], function(ab, 
   ab.context = ab.gameCanvas.getContext('2d');
   im.init();
 
-  ab.viewport = {x:0, y: 0, w: 1000, h: 600};
+  ab.viewport = {x:0, y: 0, w: 800, h: 600};
 
   ab.gameCanvas.width = ab.viewport.w;
   ab.gameCanvas.height = ab.viewport.h;

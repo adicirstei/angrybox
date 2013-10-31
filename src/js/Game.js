@@ -42,23 +42,23 @@ define(['core', 'Scene', 'box2d', 'GameObject'], function(ab, Scene, box2d, Game
     },
     scroll: function(){
       var vpx = ab.viewport.x;
-      var treshold = 3;
-      if (!scrolling && vpx > 0){
-        tvpx = 0;
-        direction = -1;
-        scrolling = true;
-      } else if(!scrolling && vpx <= 0) {
-        
-        tvpx = scene.bounds.r - ab.viewport.w;
-        indist = tvpx;
-        direction = 1;
-        scrolling = true;
+      var treshold = 5;
+      if (direction === 0 && scrolling){
+        if(vpx === 0){
+          tvpx = scene.bounds.r - ab.viewport.w;
+          direction = 1;
+        } else {
+          tvpx = 0;
+          direction = -1;
+        }
       }
       if(scrolling){
         if(direction * (tvpx-vpx) > treshold){
           ab.viewport.x = ab.viewport.x + direction * 10  /// Math.floor(ab.Mathf.lerp(vpx, tvpx, 0.1));
           //console.log(ab.viewport.x);
         } else {
+          ab.viewport.x = tvpx;
+          direction = 0;
           scrolling = false;
         }
       }
