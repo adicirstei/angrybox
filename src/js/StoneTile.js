@@ -56,8 +56,7 @@ define(['core', 'GameObject'], function(ab, GameObject){
       
     },
     onDestroyed: function(){
-    
-    
+      ab.scene.kill(this);
     },    
     onCollision: function(){
       var d = 100 - this.health;
