@@ -25,15 +25,20 @@ define(['core', 'GameObject'], function(ab, GameObject){
   
     'constructor': function (opts){
       var i;
-
       
       body.position.x= opts.x;
       body.position.y=opts.y;
       body.rot = opts.rot;
       
-      var go = new GameObject({});
+      var go = this;
+      
+      go.damageFactor = 0.5;
+      go.damageStep = 100 / opts.frames.length;
+      go.frameIndex = 0;
       
       go.sprites = [];
+      go.components = [];
+      go.health = 100;
       
       for(i=0; i<opts.frames.length; i++){
         go.sprites.push(ab.Factory.createComponent({classname:"Sprite", data:{frame: opts.frames[i], parent: go}}));
@@ -47,12 +52,22 @@ define(['core', 'GameObject'], function(ab, GameObject){
       go.components.push(phys);
       go.components.push(go.sprites[0]);
       
-      
-      return go;
+
       
     },
+    onDestroyed: function(){
+    
+    
+    },    
+    onCollision: function(){
+      var d = 100 - this.health;
+      
+      this.frameIndex = Math.floor(d/this.damageStep);
+    
+    },
+    
     getSprites: function(){
-      return this.sprites[0];
+      return [this.sprites[this.frameIndex]];
     }
   
   
