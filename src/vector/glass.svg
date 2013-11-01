@@ -57,14 +57,14 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.71114597"
-     inkscape:cx="767.11832"
-     inkscape:cy="925.10896"
+     inkscape:zoom="2.0114245"
+     inkscape:cx="392.96963"
+     inkscape:cy="804.62812"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1600"
-     inkscape:window-height="838"
+     inkscape:window-width="1680"
+     inkscape:window-height="988"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1" />
@@ -76,7 +76,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -85,13 +85,17 @@
      inkscape:groupmode="layer"
      id="layer1">
     <g
-       id="g3912">
+       id="g3912"
+       transform="matrix(0.99373456,0,0,0.96943887,-33.279155,-34.909427)"
+       inkscape:export-filename="Z:\Proiecte\angrybox\src\bmp\glass-w-1.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <g
-         style="fill:#abd4ff;fill-opacity:1;stroke:#2e94ff;stroke-opacity:1"
+         style="fill:#abd4ff;fill-opacity:1;stroke:#2e94ff;stroke-width:1.01883674;stroke-opacity:1"
          transform="matrix(1.0027419,0,0,1.0148662,-47.696599,-85.667537)"
          id="g3019">
         <path
-           style="fill:#abd4ff;fill-opacity:1;fill-rule:evenodd;stroke:#2e94ff;stroke-opacity:1"
+           style="fill:#abd4ff;fill-opacity:1;fill-rule:evenodd;stroke:#2e94ff;stroke-width:1.01883674;stroke-opacity:1"
            d="m 122.75,196.30111 0,31.53125 159.5625,0 0,-31.53125 z"
            id="rect2985"
            clip-path="none"
@@ -123,25 +127,29 @@
       </g>
     </g>
     <g
-       id="g4082">
+       id="g4082"
+       transform="matrix(0.99373456,0,0,0.96943887,-32.239535,-34.909427)"
+       inkscape:export-filename="Z:\Proiecte\angrybox\src\bmp\glass-w-2.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <g
          id="g3922"
          transform="matrix(1.0027419,0,0,1.0148662,118.23277,-85.667537)"
-         style="fill:#abd4ff;fill-opacity:1;stroke:#2e94ff;stroke-opacity:1">
+         style="fill:#abd4ff;fill-opacity:1;stroke:#2e94ff;stroke-width:1.01883674;stroke-opacity:1">
         <path
            sodipodi:nodetypes="ccccc"
            inkscape:connector-curvature="0"
            clip-path="none"
            id="path3924"
            d="m 122.75,196.30111 0,31.53125 159.5625,0 0,-31.53125 z"
-           style="fill:#abd4ff;fill-opacity:1;fill-rule:evenodd;stroke:#2e94ff;stroke-opacity:1" />
+           style="fill:#abd4ff;fill-opacity:1;fill-rule:evenodd;stroke:#2e94ff;stroke-width:1.01883674;stroke-opacity:1" />
       </g>
       <path
          sodipodi:nodetypes="cccc"
          inkscape:connector-curvature="0"
          id="path3934"
          d="m 252.76104,127.09504 17.57727,-1.40618 21.44425,3.1639 18.98345,-5.27317"
-         style="fill:none;stroke:#2e94ff;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+         style="fill:none;stroke:#2e94ff;stroke-width:1.01883674px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
       <g
          id="g3926"
          clip-path="url(#clipPath3892)"
@@ -166,7 +174,7 @@
            sodipodi:nodetypes="ccccc" />
       </g>
       <path
-         style="fill:none;stroke:#2e94ff;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="fill:none;stroke:#2e94ff;stroke-width:1.01883674px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          d="m 289.71748,128.75636 17.34874,3.15577 19.91215,8.56577 19.701,-0.2203"
          id="path3942"
          inkscape:connector-curvature="0"
@@ -176,16 +184,20 @@
          inkscape:connector-curvature="0"
          id="path3944"
          d="m 289.71748,128.75636 17.34874,3.15577 19.91215,8.56577 19.701,-0.2203"
-         style="fill:none;stroke:#2e94ff;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+         style="fill:none;stroke:#2e94ff;stroke-width:1.01883674px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
     </g>
     <g
-       id="g4124">
+       id="g4124"
+       transform="matrix(0.99373456,0,0,0.96943887,-31.184498,-34.909427)"
+       inkscape:export-filename="Z:\Proiecte\angrybox\src\bmp\glass-w-3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <g
-         style="fill:#abd4ff;fill-opacity:1;stroke:#2e94ff;stroke-opacity:1"
+         style="fill:#abd4ff;fill-opacity:1;stroke:#2e94ff;stroke-width:1.01883674;stroke-opacity:1"
          transform="matrix(1.0027419,0,0,1.0148662,286.62295,-85.667537)"
          id="g4095">
         <path
-           style="fill:#abd4ff;fill-opacity:1;fill-rule:evenodd;stroke:#2e94ff;stroke-opacity:1"
+           style="fill:#abd4ff;fill-opacity:1;fill-rule:evenodd;stroke:#2e94ff;stroke-width:1.01883674;stroke-opacity:1"
            d="m 122.75,196.30111 0,31.53125 159.5625,0 0,-31.53125 z"
            id="path4097"
            clip-path="none"
@@ -193,7 +205,7 @@
            sodipodi:nodetypes="ccccc" />
       </g>
       <path
-         style="fill:none;stroke:#2e94ff;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="fill:none;stroke:#2e94ff;stroke-width:1.01883674px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          d="m 421.15122,127.09504 17.57727,-1.40618 21.44425,3.1639 18.98345,-5.27317"
          id="path4099"
          inkscape:connector-curvature="0"
@@ -226,9 +238,9 @@
          inkscape:connector-curvature="0"
          id="path4109"
          d="m 458.10766,128.75636 17.34874,3.15577 19.91215,8.56577 19.701,-0.2203"
-         style="fill:none;stroke:#2e94ff;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+         style="fill:none;stroke:#2e94ff;stroke-width:1.01883674px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
       <path
-         style="fill:none;stroke:#2e94ff;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="fill:none;stroke:#2e94ff;stroke-width:1.01883674px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          d="m 458.10766,128.75636 17.34874,3.15577 19.91215,8.56577 19.701,-0.2203"
          id="path4111"
          inkscape:connector-curvature="0"
@@ -237,19 +249,23 @@
          inkscape:connector-curvature="0"
          id="path4122"
          d="m 568.37658,128.13978 -22.86383,10.38427 -7.8065,-15.36732 -12.58289,1.95284"
-         style="fill:none;stroke:#2e94ff;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+         style="fill:none;stroke:#2e94ff;stroke-width:1.01883674px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
     </g>
     <g
-       id="g4166">
+       id="g4166"
+       transform="matrix(0.99373456,0,0,0.96943887,-30.144878,-34.909427)"
+       inkscape:export-filename="Z:\Proiecte\angrybox\src\bmp\glass-w-4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
       <g
          transform="translate(165.92937,0)"
          id="g4138">
         <g
-           style="fill:#abd4ff;fill-opacity:1;stroke:#2e94ff;stroke-opacity:1"
+           style="fill:#abd4ff;fill-opacity:1;stroke:#2e94ff;stroke-width:1.01883674;stroke-opacity:1"
            transform="matrix(1.0027419,0,0,1.0148662,286.62295,-85.667537)"
            id="g4140">
           <path
-             style="fill:#abd4ff;fill-opacity:1;fill-rule:evenodd;stroke:#2e94ff;stroke-opacity:1"
+             style="fill:#abd4ff;fill-opacity:1;fill-rule:evenodd;stroke:#2e94ff;stroke-width:1.01883674;stroke-opacity:1"
              d="m 122.75,196.30111 0,31.53125 159.5625,0 0,-31.53125 z"
              id="path4142"
              clip-path="none"
@@ -257,7 +273,7 @@
              sodipodi:nodetypes="ccccc" />
         </g>
         <path
-           style="fill:none;stroke:#2e94ff;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           style="fill:none;stroke:#2e94ff;stroke-width:1.01883674px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
            d="m 421.15122,127.09504 17.57727,-1.40618 21.44425,3.1639 18.98345,-5.27317"
            id="path4144"
            inkscape:connector-curvature="0"
@@ -290,9 +306,9 @@
            inkscape:connector-curvature="0"
            id="path4154"
            d="m 458.10766,128.75636 17.34874,3.15577 19.91215,8.56577 19.701,-0.2203"
-           style="fill:none;stroke:#2e94ff;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+           style="fill:none;stroke:#2e94ff;stroke-width:1.01883674px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
         <path
-           style="fill:none;stroke:#2e94ff;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           style="fill:none;stroke:#2e94ff;stroke-width:1.01883674px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
            d="m 458.10766,128.75636 17.34874,3.15577 19.91215,8.56577 19.701,-0.2203"
            id="path4156"
            inkscape:connector-curvature="0"
@@ -301,15 +317,15 @@
            inkscape:connector-curvature="0"
            id="path4158"
            d="m 568.37658,128.13978 -22.86383,10.38427 -7.8065,-15.36732 -12.58289,1.95284"
-           style="fill:none;stroke:#2e94ff;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+           style="fill:none;stroke:#2e94ff;stroke-width:1.01883674px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
       </g>
       <path
          inkscape:connector-curvature="0"
          id="path4136"
          d="m 641.67057,131.57793 9.44039,-4.48632"
-         style="fill:none;stroke:#2e94ff;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+         style="fill:none;stroke:#2e94ff;stroke-width:1.01883674px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
       <path
-         style="fill:none;stroke:#2e94ff;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="fill:none;stroke:#2e94ff;stroke-width:1.01883674px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          d="m 597.7416,125.77508 9.79815,3.63926"
          id="path4160"
          inkscape:connector-curvature="0" />
@@ -317,12 +333,268 @@
          inkscape:connector-curvature="0"
          id="path4162"
          d="m 700.90232,133.48106 9.79815,3.63926"
-         style="fill:none;stroke:#2e94ff;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+         style="fill:none;stroke:#2e94ff;stroke-width:1.01883674px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
       <path
-         style="fill:none;stroke:#2e94ff;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="fill:none;stroke:#2e94ff;stroke-width:1.01883674px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          d="m 704.66832,125.0788 9.22639,-4.91138"
          id="path4164"
          inkscape:connector-curvature="0" />
+    </g>
+    <g
+       transform="matrix(0.49684766,0,0,0.96943887,3.9289271,2.8747395)"
+       id="g3183"
+       inkscape:export-filename="Z:\Proiecte\angrybox\src\bmp\glass-1.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <g
+         id="g3185"
+         transform="matrix(1.0027419,0,0,1.0148662,-47.696599,-85.667537)"
+         style="fill:#abd4ff;fill-opacity:1;stroke:#2e94ff;stroke-width:1.44088113;stroke-opacity:1">
+        <path
+           sodipodi:nodetypes="ccccc"
+           inkscape:connector-curvature="0"
+           clip-path="none"
+           id="path3187"
+           d="m 122.75,196.30111 0,31.53125 159.5625,0 0,-31.53125 z"
+           style="fill:#abd4ff;fill-opacity:1;fill-rule:evenodd;stroke:#2e94ff;stroke-width:1.44088113;stroke-opacity:1" />
+      </g>
+      <g
+         id="g3189"
+         clip-path="url(#clipPath3892)"
+         transform="translate(-44.868698,-86.070239)">
+        <path
+           sodipodi:nodetypes="ccccc"
+           inkscape:connector-curvature="0"
+           id="path3191"
+           d="m 198.11547,191.5968 20.03477,-3.75458 19.7525,75.71139 -29.31919,5.4945 z"
+           style="fill:#ffffff;fill-opacity:0.38297873;fill-rule:nonzero;stroke:none" />
+        <path
+           sodipodi:nodetypes="ccccccc"
+           inkscape:connector-curvature="0"
+           id="path3193"
+           d="m 120.78307,200.26397 158.90007,0 0,3.25996 -155.77862,0 0,27.62438 -3.12145,0 z"
+           style="fill:#e3f5fe;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+        <path
+           style="fill:#ffffff;fill-opacity:0.38297873;fill-rule:nonzero;stroke:none"
+           d="m 228.63078,194.16847 18.9255,-7.57062 34.06757,70.43988 -27.69587,11.07895 z"
+           id="path3195"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="ccccc" />
+      </g>
+    </g>
+    <g
+       transform="matrix(0.49684766,0,0,0.96943887,87.416678,2.8747395)"
+       id="g3197"
+       inkscape:export-filename="Z:\Proiecte\angrybox\src\bmp\glass-2.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <g
+         style="fill:#abd4ff;fill-opacity:1;stroke:#2e94ff;stroke-width:1.44088113;stroke-opacity:1"
+         transform="matrix(1.0027419,0,0,1.0148662,118.23277,-85.667537)"
+         id="g3199">
+        <path
+           style="fill:#abd4ff;fill-opacity:1;fill-rule:evenodd;stroke:#2e94ff;stroke-width:1.44088113;stroke-opacity:1"
+           d="m 122.75,196.30111 0,31.53125 159.5625,0 0,-31.53125 z"
+           id="path3201"
+           clip-path="none"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="ccccc" />
+      </g>
+      <path
+         style="fill:none;stroke:#2e94ff;stroke-width:1.44088113px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 252.76104,127.09504 17.57727,-1.40618 21.44425,3.1639 18.98345,-5.27317"
+         id="path3203"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cccc" />
+      <g
+         transform="translate(121.06067,-86.070239)"
+         clip-path="url(#clipPath3892)"
+         id="g3205">
+        <path
+           style="fill:#ffffff;fill-opacity:0.38297873;fill-rule:nonzero;stroke:none"
+           d="m 198.11547,191.5968 20.03477,-3.75458 19.7525,75.71139 -29.31919,5.4945 z"
+           id="path3207"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="ccccc" />
+        <path
+           style="fill:#e3f5fe;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           d="m 120.78307,200.26397 158.90007,0 0,3.25996 -155.77862,0 0,27.62438 -3.12145,0 z"
+           id="path3209"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="ccccccc" />
+        <path
+           sodipodi:nodetypes="ccccc"
+           inkscape:connector-curvature="0"
+           id="path3211"
+           d="m 228.63078,194.16847 18.9255,-7.57062 34.06757,70.43988 -27.69587,11.07895 z"
+           style="fill:#ffffff;fill-opacity:0.38297873;fill-rule:nonzero;stroke:none" />
+      </g>
+      <path
+         sodipodi:nodetypes="cccc"
+         inkscape:connector-curvature="0"
+         id="path3213"
+         d="m 289.71748,128.75636 17.34874,3.15577 19.91215,8.56577 19.701,-0.2203"
+         style="fill:none;stroke:#2e94ff;stroke-width:1.44088113px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         style="fill:none;stroke:#2e94ff;stroke-width:1.44088113px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 289.71748,128.75636 17.34874,3.15577 19.91215,8.56577 19.701,-0.2203"
+         id="path3215"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cccc" />
+    </g>
+    <g
+       transform="matrix(0.49684766,0,0,0.96943887,172.14259,2.8747395)"
+       id="g3217"
+       inkscape:export-filename="Z:\Proiecte\angrybox\src\bmp\glass-3.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <g
+         id="g3219"
+         transform="matrix(1.0027419,0,0,1.0148662,286.62295,-85.667537)"
+         style="fill:#abd4ff;fill-opacity:1;stroke:#2e94ff;stroke-width:1.44088113;stroke-opacity:1">
+        <path
+           sodipodi:nodetypes="ccccc"
+           inkscape:connector-curvature="0"
+           clip-path="none"
+           id="path3221"
+           d="m 122.75,196.30111 0,31.53125 159.5625,0 0,-31.53125 z"
+           style="fill:#abd4ff;fill-opacity:1;fill-rule:evenodd;stroke:#2e94ff;stroke-width:1.44088113;stroke-opacity:1" />
+      </g>
+      <path
+         sodipodi:nodetypes="cccc"
+         inkscape:connector-curvature="0"
+         id="path3223"
+         d="m 421.15122,127.09504 17.57727,-1.40618 21.44425,3.1639 18.98345,-5.27317"
+         style="fill:none;stroke:#2e94ff;stroke-width:1.44088113px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <g
+         id="g3225"
+         clip-path="url(#clipPath3892)"
+         transform="translate(289.45085,-86.070239)">
+        <path
+           sodipodi:nodetypes="ccccc"
+           inkscape:connector-curvature="0"
+           id="path3227"
+           d="m 198.11547,191.5968 20.03477,-3.75458 19.7525,75.71139 -29.31919,5.4945 z"
+           style="fill:#ffffff;fill-opacity:0.38297873;fill-rule:nonzero;stroke:none" />
+        <path
+           sodipodi:nodetypes="ccccccc"
+           inkscape:connector-curvature="0"
+           id="path3229"
+           d="m 120.78307,200.26397 158.90007,0 0,3.25996 -155.77862,0 0,27.62438 -3.12145,0 z"
+           style="fill:#e3f5fe;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+        <path
+           style="fill:#ffffff;fill-opacity:0.38297873;fill-rule:nonzero;stroke:none"
+           d="m 228.63078,194.16847 18.9255,-7.57062 34.06757,70.43988 -27.69587,11.07895 z"
+           id="path3231"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="ccccc" />
+      </g>
+      <path
+         style="fill:none;stroke:#2e94ff;stroke-width:1.44088113px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 458.10766,128.75636 17.34874,3.15577 19.91215,8.56577 19.701,-0.2203"
+         id="path3233"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cccc" />
+      <path
+         sodipodi:nodetypes="cccc"
+         inkscape:connector-curvature="0"
+         id="path3235"
+         d="m 458.10766,128.75636 17.34874,3.15577 19.91215,8.56577 19.701,-0.2203"
+         style="fill:none;stroke:#2e94ff;stroke-width:1.44088113px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         style="fill:none;stroke:#2e94ff;stroke-width:1.44088113px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 568.37658,128.13978 -22.86383,10.38427 -7.8065,-15.36732 -12.58289,1.95284"
+         id="path3237"
+         inkscape:connector-curvature="0" />
+    </g>
+    <g
+       transform="matrix(0.49684766,0,0,0.96943887,255.63034,2.8747395)"
+       id="g3239"
+       inkscape:export-filename="Z:\Proiecte\angrybox\src\bmp\glass-4.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90">
+      <g
+         id="g3241"
+         transform="translate(165.92937,0)">
+        <g
+           id="g3243"
+           transform="matrix(1.0027419,0,0,1.0148662,286.62295,-85.667537)"
+           style="fill:#abd4ff;fill-opacity:1;stroke:#2e94ff;stroke-width:1.44088113;stroke-opacity:1">
+          <path
+             sodipodi:nodetypes="ccccc"
+             inkscape:connector-curvature="0"
+             clip-path="none"
+             id="path3245"
+             d="m 122.75,196.30111 0,31.53125 159.5625,0 0,-31.53125 z"
+             style="fill:#abd4ff;fill-opacity:1;fill-rule:evenodd;stroke:#2e94ff;stroke-width:1.44088113;stroke-opacity:1" />
+        </g>
+        <path
+           sodipodi:nodetypes="cccc"
+           inkscape:connector-curvature="0"
+           id="path3247"
+           d="m 421.15122,127.09504 17.57727,-1.40618 21.44425,3.1639 18.98345,-5.27317"
+           style="fill:none;stroke:#2e94ff;stroke-width:1.44088113px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+        <g
+           id="g3249"
+           clip-path="url(#clipPath3892)"
+           transform="translate(289.45085,-86.070239)">
+          <path
+             sodipodi:nodetypes="ccccc"
+             inkscape:connector-curvature="0"
+             id="path3251"
+             d="m 198.11547,191.5968 20.03477,-3.75458 19.7525,75.71139 -29.31919,5.4945 z"
+             style="fill:#ffffff;fill-opacity:0.38297873;fill-rule:nonzero;stroke:none" />
+          <path
+             sodipodi:nodetypes="ccccccc"
+             inkscape:connector-curvature="0"
+             id="path3253"
+             d="m 120.78307,200.26397 158.90007,0 0,3.25996 -155.77862,0 0,27.62438 -3.12145,0 z"
+             style="fill:#e3f5fe;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+          <path
+             style="fill:#ffffff;fill-opacity:0.38297873;fill-rule:nonzero;stroke:none"
+             d="m 228.63078,194.16847 18.9255,-7.57062 34.06757,70.43988 -27.69587,11.07895 z"
+             id="path3255"
+             inkscape:connector-curvature="0"
+             sodipodi:nodetypes="ccccc" />
+        </g>
+        <path
+           style="fill:none;stroke:#2e94ff;stroke-width:1.44088113px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 458.10766,128.75636 17.34874,3.15577 19.91215,8.56577 19.701,-0.2203"
+           id="path3257"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="cccc" />
+        <path
+           sodipodi:nodetypes="cccc"
+           inkscape:connector-curvature="0"
+           id="path3259"
+           d="m 458.10766,128.75636 17.34874,3.15577 19.91215,8.56577 19.701,-0.2203"
+           style="fill:none;stroke:#2e94ff;stroke-width:1.44088113px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+        <path
+           style="fill:none;stroke:#2e94ff;stroke-width:1.44088113px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 568.37658,128.13978 -22.86383,10.38427 -7.8065,-15.36732 -12.58289,1.95284"
+           id="path3261"
+           inkscape:connector-curvature="0" />
+      </g>
+      <path
+         style="fill:none;stroke:#2e94ff;stroke-width:1.44088113px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 641.67057,131.57793 9.44039,-4.48632"
+         id="path3263"
+         inkscape:connector-curvature="0" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3265"
+         d="m 597.7416,125.77508 9.79815,3.63926"
+         style="fill:none;stroke:#2e94ff;stroke-width:1.44088113px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         style="fill:none;stroke:#2e94ff;stroke-width:1.44088113px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 700.90232,133.48106 9.79815,3.63926"
+         id="path3267"
+         inkscape:connector-curvature="0" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3269"
+         d="m 704.66832,125.0788 9.22639,-4.91138"
+         style="fill:none;stroke:#2e94ff;stroke-width:1.44088113px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
     </g>
   </g>
 </svg>
