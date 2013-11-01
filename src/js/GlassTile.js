@@ -7,8 +7,8 @@ define(['core', 'GameObject'], function(ab, GameObject){
   };
   
   fixture = {
-    density: 2,
-    friction: 0.8,
+    density: 1.8,
+    friction: 0.4,
     restitution: 0.2
   };
   
@@ -21,7 +21,7 @@ define(['core', 'GameObject'], function(ab, GameObject){
   }];
 
 
-  var StoneTile = GameObject.extend({
+  var GlassTile = GameObject.extend({
   
     'constructor': function (opts){
       var i;
@@ -32,7 +32,7 @@ define(['core', 'GameObject'], function(ab, GameObject){
       
       var go = this;
       
-      go.damageFactor = 0.1;
+      go.damageFactor = 0.3;
       go.damageStep = 100 / opts.frames.length;
       go.frameIndex = 0;
       
@@ -72,6 +72,6 @@ define(['core', 'GameObject'], function(ab, GameObject){
   
   });
 
-  ab.Factory.registerClass("StoneTile", StoneTile);
-  return StoneTile;
+  ab.Factory.registerClass("GlassTile", GlassTile);
+  return GlassTile;
 });

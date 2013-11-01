@@ -25,16 +25,16 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
-     inkscape:cx="443.44474"
-     inkscape:cy="662.47543"
+     inkscape:cx="283.83957"
+     inkscape:cy="780.68972"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1680"
-     inkscape:window-height="988"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1" />
+     inkscape:window-width="986"
+     inkscape:window-height="618"
+     inkscape:window-x="-3"
+     inkscape:window-y="35"
+     inkscape:window-maximized="0" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -43,7 +43,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -908,10 +908,11 @@
          style="fill:#6e6e6e;fill-opacity:1;fill-rule:nonzero;stroke:none" />
     </g>
     <g
-       id="g4844"
+       id="stone-01"
        inkscape:export-filename="Z:\Proiecte\angrybox\src\assets\stone-01.png"
        inkscape:export-xdpi="36"
-       inkscape:export-ydpi="36">
+       inkscape:export-ydpi="36"
+       inkscape:label="#stone-01">
       <g
          id="g4834"
          transform="matrix(1,0,0,1.9310346,-0.66352302,-16.941318)">
@@ -943,7 +944,7 @@
       </g>
     </g>
     <g
-       id="g3172"
+       id="stone-02"
        inkscape:export-filename="Z:\Proiecte\angrybox\src\assets\stone-02.png"
        inkscape:export-xdpi="36"
        inkscape:export-ydpi="36">
@@ -1014,7 +1015,7 @@
          style="fill:#6e6e6e;fill-opacity:1;fill-rule:nonzero;stroke:none" />
     </g>
     <g
-       id="g3184"
+       id="stone-03"
        inkscape:export-filename="Z:\Proiecte\angrybox\src\assets\stone-03.png"
        inkscape:export-xdpi="36"
        inkscape:export-ydpi="36">
@@ -1109,7 +1110,7 @@
          style="fill:#6e6e6e;fill-opacity:1;fill-rule:nonzero;stroke:none" />
     </g>
     <g
-       id="g4918"
+       id="stone-04"
        transform="translate(512.14734,0)"
        inkscape:export-filename="Z:\Proiecte\angrybox\src\assets\stone-04.png"
        inkscape:export-xdpi="36"

@@ -1,4 +1,4 @@
-define(['core', 'box2d', 'Factory', 'Actors', 'KillerScript', 'Animation', 'StoneTile'], function(ab, box2d, Factory, Actors){
+define(['core', 'box2d', 'Factory', 'Actors', 'KillerScript', 'Animation', 'StoneTile', 'WoodTile', 'GlassTile'], function(ab, box2d, Factory, Actors){
   var BG_LAYER = 0, PLX_LAYER = 1, OBJ_LAYER = 2, EFX_LAYER = 3;
   var Scene = ab.Class.extend({
     'constructor': function(context){
@@ -73,8 +73,12 @@ define(['core', 'box2d', 'Factory', 'Actors', 'KillerScript', 'Animation', 'Ston
     drawGO: function(go){
       var sArr = go.getSprites();
       var l = sArr.length, i, img, s, vp, x, y;
-      
+      var ctx = this.context;
       vp = ab.viewport;
+
+      ctx.font = "7pt Arial";
+      ctx.fillStyle = "black";
+
       for (i=0; i<l;i++){
         s = sArr[i].getSprite();
         img = s && s.spimg.img;
@@ -85,11 +89,15 @@ define(['core', 'box2d', 'Factory', 'Actors', 'KillerScript', 'Animation', 'Ston
         x = go.x + s.x - vp.x * this.paralax[go.layer];
         y = go.y+s.y - vp.y;
         
-        this.context.translate(x, y);
-        this.context.rotate(go.rot);
-        this.context.drawImage(img, s.spimg.x, s.spimg.y, s.spimg.w, s.spimg.h, -s.w, -s.h, s.spimg.w, s.spimg.h);
-        this.context.rotate(-go.rot);
-        this.context.translate(-x, -y);
+        ctx.translate(x, y);
+        ctx.rotate(go.rot);
+        ctx.drawImage(img, s.spimg.x, s.spimg.y, s.spimg.w, s.spimg.h, -s.w, -s.h, s.spimg.w, s.spimg.h);
+        ctx.rotate(-go.rot);
+        if(go.health){
+          ctx.fillText(go.health, 0,0);
+        }
+
+        ctx.translate(-x, -y);
       }
     },
 
