@@ -21,7 +21,7 @@ define(['core', 'GameObject'], function(ab, GameObject){
   }];
 
 
-  var StoneTile = GameObject.extend({
+  var GlassTile = GameObject.extend({
   
     'constructor': function (opts){
       var i;
@@ -72,6 +72,6 @@ define(['core', 'GameObject'], function(ab, GameObject){
   
   });
 
-  ab.Factory.registerClass("StoneTile", StoneTile);
-  return StoneTile;
+  ab.Factory.registerClass("GlassTile", GlassTile);
+  return GlassTile;
 });

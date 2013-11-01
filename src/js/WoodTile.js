@@ -7,7 +7,7 @@ define(['core', 'GameObject'], function(ab, GameObject){
   };
   
   fixture = {
-    density: 1.4,
+    density: 0.7,
     friction: 0.9,
     restitution: 0.2
   };
@@ -21,7 +21,7 @@ define(['core', 'GameObject'], function(ab, GameObject){
   }];
 
 
-  var StoneTile = GameObject.extend({
+  var WoodTile = GameObject.extend({
   
     'constructor': function (opts){
       var i;
@@ -72,6 +72,6 @@ define(['core', 'GameObject'], function(ab, GameObject){
   
   });
 
-  ab.Factory.registerClass("StoneTile", StoneTile);
-  return StoneTile;
+  ab.Factory.registerClass("WoodTile", WoodTile);
+  return WoodTile;
 });
