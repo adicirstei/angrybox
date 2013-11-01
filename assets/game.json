@@ -483,6 +483,7 @@
     {
       "slots":[{"x":100, "y":400}, {"x":150, "y":470}, {"x":170, "y":470}],
       "actors":["RED", "YELLOW", "RED"],
+      "world": {"t":0, "l": 0, "r": 1500, "b": 600},
       "layers": [
         [
           {
@@ -591,14 +592,14 @@
               "classname": "Sprite",
               "data": {
                 "frame":"fg.png",
-                "x":200
+                "x":0
               }
             },
             {
               "classname": "Sprite",
               "data": {
                 "frame":"fg.png",
-                "x": 400
+                "x": 200
               }
             },
             {
@@ -612,16 +613,44 @@
               "classname": "Sprite",
               "data": {
                 "frame":"fg.png",
+                "x": 400
+              }
+            },
+            {
+              "classname": "Sprite",
+              "data": {
+                "frame":"fg.png",
                 "x": -400
               }
             },
             {
               "classname": "Sprite",
               "data": {
-                "frame":"fg.png"
+                "frame":"fg.png",
+                "x": 600
               }
             },
-           
+            {
+              "classname": "Sprite",
+              "data": {
+                "frame":"fg.png",
+                "x": -600
+              }
+            },
+            {
+              "classname": "Sprite",
+              "data": {
+                "frame":"fg.png",
+                "x": 800
+              }
+            },            
+            {
+              "classname": "Sprite",
+              "data": {
+                "frame":"fg.png",
+                "x": -800
+              }
+            },              
             {
               "classname": "PhysComponent",
               "data": {
@@ -631,17 +660,26 @@
                   "restitution": 0.2
                 },
                 "body": {
-                  "position":{"x": 500, "y": 550},
+                  "position":{"x": 750, "y": 550},
                   "static": true
                 },
                 "shapes": [{
                   "shape":"RECTANGLE",
-                  "w": 1000,
+                  "w": 800,
                   "h": 46
                 }]
               }              
             }
           ]
+        },
+        {
+          "classname": "StoneTile",
+          "data":{
+            "frames": ["stone-w-1.png", "stone-w-2.png", "stone-w-3.png", "stone-w-4.png"],
+            "rot": 90,
+            "x" : 200,
+            "y": 50
+          }
         },
         {
           "components": [
