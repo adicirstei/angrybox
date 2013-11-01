@@ -3,12 +3,12 @@ define(['core', 'GameObject'], function(ab, GameObject){
   body = {
     static: false,
     position:{x:-1000, y:-1000},
-    angularDamping: 0.4
+    angularDamping: 0.6
   };
   
   fixture = {
-    density: 2,
-    friction: 0.8,
+    density: 1.4,
+    friction: 0.9,
     restitution: 0.2
   };
   
@@ -32,7 +32,7 @@ define(['core', 'GameObject'], function(ab, GameObject){
       
       var go = this;
       
-      go.damageFactor = 0.5;
+      go.damageFactor = 0.55;
       go.damageStep = 100 / opts.frames.length;
       go.frameIndex = 0;
       
