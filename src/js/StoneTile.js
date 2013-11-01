@@ -32,7 +32,7 @@ define(['core', 'GameObject'], function(ab, GameObject){
       
       var go = this;
       
-      go.damageFactor = 0.5;
+      go.damageFactor = 0.1;
       go.damageStep = 100 / opts.frames.length;
       go.frameIndex = 0;
       
