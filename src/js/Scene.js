@@ -146,7 +146,7 @@ define(['core', 'box2d', 'Factory', 'Actors', 'KillerScript', 'Animation', 'Ston
     listener.PostSolve = function(contact, impulse) {
         var o1, o2, imp;
         imp = impulse.normalImpulses[0];
-        if(imp > 0.6) {
+        if(imp > 1) {
           o1 = contact.GetFixtureA().GetBody().GetUserData().gameobject;
           o2 = contact.GetFixtureB().GetBody().GetUserData().gameobject;
           o1.collide(imp);

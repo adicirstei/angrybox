@@ -97,6 +97,7 @@ define(['core', 'Scene', 'box2d', 'GameObject'], function(ab, Scene, box2d, Game
           a.physics.body.ApplyImpulse(impulse, a.physics.body.GetWorldCenter());
           this.state = Game.RESOLVE;
           this.projectile = a;
+          this.projectile.puff.active = true;
 
         }
         return;

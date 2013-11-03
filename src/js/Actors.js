@@ -1,4 +1,4 @@
-define(['box2d', 'GameObject', 'Factory', 'SuicideScript', 'PhysComponent', 'Sprite'], function(box2d, GameObject, Factory){
+define(['box2d', 'GameObject', 'Factory', 'SuicideScript', 'PhysComponent', 'Sprite', 'PuffSpawner'], function(box2d, GameObject, Factory){
   var body, fixture, shapes;
   
   var sprite;
@@ -61,11 +61,19 @@ define(['box2d', 'GameObject', 'Factory', 'SuicideScript', 'PhysComponent', 'Spr
       this.status = "awake";
       this.setPos(p);
     };
-    
+    a.onCollision= function(){
+      a.puff.active = false;
+    };
     var phys = Factory.createComponent({classname:"PhysComponent", data:{fixture: fixture, shapes: shapes, body: body, parent: a}});
     var ss = Factory.createComponent({classname:"SuicideScript", data:{parent: a}});
     var spr = Factory.createComponent({classname:"Sprite", data:{frame: sprite, parent: a}});
+    var puffscript = Factory.createComponent({classname:"PuffSpawner", data:{}});
+
     
+    puffscript.parent = a;
+
+    a.puff = puffscript;
+
     phys.body.SetAwake(false);
     var filter = new box2d.b2FilterData();
     
@@ -81,6 +89,7 @@ define(['box2d', 'GameObject', 'Factory', 'SuicideScript', 'PhysComponent', 'Spr
     a.components.push(phys);
     a.components.push(ss);
     a.components.push(spr);
+    a.components.push(puffscript)
   
     return a;
   };
