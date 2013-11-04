@@ -1,4 +1,4 @@
-define(['core', 'ScriptComponent', 'Factory'], function(ab, ScriptComponent) {
+define(['core', 'ScriptComponent'], function(ab, ScriptComponent) {
   var PuffSpawner = ScriptComponent.extend({
     update: function(time){
       if(!this.active){
@@ -23,7 +23,7 @@ define(['core', 'ScriptComponent', 'Factory'], function(ab, ScriptComponent) {
           }
         ]
       });
-      ab.scene.addGameObject(puff, this.parent.layer);
+      ab.scene.addGameObject(puff, this.parent.layer-1);
 
     }
   });

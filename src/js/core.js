@@ -3,6 +3,12 @@ define(function(){
   var ab = window.AngryBox = window.AngryBox || {};
   ab.Mathf = {
     lerp: function(from, to, time){
+      if(time < 0){
+        time = 0;
+      }
+      if(time > 1) {
+        time = 1;
+      }
       return from + (time*(to-from));
     }
   };
