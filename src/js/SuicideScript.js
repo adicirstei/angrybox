@@ -5,10 +5,16 @@ define(['core', 'ScriptComponent'], function(ab, ScriptComponent) {
       this.parent = opts.parent;
     },
     update: function(time){
+      if (!this.active){
+        return;
+      }
+
       var body = this.parent.physics.body;
-      // if(body.GetAngularVelocity() < 1 ) {
-      //     ab.scene.kill(this.parent);
-      // }
+      if(!body.IsAwake()) {
+        var ago = ab.Factory.createGameObject({x: this.parent.x, y: this.parent.y, components:[{classname:"Animation", data: this.animation}]});
+        ab.scene.kill(this.parent);
+        ab.scene.addGameObject(ago, this.parent.layer+1);
+      }
     }
   });
 

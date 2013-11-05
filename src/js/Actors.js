@@ -63,6 +63,7 @@ define(['box2d', 'GameObject', 'Factory', 'SuicideScript', 'PhysComponent', 'Spr
     };
     a.onCollision= function(){
       a.puff.active = false;
+      a.suicide.active = true;
     };
     var phys = Factory.createComponent({classname:"PhysComponent", data:{fixture: fixture, shapes: shapes, body: body, parent: a}});
     var ss = Factory.createComponent({classname:"SuicideScript", data:{parent: a}});
@@ -73,6 +74,36 @@ define(['box2d', 'GameObject', 'Factory', 'SuicideScript', 'PhysComponent', 'Spr
     puffscript.parent = a;
 
     a.puff = puffscript;
+    a.suicide = ss;
+    ss.active = false;
+    
+    var redex = {frames: ["red-ex-1.png", "red-ex-2.png", "red-ex-3.png"], fps: 10, loop: false};
+    var bluex = {frames: ["blue-ex-1.png", "blue-ex-2.png", "blue-ex-3.png"], fps: 10, loop: false};
+    var yelex = {frames: ["yellow-ex-1.png", "yellow-ex-2.png", "yellow-ex-3.png"], fps: 10, loop: false};
+    var blackex = {frames: ["black-ex-1.png", "black-ex-2.png", "black-ex-3.png"], fps: 10, loop: false};
+    var whitex = {frames: ["white-ex-1.png", "white-ex-2.png", "white-ex-3.png"], fps: 10, loop: false};
+    
+    switch (TYPE){
+      case "BLUE":
+        ss.animation = bluex;
+        break;
+      case "YELLOW":
+        ss.animation = yelex;
+        break;
+      case "BLACK":
+        ss.animation = blackex;
+        break;
+      case "WHITE":
+        ss.animation = whitex;
+        break;
+      default: /// RED
+        ss.animation = redex;
+    }
+    
+    
+    
+    
+    
 
     phys.body.SetAwake(false);
     var filter = new box2d.b2FilterData();
