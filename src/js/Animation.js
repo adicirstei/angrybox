@@ -13,6 +13,7 @@ define(['core', 'Component', 'Sprite'], function (ab, Component, Sprite) {
       this.frames = opts.frames;
       this.fps = opts.fps;
       this.loop = opts.loop;
+      this.playing = true;
       
       if(this.loop === undefined){
         this.loop = true;
@@ -29,6 +30,7 @@ define(['core', 'Component', 'Sprite'], function (ab, Component, Sprite) {
     update: function(time){
       if (this.currentframe >= this.len) {
         // signal somehow the end of component
+        this.playing = false;
         return;
       }
       if(this.loop){
