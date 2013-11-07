@@ -106,6 +106,7 @@ define(['box2d', 'GameObject', 'Factory', 'SuicideScript', 'PhysComponent', 'Spr
     
 
     phys.body.SetAwake(false);
+    phys.body.SetBullet(true);
     var filter = new box2d.b2FilterData();
     
     filter.categoryBits = 0x0002;
