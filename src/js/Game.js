@@ -42,7 +42,7 @@ define(['core', 'Scene', 'box2d', 'GameObject'], function(ab, Scene, box2d, Game
     },
     scroll: function(){
       var vpx = ab.viewport.x;
-      var treshold = 5;
+      var treshold = 1;
       if (direction === 0 && scrolling){
         if(vpx === 0){
           tvpx = scene.bounds.r - ab.viewport.w;
@@ -54,8 +54,9 @@ define(['core', 'Scene', 'box2d', 'GameObject'], function(ab, Scene, box2d, Game
       }
       if(scrolling){
         if(direction * (tvpx-vpx) > treshold){
-          ab.viewport.x = ab.viewport.x + direction * 10  /// Math.floor(ab.Mathf.lerp(vpx, tvpx, 0.1));
-          //console.log(ab.viewport.x);
+          //ab.viewport.x = ab.viewport.x + direction * 10  
+          ab.viewport.x = ab.Mathf.lerp(vpx, tvpx, ab.Time.deltaTime * 2.0/1000.0);
+          console.log(tvpx);
         } else {
           ab.viewport.x = tvpx;
           direction = 0;
