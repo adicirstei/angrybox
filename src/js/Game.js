@@ -55,7 +55,7 @@ define(['core', 'Scene', 'box2d', 'GameObject'], function(ab, Scene, box2d, Game
       if(scrolling){
         if(direction * (tvpx-vpx) > treshold){
           //ab.viewport.x = ab.viewport.x + direction * 10  
-          ab.viewport.x = ab.Mathf.lerp(vpx, tvpx, ab.Time.deltaTime * 2.0/1000.0);
+          ab.viewport.x = ab.Mathf.lerp(vpx, tvpx, ab.Time.deltaTime * 3.0/1000.0);
           console.log(tvpx);
         } else {
           ab.viewport.x = tvpx;
