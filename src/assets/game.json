@@ -1036,35 +1036,20 @@
         [
         ],
         [{
-
-          "components": [
-            {
-              "classname": "Animation",
-              "data": {
-                "frames":["c-or-1.png", "c-or-1.png", "c-or-1.png", "c-or-1.png", "c-or-1.png", "c-or-1.png", "c-or-2.png", "c-or-1.png", "c-or-1.png", "c-or-1.png", "c-or-3.png", "c-or-1.png", "c-or-3.png"], 
-                "fps": 5, 
-                "loop": true
-              }
-            },
-            {
-              "classname": "PhysComponent",
-              "data": {
-                "fixture":{
-                  "density": 1,
-                  "friction": 0.9,
-                  "restitution": 0.2
-                },
-                "body": {
-                  "position":{"x": 770, "y": 520},
-                  "static": false
-                },
-                "shapes": [{
-                  "shape":"CIRCLE",
-                  "radius": 32
-                }]
-              }              
-            }
-          ]
+          "classname": "Enemy",
+          "data":{
+            "type": "NORMAL",
+            "x" : 770,
+            "y": 520
+          }
+        },
+        {
+          "classname": "Enemy",
+          "data":{
+            "type": "STRONG",
+            "x" : 1050,
+            "y": 520
+          }
         },
         {
           "classname": "StoneTile",
