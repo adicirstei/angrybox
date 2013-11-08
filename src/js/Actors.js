@@ -6,7 +6,7 @@ define(['box2d', 'GameObject', 'Factory', 'SuicideScript', 'PhysComponent', 'Spr
   body = {
     static: false,
     position:{x:-1000, y:-1000},
-    angularDamping: 0.4
+    angularDamping: 0.6
   };
   
   fixture = {

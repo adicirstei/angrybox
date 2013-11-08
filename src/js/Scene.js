@@ -1,4 +1,4 @@
-define(['core', 'box2d', 'Factory', 'Actors', 'KillerScript', 'Animation', 'StoneTile', 'WoodTile', 'GlassTile'], function(ab, box2d, Factory, Actors){
+define(['core', 'box2d', 'Factory', 'Actors', 'Enemies', 'KillerScript', 'Animation', 'StoneTile', 'WoodTile', 'GlassTile'], function(ab, box2d, Factory, Actors){
   var BG_LAYER = 0, PLX_LAYER = 1, SOBJ_LAYER=2, OBJ_LAYER = 3, EFX_LAYER = 4;
   var Scene = ab.Class.extend({
     'constructor': function(context){
@@ -91,7 +91,11 @@ define(['core', 'box2d', 'Factory', 'Actors', 'KillerScript', 'Animation', 'Ston
         
         ctx.translate(x, y);
         ctx.rotate(go.rot);
-        ctx.drawImage(img, s.spimg.x, s.spimg.y, s.spimg.w, s.spimg.h, -s.w, -s.h, s.spimg.w, s.spimg.h);
+        if(go.tag === "text") {
+          go.draw(ctx);
+        } else {
+          ctx.drawImage(img, s.spimg.x, s.spimg.y, s.spimg.w, s.spimg.h, -s.w, -s.h, s.spimg.w, s.spimg.h);
+        }
         ctx.rotate(-go.rot);
         if(go.health){
           ctx.fillText(go.health, 0,0);
@@ -153,7 +157,7 @@ define(['core', 'box2d', 'Factory', 'Actors', 'KillerScript', 'Animation', 'Ston
     listener.PostSolve = function(contact, impulse) {
         var o1, o2, imp;
         imp = impulse.normalImpulses[0];
-        if(imp > 4) {
+        if(imp > 3) {
           o1 = contact.GetFixtureA().GetBody().GetUserData().gameobject;
           o2 = contact.GetFixtureB().GetBody().GetUserData().gameobject;
           o1.collide(imp);
