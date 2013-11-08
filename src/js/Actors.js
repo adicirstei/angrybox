@@ -121,7 +121,7 @@ define(['box2d', 'GameObject', 'Factory', 'SuicideScript', 'PhysComponent', 'Spr
     a.components.push(phys);
     a.components.push(ss);
     a.components.push(spr);
-    a.components.push(puffscript)
+    a.components.push(puffscript);
   
     return a;
   };
