@@ -37,6 +37,8 @@ define(['core', 'Scene', 'box2d', 'GameObject'], function(ab, Scene, box2d, Game
         ab.game.scroll();
       }
       scene.update();
+      
+      //console.log(T.deltaTime);
       requestID = window.requestAnimationFrame(ab.game.loop);
 
     },
