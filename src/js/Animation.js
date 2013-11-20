@@ -12,7 +12,13 @@ define(['core', 'Component', 'Sprite'], function (ab, Component, Sprite) {
       
       this.frames = opts.frames;
       this.fps = opts.fps;
-      this.loop = opts.loop || true;
+      this.loop = opts.loop;
+      this.playing = true;
+      
+      if(this.loop === undefined){
+        this.loop = true;
+      }
+      
       this.currentframe = opts.startframe || 0;
       this.startframe = this.currentframe;
 
@@ -22,7 +28,17 @@ define(['core', 'Component', 'Sprite'], function (ab, Component, Sprite) {
       this.frameLen = 1000 / this.fps;
     },
     update: function(time){
-      this.currentframe = (Math.floor((time - this.starttime) / this.frameLen) + this.startframe) % this.len;
+      if (this.currentframe >= this.len) {
+        // signal somehow the end of component
+        this.playing = false;
+        return;
+      }
+      if(this.loop){
+        this.currentframe = (Math.floor((time - this.starttime) / this.frameLen) + this.startframe) % this.len;
+      } else {
+        this.currentframe = (Math.floor((time - this.starttime) / this.frameLen) + this.startframe);
+      }
+
 
     },
     getSprite: function(){

@@ -5,12 +5,7 @@ Just a training sequel. For the latest working version, please see: [http://adic
 
 TODO
 ----
-* bring sound
-* implement game logic
-* implement some property animation
-* add spawning functionality
-* add some time to live functionality
-* add damage visual feedback
+See the [issue list](https://github.com/adicirstei/angrybox/issues)
 
 To make it run
 -----------

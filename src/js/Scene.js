@@ -1,5 +1,5 @@
-define(['core', 'box2d', 'Factory', 'Actors', 'KillerScript', 'Animation', 'StoneTile', 'WoodTile', 'GlassTile'], function(ab, box2d, Factory, Actors){
-  var BG_LAYER = 0, PLX_LAYER = 1, OBJ_LAYER = 2, EFX_LAYER = 3;
+define(['core', 'box2d', 'Factory', 'Actors', 'Enemies', 'KillerScript', 'Animation', 'StoneTile', 'WoodTile', 'GlassTile'], function(ab, box2d, Factory, Actors){
+  var BG_LAYER = 0, PLX_LAYER = 1, SOBJ_LAYER=2, OBJ_LAYER = 3, EFX_LAYER = 4;
   var Scene = ab.Class.extend({
     'constructor': function(context){
       
@@ -9,8 +9,8 @@ define(['core', 'box2d', 'Factory', 'Actors', 'KillerScript', 'Animation', 'Ston
       setupDebugDraw(this.world, debug.getContext('2d'));
       this.context = context;
       // the layers will contain arrays of GameObject instances
-      this.layers = [[], [], [], []];
-      this.paralax = [0.0, 0.3, 1.0, 1.0];
+      this.layers = [[], [], [], [], []];
+      this.paralax = [0.0, 0.3, 1.0, 1.0, 1.0];
     },
     kill: function(go) {
       if(go){
@@ -91,7 +91,11 @@ define(['core', 'box2d', 'Factory', 'Actors', 'KillerScript', 'Animation', 'Ston
         
         ctx.translate(x, y);
         ctx.rotate(go.rot);
-        ctx.drawImage(img, s.spimg.x, s.spimg.y, s.spimg.w, s.spimg.h, -s.w, -s.h, s.spimg.w, s.spimg.h);
+        if(go.tag === "text") {
+          go.draw(ctx);
+        } else {
+          ctx.drawImage(img, s.spimg.x, s.spimg.y, s.spimg.w, s.spimg.h, -s.w, -s.h, s.spimg.w, s.spimg.h);
+        }
         ctx.rotate(-go.rot);
         if(go.health){
           ctx.fillText(go.health, 0,0);
@@ -123,6 +127,13 @@ define(['core', 'box2d', 'Factory', 'Actors', 'KillerScript', 'Animation', 'Ston
     }
   });
 
+  Scene.BG_LAYER = BG_LAYER;
+  Scene.PLX_LAYER = PLX_LAYER;
+  Scene.SOBJ_LAYER = SOBJ_LAYER;
+  Scene.OBJ_LAYER = OBJ_LAYER;
+  Scene.EFX_LAYER = EFX_LAYER;  
+  
+  
   function setupDebugDraw(world, ctx){
     // setup debug draw for box2d
     // ==================
@@ -146,7 +157,7 @@ define(['core', 'box2d', 'Factory', 'Actors', 'KillerScript', 'Animation', 'Ston
     listener.PostSolve = function(contact, impulse) {
         var o1, o2, imp;
         imp = impulse.normalImpulses[0];
-        if(imp > 0.6) {
+        if(imp > 3) {
           o1 = contact.GetFixtureA().GetBody().GetUserData().gameobject;
           o2 = contact.GetFixtureB().GetBody().GetUserData().gameobject;
           o1.collide(imp);
@@ -155,7 +166,7 @@ define(['core', 'box2d', 'Factory', 'Actors', 'KillerScript', 'Animation', 'Ston
     }
     w.SetContactListener(listener);
     return w;
-  }
+  };
 
   return Scene;
 
