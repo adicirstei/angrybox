@@ -16,6 +16,6 @@
     "amdclean": "~0.2.1"
   },
   "dependencies": {
-    "requirejs": "~2.1.8"
+    "requirejs": "~2.1.9"
   }
 }

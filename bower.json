@@ -1,7 +1,7 @@
 {
   "name": "angrybox",
   "dependencies": {
-    "requirejs": "~2.1.8",
+    "requirejs": "~2.1.9",
     "box2dweb": "*"
   }
 }
