@@ -1,9 +1,7 @@
 {
-  "atlases": {
-    "assets/atlas.png": {
 	"frames": {
 
-		"bg.png": {
+		"bmp/bg.png": {
 			"frame": {
 				"x": 0, 
 				"y":  0,
@@ -15,7 +13,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"black-actor.png": {
+		"bmp/black-actor.png": {
 			"frame": {
 				"x": 800, 
 				"y":  0,
@@ -27,7 +25,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"black-ex-1.png": {
+		"bmp/black-ex-1.png": {
 			"frame": {
 				"x": 800, 
 				"y":  34,
@@ -39,7 +37,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"black-ex-2.png": {
+		"bmp/black-ex-2.png": {
 			"frame": {
 				"x": 852, 
 				"y":  34,
@@ -51,7 +49,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"black-ex-3.png": {
+		"bmp/black-ex-3.png": {
 			"frame": {
 				"x": 904, 
 				"y":  34,
@@ -63,7 +61,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"blue-actor.png": {
+		"bmp/blue-actor.png": {
 			"frame": {
 				"x": 834, 
 				"y":  0,
@@ -75,7 +73,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"blue-ex-1.png": {
+		"bmp/blue-ex-1.png": {
 			"frame": {
 				"x": 956, 
 				"y":  34,
@@ -87,7 +85,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"blue-ex-2.png": {
+		"bmp/blue-ex-2.png": {
 			"frame": {
 				"x": 800, 
 				"y":  86,
@@ -99,7 +97,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"blue-ex-3.png": {
+		"bmp/blue-ex-3.png": {
 			"frame": {
 				"x": 852, 
 				"y":  86,
@@ -111,7 +109,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"c-bl-1.png": {
+		"bmp/c-bl-1.png": {
 			"frame": {
 				"x": 800, 
 				"y":  138,
@@ -123,7 +121,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"c-bl-2.png": {
+		"bmp/c-bl-2.png": {
 			"frame": {
 				"x": 876, 
 				"y":  138,
@@ -135,7 +133,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"c-bl-3.png": {
+		"bmp/c-bl-3.png": {
 			"frame": {
 				"x": 800, 
 				"y":  202,
@@ -147,7 +145,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"c-bld-1.png": {
+		"bmp/c-bld-1.png": {
 			"frame": {
 				"x": 876, 
 				"y":  202,
@@ -159,7 +157,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"c-bld-2.png": {
+		"bmp/c-bld-2.png": {
 			"frame": {
 				"x": 800, 
 				"y":  266,
@@ -171,7 +169,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"c-bld-3.png": {
+		"bmp/c-bld-3.png": {
 			"frame": {
 				"x": 876, 
 				"y":  266,
@@ -183,7 +181,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"c-or-1.png": {
+		"bmp/c-or-1.png": {
 			"frame": {
 				"x": 800, 
 				"y":  330,
@@ -195,7 +193,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"c-or-2.png": {
+		"bmp/c-or-2.png": {
 			"frame": {
 				"x": 876, 
 				"y":  330,
@@ -207,7 +205,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"c-or-3.png": {
+		"bmp/c-or-3.png": {
 			"frame": {
 				"x": 800, 
 				"y":  394,
@@ -219,7 +217,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"c-ord-1.png": {
+		"bmp/c-ord-1.png": {
 			"frame": {
 				"x": 800, 
 				"y":  458,
@@ -231,7 +229,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"c-ord-2.png": {
+		"bmp/c-ord-2.png": {
 			"frame": {
 				"x": 800, 
 				"y":  522,
@@ -243,7 +241,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"c-ord-3.png": {
+		"bmp/c-ord-3.png": {
 			"frame": {
 				"x": 876, 
 				"y":  394,
@@ -255,7 +253,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"fg.png": {
+		"bmp/fg.png": {
 			"frame": {
 				"x": 0, 
 				"y":  600,
@@ -267,7 +265,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"glass-1.png": {
+		"bmp/glass-1.png": {
 			"frame": {
 				"x": 854, 
 				"y":  0,
@@ -279,7 +277,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"glass-2.png": {
+		"bmp/glass-2.png": {
 			"frame": {
 				"x": 934, 
 				"y":  0,
@@ -291,7 +289,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"glass-3.png": {
+		"bmp/glass-3.png": {
 			"frame": {
 				"x": 904, 
 				"y":  86,
@@ -303,7 +301,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"glass-4.png": {
+		"bmp/glass-4.png": {
 			"frame": {
 				"x": 876, 
 				"y":  458,
@@ -315,7 +313,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"glass-w-1.png": {
+		"bmp/glass-w-1.png": {
 			"frame": {
 				"x": 0, 
 				"y":  711,
@@ -327,7 +325,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"glass-w-2.png": {
+		"bmp/glass-w-2.png": {
 			"frame": {
 				"x": 0, 
 				"y":  743,
@@ -339,7 +337,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"glass-w-3.png": {
+		"bmp/glass-w-3.png": {
 			"frame": {
 				"x": 0, 
 				"y":  775,
@@ -351,7 +349,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"glass-w-4.png": {
+		"bmp/glass-w-4.png": {
 			"frame": {
 				"x": 0, 
 				"y":  807,
@@ -363,7 +361,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"puff-1.png": {
+		"bmp/puff-1.png": {
 			"frame": {
 				"x": 984, 
 				"y":  86,
@@ -375,7 +373,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"puff-2.png": {
+		"bmp/puff-2.png": {
 			"frame": {
 				"x": 952, 
 				"y":  138,
@@ -387,7 +385,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"red-actor.png": {
+		"bmp/red-actor.png": {
 			"frame": {
 				"x": 984, 
 				"y":  110,
@@ -399,7 +397,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"red-ex-1.png": {
+		"bmp/red-ex-1.png": {
 			"frame": {
 				"x": 952, 
 				"y":  202,
@@ -411,7 +409,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"red-ex-2.png": {
+		"bmp/red-ex-2.png": {
 			"frame": {
 				"x": 952, 
 				"y":  266,
@@ -423,7 +421,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"red-ex-3.png": {
+		"bmp/red-ex-3.png": {
 			"frame": {
 				"x": 952, 
 				"y":  330,
@@ -435,7 +433,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"stone-01.png": {
+		"bmp/stone-01.png": {
 			"frame": {
 				"x": 952, 
 				"y":  394,
@@ -447,7 +445,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"stone-02.png": {
+		"bmp/stone-02.png": {
 			"frame": {
 				"x": 876, 
 				"y":  490,
@@ -459,7 +457,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"stone-03.png": {
+		"bmp/stone-03.png": {
 			"frame": {
 				"x": 940, 
 				"y":  490,
@@ -471,7 +469,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"stone-04.png": {
+		"bmp/stone-04.png": {
 			"frame": {
 				"x": 0, 
 				"y":  839,
@@ -483,7 +481,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"stone-w-1.png": {
+		"bmp/stone-w-1.png": {
 			"frame": {
 				"x": 956, 
 				"y":  458,
@@ -495,7 +493,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"stone-w-2.png": {
+		"bmp/stone-w-2.png": {
 			"frame": {
 				"x": 876, 
 				"y":  554,
@@ -507,7 +505,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"stone-w-3.png": {
+		"bmp/stone-w-3.png": {
 			"frame": {
 				"x": 940, 
 				"y":  554,
@@ -519,7 +517,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"stone-w-4.png": {
+		"bmp/stone-w-4.png": {
 			"frame": {
 				"x": 0, 
 				"y":  903,
@@ -531,7 +529,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"stone-ww-1.png": {
+		"bmp/stone-ww-1.png": {
 			"frame": {
 				"x": 904, 
 				"y":  118,
@@ -543,7 +541,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"stone-ww-2.png": {
+		"bmp/stone-ww-2.png": {
 			"frame": {
 				"x": 64, 
 				"y":  839,
@@ -555,7 +553,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"stone-ww-3.png": {
+		"bmp/stone-ww-3.png": {
 			"frame": {
 				"x": 64, 
 				"y":  859,
@@ -567,7 +565,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"stone-ww-4.png": {
+		"bmp/stone-ww-4.png": {
 			"frame": {
 				"x": 64, 
 				"y":  879,
@@ -579,7 +577,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"stone-www-1.png": {
+		"bmp/stone-www-1.png": {
 			"frame": {
 				"x": 200, 
 				"y":  600,
@@ -591,7 +589,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"stone-www-2.png": {
+		"bmp/stone-www-2.png": {
 			"frame": {
 				"x": 200, 
 				"y":  620,
@@ -603,7 +601,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"stone-www-3.png": {
+		"bmp/stone-www-3.png": {
 			"frame": {
 				"x": 200, 
 				"y":  640,
@@ -615,7 +613,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"stone-www-4.png": {
+		"bmp/stone-www-4.png": {
 			"frame": {
 				"x": 200, 
 				"y":  660,
@@ -627,7 +625,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"tree.png": {
+		"bmp/tree.png": {
 			"frame": {
 				"x": 360, 
 				"y":  600,
@@ -639,7 +637,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"white-actor.png": {
+		"bmp/white-actor.png": {
 			"frame": {
 				"x": 0, 
 				"y":  935,
@@ -651,7 +649,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"white-ex-1.png": {
+		"bmp/white-ex-1.png": {
 			"frame": {
 				"x": 0, 
 				"y":  969,
@@ -663,7 +661,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"white-ex-2.png": {
+		"bmp/white-ex-2.png": {
 			"frame": {
 				"x": 64, 
 				"y":  899,
@@ -675,7 +673,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"white-ex-3.png": {
+		"bmp/white-ex-3.png": {
 			"frame": {
 				"x": 64, 
 				"y":  951,
@@ -687,7 +685,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"wood-1.png": {
+		"bmp/wood-1.png": {
 			"frame": {
 				"x": 200, 
 				"y":  680,
@@ -699,7 +697,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"wood-2.png": {
+		"bmp/wood-2.png": {
 			"frame": {
 				"x": 200, 
 				"y":  760,
@@ -711,7 +709,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"wood-3.png": {
+		"bmp/wood-3.png": {
 			"frame": {
 				"x": 200, 
 				"y":  840,
@@ -723,7 +721,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"wood-s-1.png": {
+		"bmp/wood-s-1.png": {
 			"frame": {
 				"x": 116, 
 				"y":  899,
@@ -735,7 +733,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"wood-s-2.png": {
+		"bmp/wood-s-2.png": {
 			"frame": {
 				"x": 200, 
 				"y":  920,
@@ -747,7 +745,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"wood-s-3.png": {
+		"bmp/wood-s-3.png": {
 			"frame": {
 				"x": 280, 
 				"y":  920,
@@ -759,7 +757,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"wood-w-1.png": {
+		"bmp/wood-w-1.png": {
 			"frame": {
 				"x": 360, 
 				"y":  850,
@@ -771,7 +769,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"wood-w-2.png": {
+		"bmp/wood-w-2.png": {
 			"frame": {
 				"x": 360, 
 				"y":  890,
@@ -783,7 +781,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"wood-w-3.png": {
+		"bmp/wood-w-3.png": {
 			"frame": {
 				"x": 360, 
 				"y":  930,
@@ -795,7 +793,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"wood-ws-1.png": {
+		"bmp/wood-ws-1.png": {
 			"frame": {
 				"x": 116, 
 				"y":  979,
@@ -807,7 +805,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"wood-ws-2.png": {
+		"bmp/wood-ws-2.png": {
 			"frame": {
 				"x": 520, 
 				"y":  850,
@@ -819,7 +817,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"wood-ws-3.png": {
+		"bmp/wood-ws-3.png": {
 			"frame": {
 				"x": 520, 
 				"y":  890,
@@ -831,7 +829,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"wood-ww-1.png": {
+		"bmp/wood-ww-1.png": {
 			"frame": {
 				"x": 200, 
 				"y":  1000,
@@ -843,7 +841,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"wood-ww-2.png": {
+		"bmp/wood-ww-2.png": {
 			"frame": {
 				"x": 280, 
 				"y":  1000,
@@ -855,7 +853,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"wood-ww-3.png": {
+		"bmp/wood-ww-3.png": {
 			"frame": {
 				"x": 360, 
 				"y":  970,
@@ -867,7 +865,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"wood-www-1.png": {
+		"bmp/wood-www-1.png": {
 			"frame": {
 				"x": 607, 
 				"y":  600,
@@ -879,7 +877,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"wood-www-2.png": {
+		"bmp/wood-www-2.png": {
 			"frame": {
 				"x": 767, 
 				"y":  600,
@@ -891,7 +889,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"wood-www-3.png": {
+		"bmp/wood-www-3.png": {
 			"frame": {
 				"x": 607, 
 				"y":  620,
@@ -903,7 +901,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"yellow-actor.png": {
+		"bmp/yellow-actor.png": {
 			"frame": {
 				"x": 160, 
 				"y":  711,
@@ -915,7 +913,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"yellow-ex-1.png": {
+		"bmp/yellow-ex-1.png": {
 			"frame": {
 				"x": 440, 
 				"y":  970,
@@ -927,7 +925,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"yellow-ex-2.png": {
+		"bmp/yellow-ex-2.png": {
 			"frame": {
 				"x": 520, 
 				"y":  930,
@@ -939,7 +937,7 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		},
-		"yellow-ex-3.png": {
+		"bmp/yellow-ex-3.png": {
 			"frame": {
 				"x": 607, 
 				"y":  640,
@@ -951,345 +949,4 @@
 "spriteSourceSize": {},
 "sourceSize": {}
 		}	}, "meta": {}
-}
-
-  },
-  "sounds": [
-    "assets/smash.mp3",
-    "assets/glass1.mp3",
-    "assets/glass2.mp3"
-  ],
-  "levels": [
-    {
-      "slots":[{"x":100, "y":400}, {"x":150, "y":470}, {"x":170, "y":470}],
-      "actors":["RED", "YELLOW", "RED"],
-      "world": {"t":0, "l": 0, "r": 1500, "b": 600},
-      "layers": [
-        [
-          {
-            "x": 400,
-            "y": 300,
-            "components":[{
-              "classname": "Sprite",
-              "data": {"frame": "bg.png"}
-            }]
-          }
-        ],
-        [{
-          "x": 100,
-          "y": 400,
-          "name":"tree-1",
-          "components": [
-            {
-              "classname": "Sprite",
-              "data": {
-                "frame":"tree.png"
-              }
-            }
-          ]
-        },
-        {
-          "x": 200,
-          "y": 400,
-          "name":"puff-1",
-          "components": [
-            {
-              "classname": "KillerScript",
-              "data": {
-                "ttl":5000
-              }
-            },
-            {
-              "classname": "Sprite",
-              "data": {
-                "frame":"puff-1.png"
-              }
-            }
-          ]
-        },        
-        {
-          "x": 300,
-          "y": 400,
-          "name":"puff-2",
-          "components": [
-            {
-              "classname": "Sprite",
-              "data": {
-                "frame":"puff-2.png"
-              }
-            }
-          ]
-        },                
-        {
-          "x": 700,
-          "y": 400,
-          "name":"tree-2",
-          "components": [
-            {
-              "classname": "Sprite",
-              "data": {
-                "frame":"tree.png"
-              }
-            }
-          ]
-        }],
-        [
-        ],
-        [{
-          "classname": "Enemy",
-          "data":{
-            "type": "NORMAL",
-            "x" : 770,
-            "y": 520
-          }
-        },
-        {
-          "classname": "Enemy",
-          "data":{
-            "type": "STRONG",
-            "x" : 1050,
-            "y": 520
-          }
-        },
-        {
-          "classname": "StoneTile",
-          "data":{
-            "frames": ["stone-ww-1.png", "stone-ww-2.png", "stone-ww-3.png", "stone-ww-4.png"],
-            "rot": 90,
-            "x" : 700,
-            "y": 464
-          }
-        },
-        {
-          "classname": "StoneTile",
-          "data":{
-            "frames": ["stone-ww-1.png", "stone-ww-2.png", "stone-ww-3.png", "stone-ww-4.png"],
-            "rot": 90,
-            "x" : 840,
-            "y": 464
-          }
-        },
-        {
-          "classname": "StoneTile",
-          "data":{
-            "frames": ["stone-www-1.png", "stone-www-2.png", "stone-www-3.png", "stone-www-4.png"],
-            "rot": 0,
-            "x" : 770,
-            "y": 414
-          }
-        },
-        {
-          "classname": "WoodTile",
-          "data":{
-            "frames": ["wood-ws-1.png", "wood-ws-2.png", "wood-ws-3.png"],
-            "rot": 0,
-            "x" : 770,
-            "y": 384
-          }
-        },
-        {
-          "classname": "WoodTile",
-          "data":{
-            "frames": ["wood-ww-1.png", "wood-ww-2.png", "wood-ww-3.png"],
-            "rot": 90,
-            "x" : 650,
-            "y": 464
-          }
-        },
-        {
-          "classname": "WoodTile",
-          "data":{
-            "frames": ["wood-ww-1.png", "wood-ww-2.png", "wood-ww-3.png"],
-            "rot": 90,
-            "x" : 890,
-            "y": 464
-          }
-        },
-        {
-          "classname": "WoodTile",
-          "data":{
-            "frames": ["wood-ww-1.png", "wood-ww-2.png", "wood-ww-3.png"],
-            "rot": -27,
-            "x" : 681,
-            "y": 397
-          }
-        },
-        {
-          "classname": "WoodTile",
-          "data":{
-            "frames": ["wood-ww-1.png", "wood-ww-2.png", "wood-ww-3.png"],
-            "rot": 27,
-            "x" : 859,
-            "y": 397
-          }
-        },
-        {
-          "classname": "GlassTile",
-          "data":{
-            "frames": ["glass-1.png", "glass-2.png", "glass-3.png", "glass-4.png"],
-            "rot": 90,
-            "x" : 770,
-            "y": 323
-          }
-        },
-        {
-          "classname": "GlassTile",
-          "data":{
-            "frames": ["glass-w-1.png", "glass-w-2.png", "glass-w-3.png", "glass-w-4.png"],
-            "rot": 90,
-            "x" : 610,
-            "y": 424
-          }
-        },
-        {
-          "classname": "GlassTile",
-          "data":{
-            "frames": ["glass-w-1.png", "glass-w-2.png", "glass-w-3.png", "glass-w-4.png"],
-            "rot": 90,
-            "x" : 930,
-            "y": 424
-          }
-        },
-        {
-          "classname": "GlassTile",
-          "data":{
-            "frames": ["glass-w-1.png", "glass-w-2.png", "glass-w-3.png", "glass-w-4.png"],
-            "rot": -24,
-            "x" : 683,
-            "y": 297
-          }
-        },
-        {
-          "classname": "GlassTile",
-          "data":{
-            "frames": ["glass-w-1.png", "glass-w-2.png", "glass-w-3.png", "glass-w-4.png"],
-            "rot": 24,
-            "x" : 857,
-            "y": 297
-          }
-        }
-
-        ],
-        [{
-          "x": 100,
-          "y": 500,
-          "components": [
-            {
-              "classname": "Sprite",
-              "data": {
-                "frame":"fg.png",
-                "x":0
-              }
-            },
-            {
-              "classname": "Sprite",
-              "data": {
-                "frame":"fg.png",
-                "x": 200
-              }
-            },
-            {
-              "classname": "Sprite",
-              "data": {
-                "frame":"fg.png",
-                "x": -200
-              }
-            },
-            {
-              "classname": "Sprite",
-              "data": {
-                "frame":"fg.png",
-                "x": 400
-              }
-            },
-            {
-              "classname": "Sprite",
-              "data": {
-                "frame":"fg.png",
-                "x": -400
-              }
-            },
-            {
-              "classname": "Sprite",
-              "data": {
-                "frame":"fg.png",
-                "x": 600
-              }
-            },
-            {
-              "classname": "Sprite",
-              "data": {
-                "frame":"fg.png",
-                "x": -600
-              }
-            },
-            {
-              "classname": "Sprite",
-              "data": {
-                "frame":"fg.png",
-                "x": 800
-              }
-            },            
-            {
-              "classname": "Sprite",
-              "data": {
-                "frame":"fg.png",
-                "x": -800
-              }
-            },              
-            {
-              "classname": "PhysComponent",
-              "data": {
-                "fixture":{
-                  "density": 1,
-                  "friction": 0.9,
-                  "restitution": 0.2
-                },
-                "body": {
-                  "position":{"x": 750, "y": 550},
-                  "static": true
-                },
-                "shapes": [{
-                  "shape":"RECTANGLE",
-                  "w": 800,
-                  "h": 46
-                }]
-              }              
-            }
-          ]
-        },
-        {
-          "components": [
-            {
-              "classname": "Sprite",
-              "data": {
-                "frame":"stone-01.png"
-              }
-            },
-
-            {
-              "classname": "PhysComponent",
-              "data": {
-                "fixture":{
-                  "density": 1,
-                  "friction": 0.9,
-                  "restitution": 0.2
-                },
-                "body": {
-                  "position":{"x": 400, "y": 300},
-                  "static": false,
-                  "rot": 44
-                },
-                "shapes": [{
-                  "shape":"RECTANGLE",
-                  "w": 32,
-                  "h": 32
-                }]
-              }              
-            }
-          ]
-        }]
-      ]
-    }
-  ]
 }
